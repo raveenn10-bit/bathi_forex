@@ -1,0 +1,229 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+
+interface CandlestickChartVisualProps {
+  className?: string;
+  activePair?: string;
+}
+
+export default function CandlestickChartVisual({
+  className = "",
+  activePair = "EUR/USD",
+}: CandlestickChartVisualProps) {
+  // Live price fluctuation micro-effect
+  const [currentPrice, setCurrentPrice] = useState("1.08425");
+  const [isBullishTick, setIsBullishTick] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const base = 1.0842;
+      const randomDelta = (Math.random() - 0.48) * 0.001;
+      const newPrice = (base + randomDelta).toFixed(5);
+      setIsBullishTick(newPrice >= currentPrice);
+      setCurrentPrice(newPrice);
+    }, 2800);
+
+    return () => clearInterval(interval);
+  }, [currentPrice]);
+
+  return (
+    <div
+      className={`relative w-full overflow-hidden rounded-2xl border border-brand-border bg-brand-bgSecondary/80 p-4 shadow-glass backdrop-blur-xl ${className}`}
+    >
+      {/* Chart Header */}
+      <div className="mb-3 flex items-center justify-between border-b border-brand-border/60 pb-3">
+        <div className="flex items-center gap-3">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-purple/20 text-brand-purple">
+            <span className="font-heading text-xs font-bold">FX</span>
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-heading text-sm font-bold text-white">
+                {activePair}
+              </span>
+              <span className="rounded bg-brand-purple/15 px-1.5 py-0.5 text-[10px] font-semibold text-brand-purpleLight">
+                1H
+              </span>
+            </div>
+            <div className="flex items-center gap-2 text-xs">
+              <span
+                className={`font-mono font-bold transition-colors ${
+                  isBullishTick ? "text-brand-bullish" : "text-brand-bearish"
+                }`}
+              >
+                {currentPrice}
+              </span>
+              <span className="text-[10px] text-brand-bullish">+0.48% Today</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Live indicator & Target ratio */}
+        <div className="flex items-center gap-3">
+          <div className="hidden sm:flex flex-col items-end text-right">
+            <span className="text-[10px] text-brand-muted">Target R:R</span>
+            <span className="font-mono text-xs font-bold text-brand-gold">1 : 3.4</span>
+          </div>
+          <div className="flex items-center gap-1.5 rounded-full bg-brand-bullish/10 px-2.5 py-1 border border-brand-bullish/20">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-bullish animate-ping" />
+            <span className="text-[10px] font-semibold tracking-wider text-brand-bullish uppercase">
+              LIVE
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Candlestick SVG canvas */}
+      <div className="relative h-44 sm:h-52 w-full">
+        {/* Support & Resistance Horizontal Reference Lines */}
+        <div className="absolute top-[22%] left-0 right-0 flex items-center gap-2 border-t border-dashed border-brand-bearish/40">
+          <span className="rounded bg-brand-bearish/20 px-1.5 py-0.5 text-[9px] font-mono text-brand-bearish">
+            Resistance 1.08900
+          </span>
+        </div>
+        <div className="absolute bottom-[28%] left-0 right-0 flex items-center gap-2 border-t border-dashed border-brand-bullish/40">
+          <span className="rounded bg-brand-bullish/20 px-1.5 py-0.5 text-[9px] font-mono text-brand-bullish">
+            Institutional Demand 1.08150
+          </span>
+        </div>
+
+        {/* SVG candlesticks */}
+        <svg
+          viewBox="0 0 500 180"
+          preserveAspectRatio="none"
+          className="h-full w-full overflow-visible"
+        >
+          <defs>
+            <linearGradient id="areaGlow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#995DE8" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#995DE8" stopOpacity="0.0" />
+            </linearGradient>
+            <linearGradient id="pathGradient" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#995DE8" />
+              <stop offset="70%" stopColor="#B17AF5" />
+              <stop offset="100%" stopColor="#D6B15E" />
+            </linearGradient>
+          </defs>
+
+          {/* Grid lines */}
+          <line x1="0" y1="45" x2="500" y2="45" stroke="#2A2E42" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="0" y1="90" x2="500" y2="90" stroke="#2A2E42" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="0" y1="135" x2="500" y2="135" stroke="#2A2E42" strokeDasharray="3 3" strokeWidth="0.8" />
+
+          {/* Candlesticks sequence */}
+          {/* Candle 1 (Bullish) */}
+          <line x1="30" y1="110" x2="30" y2="145" stroke="#00E676" strokeWidth="1.2" />
+          <rect x="25" y="118" width="10" height="20" rx="1.5" fill="#00E676" />
+
+          {/* Candle 2 (Bearish) */}
+          <line x1="60" y1="105" x2="60" y2="135" stroke="#FF5252" strokeWidth="1.2" />
+          <rect x="55" y="110" width="10" height="18" rx="1.5" fill="#FF5252" />
+
+          {/* Candle 3 (Bullish) */}
+          <line x1="90" y1="95" x2="90" y2="130" stroke="#00E676" strokeWidth="1.2" />
+          <rect x="85" y="100" width="10" height="22" rx="1.5" fill="#00E676" />
+
+          {/* Candle 4 (Bullish strong) */}
+          <line x1="120" y1="75" x2="120" y2="115" stroke="#00E676" strokeWidth="1.2" />
+          <rect x="115" y="80" width="10" height="30" rx="1.5" fill="#00E676" />
+
+          {/* Candle 5 (Pullback Bearish) */}
+          <line x1="150" y1="78" x2="150" y2="110" stroke="#FF5252" strokeWidth="1.2" />
+          <rect x="145" y="85" width="10" height="15" rx="1.5" fill="#FF5252" />
+
+          {/* Candle 6 (Liquidity sweep pinbar) */}
+          <line x1="180" y1="65" x2="180" y2="118" stroke="#00E676" strokeWidth="1.2" />
+          <rect x="175" y="70" width="10" height="12" rx="1.5" fill="#00E676" />
+
+          {/* Candle 7 (Bearish consolidation) */}
+          <line x1="210" y1="68" x2="210" y2="100" stroke="#FF5252" strokeWidth="1.2" />
+          <rect x="205" y="75" width="10" height="18" rx="1.5" fill="#FF5252" />
+
+          {/* Candle 8 (Demand test) */}
+          <line x1="240" y1="80" x2="240" y2="125" stroke="#00E676" strokeWidth="1.2" />
+          <rect x="235" y="85" width="10" height="25" rx="1.5" fill="#00E676" />
+
+          {/* Candle 9 (Bullish continuation) */}
+          <line x1="270" y1="58" x2="270" y2="98" stroke="#00E676" strokeWidth="1.2" />
+          <rect x="265" y="65" width="10" height="26" rx="1.5" fill="#00E676" />
+
+          {/* Candle 10 (Break of Structure - BOS) */}
+          <line x1="300" y1="42" x2="300" y2="80" stroke="#00E676" strokeWidth="1.2" />
+          <rect x="295" y="48" width="10" height="24" rx="1.5" fill="#00E676" />
+
+          {/* Candle 11 (Retest) */}
+          <line x1="330" y1="50" x2="330" y2="78" stroke="#FF5252" strokeWidth="1.2" />
+          <rect x="325" y="55" width="10" height="14" rx="1.5" fill="#FF5252" />
+
+          {/* Candle 12 (Expansion upward) */}
+          <line x1="360" y1="32" x2="360" y2="68" stroke="#00E676" strokeWidth="1.2" />
+          <rect x="355" y="38" width="10" height="25" rx="1.5" fill="#00E676" />
+
+          {/* Candle 13 (Consolidation) */}
+          <line x1="390" y1="30" x2="390" y2="58" stroke="#FF5252" strokeWidth="1.2" />
+          <rect x="385" y="34" width="10" height="16" rx="1.5" fill="#FF5252" />
+
+          {/* Candle 14 (Institutional thrust) */}
+          <line x1="420" y1="18" x2="420" y2="52" stroke="#00E676" strokeWidth="1.2" />
+          <rect x="415" y="22" width="10" height="22" rx="1.5" fill="#00E676" />
+
+          {/* Candle 15 (Current active candle) */}
+          <line x1="450" y1="12" x2="450" y2="40" stroke="#D6B15E" strokeWidth="1.5" />
+          <rect x="445" y="16" width="10" height="18" rx="1.5" fill="#D6B15E" />
+
+          {/* Dynamic Moving Average Trend Curves */}
+          <path
+            d="M20 135 C 100 115, 180 90, 260 75 S 380 35, 460 22"
+            fill="none"
+            stroke="url(#pathGradient)"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+
+          {/* Area fill glow */}
+          <path
+            d="M20 135 C 100 115, 180 90, 260 75 S 380 35, 460 22 L 460 170 L 20 170 Z"
+            fill="url(#areaGlow)"
+          />
+
+          {/* Active price pointer beacon */}
+          <circle cx="450" cy="22" r="5" fill="#D6B15E" className="animate-pulse" />
+          <circle cx="450" cy="22" r="10" fill="none" stroke="#D6B15E" strokeOpacity="0.5" strokeWidth="1" />
+        </svg>
+
+        {/* Volume Bars at Bottom */}
+        <div className="absolute bottom-1 left-2 right-2 flex items-end justify-between h-7 opacity-35">
+          <div className="w-1.5 h-3 bg-brand-bullish rounded-t-sm" />
+          <div className="w-1.5 h-2 bg-brand-bearish rounded-t-sm" />
+          <div className="w-1.5 h-4 bg-brand-bullish rounded-t-sm" />
+          <div className="w-1.5 h-6 bg-brand-bullish rounded-t-sm" />
+          <div className="w-1.5 h-3 bg-brand-bearish rounded-t-sm" />
+          <div className="w-1.5 h-5 bg-brand-bullish rounded-t-sm" />
+          <div className="w-1.5 h-2 bg-brand-bearish rounded-t-sm" />
+          <div className="w-1.5 h-4 bg-brand-bullish rounded-t-sm" />
+          <div className="w-1.5 h-7 bg-brand-bullish rounded-t-sm" />
+          <div className="w-1.5 h-5 bg-brand-bullish rounded-t-sm" />
+          <div className="w-1.5 h-2 bg-brand-bearish rounded-t-sm" />
+          <div className="w-1.5 h-6 bg-brand-bullish rounded-t-sm" />
+          <div className="w-1.5 h-3 bg-brand-bearish rounded-t-sm" />
+          <div className="w-1.5 h-7 bg-brand-bullish rounded-t-sm" />
+          <div className="w-1.5 h-5 bg-brand-gold rounded-t-sm" />
+        </div>
+      </div>
+
+      {/* Chart Footer Information Bar */}
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-brand-border/60 pt-2 text-[10px] text-brand-muted">
+        <div className="flex items-center gap-3">
+          <span>Spread: <strong className="text-white font-mono">0.6 pips</strong></span>
+          <span className="hidden sm:inline">Volume: <strong className="text-white font-mono">$1.48B</strong></span>
+          <span>Session: <strong className="text-brand-purpleLight">London / NY Overlap</strong></span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-brand-purple"></span>
+          <span>Liquidity Sweep Identified</span>
+        </div>
+      </div>
+    </div>
+  );
+}
