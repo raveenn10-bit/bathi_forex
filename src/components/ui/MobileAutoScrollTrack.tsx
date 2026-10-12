@@ -5,8 +5,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface MobileAutoScrollTrackProps {
   children: React.ReactNode[];
-  speed?: number; // pixels per animation frame (default ~0.7)
-  autoResumeDelay?: number; // ms to resume after touch (default 3000)
+  speed?: number; // pixels per frame (default ~0.75)
+  autoResumeDelay?: number; // ms to resume after touch (default 2500)
+  direction?: "ltr" | "rtl"; // "ltr" = Left-to-Right drift, "rtl" = Right-to-Left drift
   className?: string;
   itemClassName?: string;
   badgeLabel?: string;
@@ -14,11 +15,12 @@ interface MobileAutoScrollTrackProps {
 
 export default function MobileAutoScrollTrack({
   children,
-  speed = 0.7,
-  autoResumeDelay = 3000,
+  speed = 0.75,
+  autoResumeDelay = 2500,
+  direction = "ltr",
   className = "",
   itemClassName = "",
-  badgeLabel = "Auto-Scrolls Left → Right",
+  badgeLabel = "Auto-Scroll Loop LTR",
 }: MobileAutoScrollTrackProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const isInteractingRef = useRef<boolean>(false);
@@ -26,7 +28,26 @@ export default function MobileAutoScrollTrack({
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
-  const totalItems = React.Children.count(children);
+  const originalChildren = React.Children.toArray(children);
+  const originalCount = originalChildren.length;
+
+  // Duplicate cards for seamless continuous infinite wrap
+  const loopedItems = [...originalChildren, ...originalChildren];
+
+  // Set initial scroll offset for LTR direction so it can immediately drift leftwards
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el || originalCount === 0) return;
+
+    const timer = setTimeout(() => {
+      const halfWidth = el.scrollWidth / 2;
+      if (halfWidth > 0 && direction === "ltr" && el.scrollLeft === 0) {
+        el.scrollLeft = halfWidth;
+      }
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, [direction, originalCount]);
 
   // Resume auto-scroll after idle timeout
   const scheduleResume = useCallback(() => {
@@ -55,28 +76,47 @@ export default function MobileAutoScrollTrack({
   // Track active slide based on scrollLeft
   const handleScroll = () => {
     const el = scrollRef.current;
-    if (!el || totalItems === 0) return;
-    const cardWidth = el.scrollWidth / totalItems;
-    const current = Math.round(el.scrollLeft / cardWidth);
-    setActiveIndex(Math.min(Math.max(current, 0), totalItems - 1));
+    if (!el || originalCount === 0) return;
+    const halfWidth = el.scrollWidth / 2;
+    if (halfWidth <= 0) return;
+
+    // Seamless wrapping check during user scroll/drag
+    if (el.scrollLeft >= halfWidth * 1.8) {
+      el.scrollLeft -= halfWidth;
+    } else if (el.scrollLeft <= 5) {
+      el.scrollLeft += halfWidth;
+    }
+
+    const cardWidth = halfWidth / originalCount;
+    if (cardWidth > 0) {
+      const current = Math.floor((el.scrollLeft % halfWidth) / cardWidth);
+      setActiveIndex(Math.min(Math.max(current, 0), originalCount - 1));
+    }
   };
 
-  // Continuous gentle horizontal drift engine
+  // Continuous seamless infinite loop engine
   useEffect(() => {
     const el = scrollRef.current;
-    if (!el) return;
+    if (!el || originalCount === 0) return;
 
     let animId: number;
 
     const tick = () => {
       if (!isInteractingRef.current && el) {
-        const maxScroll = el.scrollWidth - el.clientWidth;
-        if (maxScroll > 0) {
-          if (el.scrollLeft >= maxScroll - 1) {
-            // Smoothly reset back to the beginning once end is reached
-            el.scrollLeft = 0;
+        const halfWidth = el.scrollWidth / 2;
+        if (halfWidth > 0) {
+          if (direction === "ltr") {
+            // Left-to-Right drift: cards glide smoothly towards the right
+            el.scrollLeft -= speed;
+            if (el.scrollLeft <= 0) {
+              el.scrollLeft += halfWidth;
+            }
           } else {
+            // Right-to-Left drift: cards glide smoothly towards the left
             el.scrollLeft += speed;
+            if (el.scrollLeft >= halfWidth) {
+              el.scrollLeft -= halfWidth;
+            }
           }
         }
       }
@@ -91,37 +131,48 @@ export default function MobileAutoScrollTrack({
         clearTimeout(resumeTimerRef.current);
       }
     };
-  }, [speed]);
+  }, [speed, direction, originalCount]);
 
   // Jump to specific card index
   const scrollToIndex = (idx: number) => {
     handleInteractionStart();
     const el = scrollRef.current;
-    if (!el) return;
-    const childrenNodes = el.children;
-    if (childrenNodes[idx]) {
-      const targetChild = childrenNodes[idx] as HTMLElement;
-      el.scrollTo({
-        left: targetChild.offsetLeft - 16,
-        behavior: "smooth",
-      });
-    }
+    if (!el || originalCount === 0) return;
+    const halfWidth = el.scrollWidth / 2;
+    const cardWidth = halfWidth / originalCount;
+    el.scrollTo({
+      left: idx * cardWidth,
+      behavior: "smooth",
+    });
+    setActiveIndex(idx);
     scheduleResume();
   };
 
   const handlePrev = () => {
-    scrollToIndex((activeIndex - 1 + totalItems) % totalItems);
+    handleInteractionStart();
+    const el = scrollRef.current;
+    if (!el || originalCount === 0) return;
+    const halfWidth = el.scrollWidth / 2;
+    const cardWidth = halfWidth / originalCount;
+    el.scrollBy({ left: -cardWidth, behavior: "smooth" });
+    scheduleResume();
   };
 
   const handleNext = () => {
-    scrollToIndex((activeIndex + 1) % totalItems);
+    handleInteractionStart();
+    const el = scrollRef.current;
+    if (!el || originalCount === 0) return;
+    const halfWidth = el.scrollWidth / 2;
+    const cardWidth = halfWidth / originalCount;
+    el.scrollBy({ left: cardWidth, behavior: "smooth" });
+    scheduleResume();
   };
 
   return (
     <div className={`md:hidden relative w-full ${className}`}>
       {/* Top Mobile Affordance Header */}
       <div className="flex items-center justify-between mb-3 px-1">
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-sky-500/10 border border-sky-400/25 px-2.5 py-0.5 text-[10px] font-semibold text-sky-600">
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-sky-500/10 dark:bg-sky-500/20 border border-sky-400/25 dark:border-sky-500/40 px-2.5 py-0.5 text-[10px] font-semibold text-sky-600 dark:text-sky-400">
           <span className="relative flex h-1.5 w-1.5">
             <span
               className={`absolute inline-flex h-full w-full rounded-full bg-sky-400 ${
@@ -131,6 +182,9 @@ export default function MobileAutoScrollTrack({
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-sky-500" />
           </span>
           <span>{badgeLabel}</span>
+          <span className="text-[9px] font-mono text-sky-500/80 dark:text-sky-400/80 uppercase">
+            {isPaused ? "• Paused" : "• Loop"}
+          </span>
         </div>
 
         {/* Micro Interaction Controls */}
@@ -139,7 +193,7 @@ export default function MobileAutoScrollTrack({
             type="button"
             onClick={handlePrev}
             aria-label="Previous card"
-            className="h-6 w-6 rounded-full bg-white/80 border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-white active:scale-90 transition-all shadow-sm"
+            className="h-6 w-6 rounded-full bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center hover:bg-white dark:hover:bg-slate-800 active:scale-90 transition-all shadow-xs"
           >
             <ChevronLeft className="h-3.5 w-3.5" />
           </button>
@@ -147,14 +201,14 @@ export default function MobileAutoScrollTrack({
             type="button"
             onClick={handleNext}
             aria-label="Next card"
-            className="h-6 w-6 rounded-full bg-white/80 border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-white active:scale-90 transition-all shadow-sm"
+            className="h-6 w-6 rounded-full bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center hover:bg-white dark:hover:bg-slate-800 active:scale-90 transition-all shadow-xs"
           >
             <ChevronRight className="h-3.5 w-3.5" />
           </button>
         </div>
       </div>
 
-      {/* Horizontal Scroll Track */}
+      {/* Horizontal Infinite Looping Scroll Track */}
       <div
         ref={scrollRef}
         onScroll={handleScroll}
@@ -162,13 +216,15 @@ export default function MobileAutoScrollTrack({
         onTouchEnd={handleInteractionEnd}
         onMouseDown={handleInteractionStart}
         onMouseUp={handleInteractionEnd}
-        className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-4 pb-3 scroll-smooth touch-pan-x"
+        onMouseEnter={handleInteractionStart}
+        onMouseLeave={handleInteractionEnd}
+        className="flex overflow-x-auto no-scrollbar gap-4 pb-3 touch-pan-x cursor-grab active:cursor-grabbing select-none"
         style={{ WebkitOverflowScrolling: "touch" }}
       >
-        {React.Children.map(children, (child, idx) => (
+        {loopedItems.map((child, idx) => (
           <div
             key={idx}
-            className={`snap-center shrink-0 w-[84vw] max-w-[325px] transition-transform duration-200 active:scale-[0.99] ${itemClassName}`}
+            className={`shrink-0 w-[84vw] max-w-[325px] transition-transform duration-200 active:scale-[0.99] ${itemClassName}`}
           >
             {child}
           </div>
@@ -176,9 +232,9 @@ export default function MobileAutoScrollTrack({
       </div>
 
       {/* Micro Progress Dots */}
-      {totalItems > 1 && (
+      {originalCount > 1 && (
         <div className="flex items-center justify-center gap-1.5 mt-2">
-          {Array.from({ length: totalItems }).map((_, i) => (
+          {Array.from({ length: originalCount }).map((_, i) => (
             <button
               key={i}
               type="button"
@@ -186,8 +242,8 @@ export default function MobileAutoScrollTrack({
               aria-label={`Go to item ${i + 1}`}
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 activeIndex === i
-                  ? "w-6 bg-sky-500 shadow-sm"
-                  : "w-1.5 bg-slate-300 hover:bg-slate-400"
+                  ? "w-6 bg-sky-500 shadow-xs"
+                  : "w-1.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
               }`}
             />
           ))}

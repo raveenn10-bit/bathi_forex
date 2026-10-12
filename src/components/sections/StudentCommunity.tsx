@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ACADEMY_CONFIG } from "@/data/academy";
 import { getGeneralInquiryWhatsAppUrl } from "@/lib/whatsapp";
 import { useGSAPContext, gsap } from "@/hooks/useGSAPAnimations";
+import MobileAutoScrollTrack from "../ui/MobileAutoScrollTrack";
 import {
   Users,
   LineChart,
@@ -105,52 +106,99 @@ export default function StudentCommunity() {
     <section
       id="community"
       ref={containerRef}
-      className="relative w-full py-24 sm:py-32 overflow-hidden"
+      className="relative w-full py-24 sm:py-32 overflow-hidden bg-slate-50/50 dark:bg-[#0B0E14] border-t border-slate-200/80 dark:border-slate-800/80"
     >
       {/* Ambient background glows */}
-      <div className="pointer-events-none absolute left-1/4 top-1/4 -translate-y-1/2 h-[450px] w-[450px] rounded-full bg-emerald-500/10 blur-[150px]" />
-      <div className="pointer-events-none absolute right-1/4 bottom-1/4 h-[420px] w-[420px] rounded-full bg-[#FFD3B6]/30 blur-[150px]" />
+      <div className="pointer-events-none absolute left-1/4 top-1/4 -translate-y-1/2 h-[450px] w-[450px] rounded-full bg-emerald-500/10 dark:bg-emerald-500/5 blur-[150px]" />
+      <div className="pointer-events-none absolute right-1/4 bottom-1/4 h-[420px] w-[420px] rounded-full bg-[#FFD3B6]/30 dark:bg-amber-900/10 blur-[150px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-700 mb-4 shadow-sm">
-            <WhatsAppGlyph className="h-4 w-4 fill-emerald-600" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/40 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300 mb-4 shadow-sm">
+            <WhatsAppGlyph className="h-4 w-4 fill-emerald-600 dark:fill-emerald-400" />
             <span>OFFICIAL STUDENT FORUM & TRADING COMMUNITY</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Join the Official{" "}
-            <span className="text-emerald-700">
+            <span className="text-emerald-700 dark:text-emerald-400">
               Student WhatsApp Forum
             </span>
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Connect with 1,500+ active Sri Lankan traders, get daily market breakdowns, and receive direct chart guidance from Bhathiya Sooriarachchi at Apex Trading Academy.
           </p>
 
           {/* Quick Metrics Bar */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-700">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/90 px-3 py-1 shadow-sm">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-700 dark:text-slate-300">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 px-3 py-1 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>1,500+ Active Members</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/90 px-3 py-1 shadow-sm">
-              <CheckCircle2 className="h-3.5 w-3.5 text-amber-600" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 px-3 py-1 shadow-sm">
+              <CheckCircle2 className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
               <span>Daily Pre-Market Watchlists</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/90 px-3 py-1 shadow-sm">
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 px-3 py-1 shadow-sm">
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
               <span>Zero Spam & Anti-Gambling Rule</span>
             </span>
           </div>
         </div>
 
-        {/* 4 Feature Cards Grid */}
+        {/* Mobile Horizontal Auto-Scroll Loop Track */}
+        <MobileAutoScrollTrack
+          badgeLabel="Community Perks • Auto-Scroll Loop LTR"
+          direction="ltr"
+          className="mb-8"
+        >
+          {studentCommunity.benefits.map((benefit, idx) => {
+            const IconComponent = BENEFIT_ICONS[idx % BENEFIT_ICONS.length];
+            const pillText = BENEFIT_PILLS[idx % BENEFIT_PILLS.length];
+
+            return (
+              <div
+                key={`mobile-${benefit.title}`}
+                className="group relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-[#121824]/90 p-6 shadow-sm backdrop-blur-xl transition-all duration-300 hover:border-emerald-500/40 flex flex-col justify-between min-h-[220px]"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-emerald-500/30 dark:border-emerald-500/40 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 shadow-sm">
+                      <IconComponent className="h-5 w-5" />
+                    </div>
+                    <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500">
+                      {`0${idx + 1}`}
+                    </span>
+                  </div>
+
+                  <span className="inline-block font-mono text-[10px] font-bold tracking-wider uppercase text-amber-600 dark:text-amber-400 mb-1.5">
+                    {pillText}
+                  </span>
+
+                  <h3 className="font-heading text-base font-bold text-slate-900 dark:text-white">
+                    {benefit.title}
+                  </h3>
+
+                  <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+                    {benefit.description}
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">
+                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
+                  <span>Included for All Forum Students</span>
+                </div>
+              </div>
+            );
+          })}
+        </MobileAutoScrollTrack>
+
+        {/* Desktop 4 Feature Cards Grid */}
         <div
           ref={cardsRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 sm:mb-20"
+          className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 sm:mb-20"
         >
           {studentCommunity.benefits.map((benefit, idx) => {
             const IconComponent = BENEFIT_ICONS[idx % BENEFIT_ICONS.length];
@@ -159,33 +207,33 @@ export default function StudentCommunity() {
             return (
               <div
                 key={benefit.title}
-                className="group relative rounded-3xl border border-slate-200 bg-white/85 p-6 shadow-glass backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/40 hover:bg-white hover:shadow-card flex flex-col justify-between"
+                className="group relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-[#121824]/90 p-6 shadow-glass backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/40 hover:bg-white dark:hover:bg-[#162030] hover:shadow-card flex flex-col justify-between"
               >
                 <div>
                   {/* Top Bar with Number and Tag */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald-500/30 bg-emerald-50 text-emerald-600 shadow-sm transition-transform duration-300 group-hover:scale-110">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald-500/30 dark:border-emerald-500/40 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 shadow-sm transition-transform duration-300 group-hover:scale-110">
                       <IconComponent className="h-5 w-5" />
                     </div>
-                    <span className="font-mono text-xs font-bold text-slate-400">
+                    <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500">
                       {`0${idx + 1}`}
                     </span>
                   </div>
 
-                  <span className="inline-block font-mono text-[10px] font-bold tracking-wider uppercase text-amber-600 mb-2">
+                  <span className="inline-block font-mono text-[10px] font-bold tracking-wider uppercase text-amber-600 dark:text-amber-400 mb-2">
                     {pillText}
                   </span>
 
-                  <h3 className="font-heading text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="font-heading text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                     {benefit.title}
                   </h3>
 
-                  <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-slate-600">
+                  <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                     {benefit.description}
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700">
+                <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">
                   <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
                   <span>Included for All Forum Students</span>
                 </div>
@@ -197,36 +245,36 @@ export default function StudentCommunity() {
         {/* Big, High-Converting WhatsApp Forum CTA Card */}
         <div
           ref={ctaRef}
-          className="relative overflow-hidden rounded-3xl border border-emerald-400/40 bg-gradient-to-b from-white via-slate-50 to-white p-8 sm:p-10 lg:p-12 shadow-glass backdrop-blur-2xl"
+          className="relative overflow-hidden rounded-3xl border border-emerald-400/40 dark:border-slate-800 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#121824] dark:via-[#0F131C] dark:to-[#121824] p-8 sm:p-10 lg:p-12 shadow-glass backdrop-blur-2xl"
         >
           {/* Subtle background glow spots */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl" />
-          <div className="pointer-events-none absolute -left-20 -bottom-20 h-72 w-72 rounded-full bg-[#FFD3B6]/25 blur-3xl" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-emerald-500/10 dark:bg-emerald-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute -left-20 -bottom-20 h-72 w-72 rounded-full bg-[#FFD3B6]/25 dark:bg-amber-900/10 blur-3xl" />
 
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left: Conversion Copy & CTA Buttons */}
             <div className="lg:col-span-7 flex flex-col gap-6">
               {/* Trust Badges Strip */}
               <div className="flex flex-wrap items-center gap-2.5">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-50 px-3 py-1 font-mono text-xs font-bold text-emerald-700 shadow-sm">
-                  <WhatsAppGlyph className="h-3.5 w-3.5 fill-emerald-600" />
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 font-mono text-xs font-bold text-emerald-700 dark:text-emerald-400 shadow-sm">
+                  <WhatsAppGlyph className="h-3.5 w-3.5 fill-emerald-600 dark:fill-emerald-400" />
                   <span>1,500+ Active Traders</span>
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-full border border-amber-400/40 bg-amber-50 px-3 py-1 font-mono text-xs font-bold text-amber-700">
+                <span className="inline-flex items-center gap-1 rounded-full border border-amber-400/40 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-950/40 px-3 py-1 font-mono text-xs font-bold text-amber-700 dark:text-amber-400">
                   <Sparkles className="h-3 w-3 text-amber-500" />
                   <span>100% Free Educational Forum</span>
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1 font-mono text-xs font-medium text-slate-600 shadow-sm">
-                  <Lock className="h-3 w-3 text-slate-500" />
+                <span className="inline-flex items-center gap-1 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3 py-1 font-mono text-xs font-medium text-slate-600 dark:text-slate-300 shadow-sm">
+                  <Lock className="h-3 w-3 text-slate-500 dark:text-slate-400" />
                   <span>Zero Spam Guarantee</span>
                 </span>
               </div>
 
               <div>
-                <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
                   Accelerate Your Trading Journey with Sri Lanka&apos;s Most Disciplined Community
                 </h3>
-                <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
+                <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
                   Never trade in isolation again. Join our verified student community to review trade setups, discuss real macroeconomic events, and elevate your discipline alongside fellow dedicated traders under Bhathiya&apos;s direct supervision.
                 </p>
               </div>
@@ -248,25 +296,25 @@ export default function StudentCommunity() {
                   href={directInquiryUrl.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-amber-400/60 bg-amber-50 px-6 py-4 text-sm font-semibold text-amber-800 transition-all duration-300 hover:bg-amber-100 active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-amber-400/60 dark:border-amber-500/40 bg-amber-50 dark:bg-amber-950/40 px-6 py-4 text-sm font-semibold text-amber-800 dark:text-amber-300 transition-all duration-300 hover:bg-amber-100 dark:hover:bg-amber-900/50 active:scale-[0.98]"
                 >
-                  <MessageSquare className="h-4 w-4 text-amber-600" />
+                  <MessageSquare className="h-4 w-4 text-amber-600 dark:text-amber-400" />
                   <span>Direct 1:1 Inquiries</span>
                 </a>
               </div>
 
               {/* Ethical Community Rules */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-slate-600 border-t border-slate-200">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-slate-600 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <span>Strict Moderator Screening</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <span>No Scam Bots or Signals</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <span>Focus on Pure Price Action</span>
                 </div>
               </div>

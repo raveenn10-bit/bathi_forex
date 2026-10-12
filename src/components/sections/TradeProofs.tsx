@@ -266,28 +266,28 @@ export default function TradeProofs() {
     <section
       id="proofs"
       ref={containerRef}
-      className="relative w-full py-24 sm:py-32 overflow-hidden bg-slate-50/50 border-t border-slate-200/80"
+      className="relative w-full py-24 sm:py-32 overflow-hidden bg-slate-50/50 dark:bg-[#0B0E14] border-t border-slate-200/80 dark:border-slate-800/80"
     >
       {/* Background Ambience */}
-      <div className="pointer-events-none absolute -top-40 right-1/4 h-96 w-96 rounded-full bg-sky-200/25 blur-[140px]" />
-      <div className="pointer-events-none absolute bottom-10 left-1/4 h-96 w-96 rounded-full bg-amber-100/35 blur-[140px]" />
+      <div className="pointer-events-none absolute -top-40 right-1/4 h-96 w-96 rounded-full bg-sky-200/25 dark:bg-sky-900/20 blur-[140px]" />
+      <div className="pointer-events-none absolute bottom-10 left-1/4 h-96 w-96 rounded-full bg-amber-100/35 dark:bg-amber-900/10 blur-[140px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 bg-sky-50 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-sky-700 mb-3.5 shadow-xs">
+          <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 dark:border-sky-500/30 bg-sky-50 dark:bg-sky-950/40 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-300 mb-3.5 shadow-xs">
             <ShieldCheck className="h-3.5 w-3.5 text-amber-500" />
             <span>LIVE MARKET EXECUTION &amp; VERIFICATION</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Verified Execution &amp;{" "}
-            <span className="text-sky-600">
+            <span className="text-sky-600 dark:text-sky-400">
               Real Results
             </span>
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
             Real market orders. Real risk parameters. Real bank liquidations. Explore our verified trading records spanning MetaTrader 5 Forex, Binance Perpetual Futures, and Bybit derivative execution at Apex Trading Academy.
           </p>
 
@@ -304,8 +304,8 @@ export default function TradeProofs() {
                 onClick={() => setActiveCategory(tab.id as typeof activeCategory)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 border ${
                   activeCategory === tab.id
-                    ? "bg-sky-600 text-white border-sky-600 shadow-sm"
-                    : "bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                    ? "bg-sky-600 dark:bg-sky-500 text-white border-sky-600 dark:border-sky-500 shadow-sm"
+                    : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/60"
                 }`}
               >
                 {tab.label}
@@ -325,10 +325,10 @@ export default function TradeProofs() {
             return (
               <div
                 key={`mobile-${proof.id}`}
-                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden transition-all duration-300"
+                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#121824] shadow-sm overflow-hidden transition-all duration-300"
               >
                 {/* Top Media Showcase Container */}
-                <div className="relative w-full bg-slate-50 border-b border-slate-100 p-4 pb-0">
+                <div className="relative w-full bg-slate-50 dark:bg-[#0E131C] border-b border-slate-100 dark:border-slate-800/80 p-4 pb-0">
                   <div className="mb-3 flex items-center justify-between gap-2">
                     <span
                       className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[10px] font-extrabold uppercase tracking-wider border ${getBadgeClasses(
@@ -347,7 +347,7 @@ export default function TradeProofs() {
                       <span>{proof.badge}</span>
                     </span>
 
-                    <span className="font-mono text-[10px] font-semibold text-slate-600 bg-white px-2 py-0.5 rounded-md border border-slate-200 shadow-xs">
+                    <span className="font-mono text-[10px] font-semibold text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-900 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-800 shadow-xs">
                       {proof.platform}
                     </span>
                   </div>
@@ -357,7 +357,7 @@ export default function TradeProofs() {
                       setLightboxIndex(originalIndex);
                       setZoomLevel(1);
                     }}
-                    className="relative aspect-[9/13] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-sm cursor-pointer"
+                    className="relative aspect-[9/13] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-900 shadow-sm cursor-pointer"
                   >
                     <Image
                       src={proof.image}
@@ -391,28 +391,28 @@ export default function TradeProofs() {
                 {/* Card Body & Proof Dossier */}
                 <div className="flex flex-1 flex-col justify-between p-4">
                   <div>
-                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-amber-700 mb-1.5">
+                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-amber-700 dark:text-amber-400 mb-1.5">
                       <CheckCircle2 className="h-3.5 w-3.5 text-amber-500 shrink-0" />
                       <span className="truncate">{proof.verificationBadge}</span>
                     </div>
 
-                    <h3 className="font-heading text-sm font-bold text-slate-900 leading-snug">
+                    <h3 className="font-heading text-sm font-bold text-slate-900 dark:text-white leading-snug">
                       {proof.title}
                     </h3>
-                    <p className="mt-1 text-[11px] text-slate-600 leading-relaxed line-clamp-2">
+                    <p className="mt-1 text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
                       {proof.subtitle}
                     </p>
 
-                    <div className="mt-3 grid grid-cols-2 gap-2 border-t border-slate-100 pt-2.5">
+                    <div className="mt-3 grid grid-cols-2 gap-2 border-t border-slate-100 dark:border-slate-800 pt-2.5">
                       {proof.metrics.slice(0, 2).map((m) => (
                         <div
                           key={m.label}
-                          className="rounded-lg bg-slate-50 p-1.5 border border-slate-100"
+                          className="rounded-lg bg-slate-50 dark:bg-[#0B0E14] p-1.5 border border-slate-100 dark:border-slate-800/80"
                         >
-                          <span className="block text-[9px] text-slate-500">
+                          <span className="block text-[9px] text-slate-500 dark:text-slate-400">
                             {m.label}
                           </span>
-                          <span className="block font-mono text-xs font-bold text-slate-800 truncate">
+                          <span className="block font-mono text-xs font-bold text-slate-800 dark:text-slate-200 truncate">
                             {m.value}
                           </span>
                         </div>
@@ -420,8 +420,8 @@ export default function TradeProofs() {
                     </div>
 
                     {proof.referralCode && (
-                      <div className="mt-2.5 flex items-center justify-between rounded-xl bg-amber-50 border border-amber-200 px-2.5 py-1 text-xs">
-                        <span className="text-[10px] font-medium text-amber-800">
+                      <div className="mt-2.5 flex items-center justify-between rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 px-2.5 py-1 text-xs">
+                        <span className="text-[10px] font-medium text-amber-800 dark:text-amber-300">
                           Code:
                         </span>
                         <button
@@ -429,7 +429,7 @@ export default function TradeProofs() {
                             e.stopPropagation();
                             copyReferralCode(proof.referralCode!);
                           }}
-                          className="inline-flex items-center gap-1 font-mono font-bold text-amber-700 hover:underline"
+                          className="inline-flex items-center gap-1 font-mono font-bold text-amber-700 dark:text-amber-400 hover:underline"
                         >
                           <span>{proof.referralCode}</span>
                           {copiedCode === proof.referralCode ? (
@@ -447,7 +447,7 @@ export default function TradeProofs() {
                       setLightboxIndex(originalIndex);
                       setZoomLevel(1);
                     }}
-                    className="mt-4 w-full rounded-xl border border-slate-200 bg-slate-50 py-2 px-3 text-center text-xs font-bold text-slate-700 transition-all duration-200 hover:bg-sky-50 hover:text-sky-700 hover:border-sky-300 flex items-center justify-center gap-1.5"
+                    className="mt-4 w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 py-2 px-3 text-center text-xs font-bold text-slate-700 dark:text-slate-200 transition-all duration-200 hover:bg-sky-50 dark:hover:bg-sky-950/40 hover:text-sky-700 dark:hover:text-sky-300 hover:border-sky-300 dark:hover:border-sky-500/50 flex items-center justify-center gap-1.5"
                   >
                     <span>View Proof</span>
                     <ArrowUpRight className="h-3.5 w-3.5" />
@@ -469,12 +469,12 @@ export default function TradeProofs() {
             return (
               <div
                 key={proof.id}
-                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-300 hover:shadow-md"
+                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#121824] shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-300 dark:hover:border-sky-500/50 hover:shadow-lg"
               >
                 {/* Top Media Showcase Container */}
-                <div className="relative w-full bg-slate-50 border-b border-slate-100 p-4 pb-0">
+                <div className="relative w-full bg-slate-50 dark:bg-[#0E131C] border-b border-slate-100 dark:border-slate-800/80 p-5 pb-0">
                   {/* Floating Top Badge Highlight */}
-                  <div className="mb-3 flex items-center justify-between gap-2">
+                  <div className="mb-4 flex items-center justify-between gap-2">
                     <span
                       className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[10px] font-extrabold uppercase tracking-wider border ${getBadgeClasses(
                         proof.badgeTheme
@@ -492,7 +492,7 @@ export default function TradeProofs() {
                       <span>{proof.badge}</span>
                     </span>
 
-                    <span className="font-mono text-[10px] font-semibold text-slate-600 bg-white px-2 py-0.5 rounded-md border border-slate-200 shadow-xs">
+                    <span className="font-mono text-[10px] font-semibold text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-900 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-800 shadow-xs">
                       {proof.platform}
                     </span>
                   </div>
@@ -503,7 +503,7 @@ export default function TradeProofs() {
                       setLightboxIndex(originalIndex);
                       setZoomLevel(1);
                     }}
-                    className="relative aspect-[9/13] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-sm cursor-pointer group/shot"
+                    className="relative aspect-[9/13] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-900 shadow-sm cursor-pointer group/shot"
                   >
                     <Image
                       src={proof.image}
@@ -550,30 +550,30 @@ export default function TradeProofs() {
                 <div className="flex flex-1 flex-col justify-between p-5">
                   <div>
                     {/* Verification Stamp */}
-                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-amber-700 mb-2">
+                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-amber-700 dark:text-amber-400 mb-2">
                       <CheckCircle2 className="h-3.5 w-3.5 text-amber-500 shrink-0" />
                       <span className="truncate">{proof.verificationBadge}</span>
                     </div>
 
                     {/* Title & Subtitle */}
-                    <h3 className="font-heading text-base font-bold text-slate-900 group-hover:text-sky-600 transition-colors leading-snug">
+                    <h3 className="font-heading text-base font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors leading-snug">
                       {proof.title}
                     </h3>
-                    <p className="mt-1 text-xs text-slate-600 leading-relaxed line-clamp-2">
+                    <p className="mt-1 text-xs text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
                       {proof.subtitle}
                     </p>
 
                     {/* Mini Metrics List */}
-                    <div className="mt-4 grid grid-cols-2 gap-2 border-t border-slate-100 pt-3">
+                    <div className="mt-4 grid grid-cols-2 gap-2 border-t border-slate-100 dark:border-slate-800 pt-3">
                       {proof.metrics.slice(0, 2).map((m) => (
                         <div
                           key={m.label}
-                          className="rounded-lg bg-slate-50 p-2 border border-slate-100"
+                          className="rounded-lg bg-slate-50 dark:bg-[#0B0E14] p-2 border border-slate-100 dark:border-slate-800/80"
                         >
-                          <span className="block text-[10px] text-slate-500">
+                          <span className="block text-[10px] text-slate-500 dark:text-slate-400">
                             {m.label}
                           </span>
-                          <span className="block font-mono text-xs font-bold text-slate-800 truncate">
+                          <span className="block font-mono text-xs font-bold text-slate-800 dark:text-slate-200 truncate">
                             {m.value}
                           </span>
                         </div>
@@ -582,8 +582,8 @@ export default function TradeProofs() {
 
                     {/* Bybit Partner Code Callout if available */}
                     {proof.referralCode && (
-                      <div className="mt-3 flex items-center justify-between rounded-xl bg-amber-50 border border-amber-200 px-3 py-1.5 text-xs">
-                        <span className="text-[11px] font-medium text-amber-800">
+                      <div className="mt-3 flex items-center justify-between rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 px-3 py-1.5 text-xs">
+                        <span className="text-[11px] font-medium text-amber-800 dark:text-amber-300">
                           Partner Code:
                         </span>
                         <button
@@ -591,7 +591,7 @@ export default function TradeProofs() {
                             e.stopPropagation();
                             copyReferralCode(proof.referralCode!);
                           }}
-                          className="inline-flex items-center gap-1 font-mono font-bold text-amber-700 hover:underline"
+                          className="inline-flex items-center gap-1 font-mono font-bold text-amber-700 dark:text-amber-400 hover:underline"
                         >
                           <span>{proof.referralCode}</span>
                           {copiedCode === proof.referralCode ? (
@@ -610,7 +610,7 @@ export default function TradeProofs() {
                       setLightboxIndex(originalIndex);
                       setZoomLevel(1);
                     }}
-                    className="mt-5 w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 px-3 text-center text-xs font-bold text-slate-700 transition-all duration-200 hover:bg-sky-50 hover:text-sky-700 hover:border-sky-300 flex items-center justify-center gap-2 group/btn"
+                    className="mt-5 w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 py-2.5 px-3 text-center text-xs font-bold text-slate-700 dark:text-slate-200 transition-all duration-200 hover:bg-sky-50 dark:hover:bg-sky-950/40 hover:text-sky-700 dark:hover:text-sky-300 hover:border-sky-300 dark:hover:border-sky-500/50 flex items-center justify-center gap-2 group/btn"
                   >
                     <span>View Verified Proof</span>
                     <ArrowUpRight className="h-3.5 w-3.5 transform transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
@@ -622,59 +622,59 @@ export default function TradeProofs() {
         </div>
 
         {/* Verification Guarantee Strip */}
-        <div className="mt-14 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
+        <div className="mt-14 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#121824] p-5 sm:p-6 shadow-sm">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center sm:text-left">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-slate-900">
+                <span className="block text-xs font-bold text-slate-900 dark:text-white">
                   100% Real Screenshots
                 </span>
-                <span className="text-[11px] text-slate-500">
+                <span className="text-[11px] text-slate-500 dark:text-slate-400">
                   Zero simulated demos or mockups
                 </span>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600 shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-sky-50 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800 flex items-center justify-center text-sky-600 dark:text-sky-400 shrink-0">
                 <Layers className="h-5 w-5" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-slate-900">
+                <span className="block text-xs font-bold text-slate-900 dark:text-white">
                   Multi-Market Coverage
                 </span>
-                <span className="text-[11px] text-slate-500">
+                <span className="text-[11px] text-slate-500 dark:text-slate-400">
                   Forex, Gold, Bitcoin &amp; Altcoins
                 </span>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 flex items-center justify-center text-amber-600 dark:text-amber-400 shrink-0">
                 <Sparkles className="h-5 w-5" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-slate-900">
+                <span className="block text-xs font-bold text-slate-900 dark:text-white">
                   Official Bybit Partner
                 </span>
-                <span className="text-[11px] text-slate-500">
-                  Referral code: <code className="font-mono text-amber-700 font-bold">02Q4O8Z</code>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400">
+                  Referral code: <code className="font-mono text-amber-700 dark:text-amber-400 font-bold">02Q4O8Z</code>
                 </span>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-600 shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 flex items-center justify-center text-teal-600 dark:text-teal-400 shrink-0">
                 <Wallet className="h-5 w-5" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-slate-900">
+                <span className="block text-xs font-bold text-slate-900 dark:text-white">
                   Verified P2P Cashouts
                 </span>
-                <span className="text-[11px] text-slate-500">
+                <span className="text-[11px] text-slate-500 dark:text-slate-400">
                   Proven bank settlement workflow
                 </span>
               </div>
@@ -683,18 +683,18 @@ export default function TradeProofs() {
         </div>
 
         {/* Mandatory Educational & Regulatory Risk Disclaimer */}
-        <div className="mt-10 rounded-2xl border border-amber-200 bg-amber-50/70 p-5 sm:p-6">
+        <div className="mt-10 rounded-2xl border border-amber-200 dark:border-amber-500/30 bg-amber-50/70 dark:bg-amber-950/20 p-5 sm:p-6">
           <div className="flex items-start gap-3.5">
-            <AlertTriangle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
-            <div className="space-y-1.5 text-xs leading-relaxed text-slate-700">
-              <h4 className="font-heading text-sm font-bold text-amber-900">
+            <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+            <div className="space-y-1.5 text-xs leading-relaxed text-slate-700 dark:text-slate-300">
+              <h4 className="font-heading text-sm font-bold text-amber-900 dark:text-amber-300">
                 Official Regulatory &amp; Educational Risk Disclaimer
               </h4>
               <p>
-                <strong className="text-slate-900">Educational Illustrative Purpose Only:</strong> All trading execution logs, MT5 order tickets, Binance Futures PnL share cards, Bybit derivative positions, and Binance P2P liquidation receipts displayed on this page reflect authentic historical trades executed by the Apex Trading Academy lead educator. They are documented strictly for academic demonstration to illustrate proper risk-to-reward ratios, position sizing discipline, and capital realization procedures.
+                <strong className="text-slate-900 dark:text-white">Educational Illustrative Purpose Only:</strong> All trading execution logs, MT5 order tickets, Binance Futures PnL share cards, Bybit derivative positions, and Binance P2P liquidation receipts displayed on this page reflect authentic historical trades executed by the Apex Trading Academy lead educator. They are documented strictly for academic demonstration to illustrate proper risk-to-reward ratios, position sizing discipline, and capital realization procedures.
               </p>
               <p>
-                <strong className="text-slate-900">Capital Risk Warning:</strong> Trading foreign currencies (Forex), precious metals (Gold/XAUUSD), and high-leverage cryptocurrency futures carries a high level of risk and may result in the loss of your invested capital. Leverage amplifies both profits and losses. Past performance shown is not an indicator or guarantee of future trading success. Never risk capital that you cannot afford to lose. Apex Trading Academy is an educational academy and does not provide financial investment advisory services, manage external pooled accounts, or solicit funds.
+                <strong className="text-slate-900 dark:text-white">Capital Risk Warning:</strong> Trading foreign currencies (Forex), precious metals (Gold/XAUUSD), and high-leverage cryptocurrency futures carries a high level of risk and may result in the loss of your invested capital. Leverage amplifies both profits and losses. Past performance shown is not an indicator or guarantee of future trading success. Never risk capital that you cannot afford to lose. Apex Trading Academy is an educational academy and does not provide financial investment advisory services, manage external pooled accounts, or solicit funds.
               </p>
             </div>
           </div>
@@ -712,7 +712,7 @@ export default function TradeProofs() {
           {/* Modal Container */}
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative flex flex-col lg:flex-row w-full max-w-6xl max-h-[92vh] overflow-hidden rounded-3xl border border-white/15 bg-brand-bg shadow-2xl"
+            className="relative flex flex-col lg:flex-row w-full max-w-6xl max-h-[92vh] overflow-hidden rounded-3xl border border-white/15 dark:border-slate-800 bg-[#0B0E14] shadow-2xl"
           >
             {/* Top Bar for Mobile & Desktop */}
             <div className="absolute top-3 right-3 z-30 flex items-center gap-2">
@@ -819,7 +819,7 @@ export default function TradeProofs() {
             </div>
 
             {/* Right Column: Detailed Proof Dossier */}
-            <div className="w-full lg:w-[420px] bg-brand-card/95 border-t lg:border-t-0 lg:border-l border-white/10 p-6 overflow-y-auto max-h-[45vh] lg:max-h-[92vh] flex flex-col justify-between">
+            <div className="w-full lg:w-[420px] bg-[#121824] border-t lg:border-t-0 lg:border-l border-white/10 dark:border-slate-800 p-6 overflow-y-auto max-h-[45vh] lg:max-h-[92vh] flex flex-col justify-between">
               <div>
                 {/* Header Pills */}
                 <div className="flex items-center justify-between gap-2 mb-3">
@@ -841,13 +841,13 @@ export default function TradeProofs() {
                 <h3 className="font-heading text-xl font-extrabold text-white">
                   {currentProof.title}
                 </h3>
-                <p className="mt-1 text-xs text-brand-muted leading-relaxed">
+                <p className="mt-1 text-xs text-slate-300 dark:text-slate-300 leading-relaxed">
                   {currentProof.subtitle}
                 </p>
 
                 {/* Hero Metric Box */}
-                <div className="mt-4 rounded-2xl bg-black/50 border border-white/10 p-3.5">
-                  <span className="block text-[10px] uppercase tracking-wider text-brand-muted">
+                <div className="mt-4 rounded-2xl bg-black/60 dark:bg-[#0B0E14] border border-white/10 dark:border-slate-800/80 p-3.5">
+                  <span className="block text-[10px] uppercase tracking-wider text-slate-400">
                     {currentProof.heroStat.label}
                   </span>
                   <span
@@ -859,16 +859,16 @@ export default function TradeProofs() {
 
                 {/* Full Breakdown Metrics */}
                 <div className="mt-4 space-y-2">
-                  <span className="block text-[11px] font-bold uppercase tracking-wider text-brand-muted">
+                  <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-400">
                     Execution Metrics &amp; Parameters:
                   </span>
                   <div className="grid grid-cols-2 gap-2">
                     {currentProof.metrics.map((m) => (
                       <div
                         key={m.label}
-                        className="rounded-xl bg-white/[0.03] p-2.5 border border-white/5"
+                        className="rounded-xl bg-white/[0.04] dark:bg-slate-900/60 p-2.5 border border-white/10 dark:border-slate-800"
                       >
-                        <span className="block text-[10px] text-brand-muted">
+                        <span className="block text-[10px] text-slate-400">
                           {m.label}
                         </span>
                         <span className="block font-mono text-xs font-bold text-white">
@@ -881,7 +881,7 @@ export default function TradeProofs() {
 
                 {/* Bybit Partner Referral Bonus */}
                 {currentProof.referralCode && (
-                  <div className="mt-4 rounded-xl border border-brand-purple/40 bg-brand-purple/10 p-3">
+                  <div className="mt-4 rounded-xl border border-brand-purple/40 dark:border-sky-500/30 bg-brand-purple/10 dark:bg-sky-950/30 p-3">
                     <div className="flex items-center justify-between">
                       <div>
                         <span className="block text-[10px] font-bold uppercase text-brand-purpleLight">
@@ -912,7 +912,7 @@ export default function TradeProofs() {
                 )}
 
                 {/* Educational Takeaway */}
-                <div className="mt-4 rounded-xl border border-brand-gold/20 bg-brand-gold/5 p-3">
+                <div className="mt-4 rounded-xl border border-brand-gold/30 dark:border-amber-500/30 bg-brand-gold/10 dark:bg-amber-950/30 p-3">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-brand-gold mb-1">
                     <Sparkles className="h-3.5 w-3.5" />
                     <span>Academy Teaching Concept</span>
@@ -923,13 +923,13 @@ export default function TradeProofs() {
                 </div>
 
                 {/* Comprehensive Description */}
-                <p className="mt-3 text-xs text-brand-muted leading-relaxed">
+                <p className="mt-3 text-xs text-slate-300 dark:text-slate-300 leading-relaxed">
                   {currentProof.description}
                 </p>
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-2">
+              <div className="mt-6 pt-4 border-t border-white/10 dark:border-slate-800 flex flex-col sm:flex-row gap-2">
                 <a
                   href={
                     getGeneralInquiryWhatsAppUrl(
@@ -946,7 +946,7 @@ export default function TradeProofs() {
 
                 <button
                   onClick={() => setLightboxIndex(null)}
-                  className="rounded-xl border border-white/15 bg-white/5 py-2.5 px-4 text-center text-xs font-semibold text-brand-muted hover:text-white hover:bg-white/10 transition-colors"
+                  className="rounded-xl border border-white/15 dark:border-slate-700 bg-white/5 dark:bg-slate-800 py-2.5 px-4 text-center text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 dark:hover:bg-slate-700 transition-colors"
                 >
                   Close
                 </button>

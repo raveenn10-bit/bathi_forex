@@ -21,29 +21,25 @@ export default function AmbientTradingBackground() {
       {/* =========================================================================
           LAYER 1: LIGHT SILVER BASE & OCEAN BREEZE / PEACH CHAMPAGNE GLOW ORBS
           ========================================================================= */}
-      <div className="absolute inset-0 bg-[#F4F7FB]">
+      <div className="absolute inset-0 bg-[#F4F7FB] dark:bg-[#0B0E14] transition-colors duration-300">
         {/* Top-Right Vivid Ocean Breeze Sky Glow */}
-        <div className="absolute -top-40 right-[-10%] h-[680px] w-[680px] rounded-full bg-[#7FCDFF]/30 blur-[150px] transform-gpu" />
+        <div className="absolute -top-40 right-[-10%] h-[680px] w-[680px] rounded-full bg-[#7FCDFF]/30 dark:bg-[#38B6FF]/15 blur-[150px] transform-gpu" />
 
         {/* Mid-Left Ocean Deep Ambient Pool */}
-        <div className="absolute top-[26%] -left-32 h-[580px] w-[580px] rounded-full bg-[#38B6FF]/18 blur-[150px] transform-gpu" />
+        <div className="absolute top-[26%] -left-32 h-[580px] w-[580px] rounded-full bg-[#38B6FF]/18 dark:bg-[#0284c7]/12 blur-[150px] transform-gpu" />
 
         {/* Center-Right Warm Peach Champagne Glow */}
-        <div className="absolute top-[42%] right-[4%] h-[520px] w-[520px] rounded-full bg-[#FFD3B6]/40 blur-[145px] transform-gpu" />
+        <div className="absolute top-[42%] right-[4%] h-[520px] w-[520px] rounded-full bg-[#FFD3B6]/40 dark:bg-[#E09C64]/10 blur-[145px] transform-gpu" />
 
         {/* Bottom-Left Soft Ocean Ice Glow */}
-        <div className="absolute bottom-[-10%] left-[8%] h-[620px] w-[620px] rounded-full bg-[#DFF7FF]/70 blur-[160px] transform-gpu" />
+        <div className="absolute bottom-[-10%] left-[8%] h-[620px] w-[620px] rounded-full bg-[#DFF7FF]/70 dark:bg-[#0369a1]/12 blur-[160px] transform-gpu" />
 
         {/* Top-Left Peach Champagne Accent */}
-        <div className="absolute top-10 left-[6%] h-[400px] w-[400px] rounded-full bg-[#F5A87B]/20 blur-[130px] transform-gpu" />
+        <div className="absolute top-10 left-[6%] h-[400px] w-[400px] rounded-full bg-[#F5A87B]/20 dark:bg-[#F5A87B]/10 blur-[130px] transform-gpu" />
 
-        {/* Subtle Light Silver Vignette Rim */}
+        {/* Subtle Light Silver / Dark Executive Vignette Rim */}
         <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(203, 213, 225, 0.35) 100%)",
-          }}
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,transparent_55%,rgba(203,213,225,0.35)_100%)] dark:bg-[radial-gradient(ellipse_at_50%_50%,transparent_50%,rgba(5,8,13,0.75)_100%)]"
         />
       </div>
 
@@ -51,7 +47,7 @@ export default function AmbientTradingBackground() {
           LAYER 2: REALISTIC TRADING DESK WATERMARK TEXTURE
           ========================================================================= */}
       <div
-        className="absolute top-0 right-0 w-full sm:w-[850px] h-[580px] pointer-events-none overflow-hidden opacity-[0.035] mix-blend-multiply"
+        className="absolute top-0 right-0 w-full sm:w-[850px] h-[580px] pointer-events-none overflow-hidden opacity-[0.035] dark:opacity-[0.045] mix-blend-multiply dark:mix-blend-screen"
         style={{
           maskImage:
             "radial-gradient(ellipse 75% 65% at 75% 35%, black 20%, rgba(0,0,0,0.5) 55%, transparent 85%)",
@@ -68,21 +64,19 @@ export default function AmbientTradingBackground() {
           className="object-cover object-center filter grayscale contrast-125"
         />
         {/* Seamless fade masks */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F4F7FB] via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F4F7FB] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F4F7FB] dark:from-[#0B0E14] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F4F7FB] dark:from-[#0B0E14] via-transparent to-transparent" />
       </div>
 
       {/* =========================================================================
           LAYER 3: TECHNICAL MATRIX GRID & SCANLINES
           ========================================================================= */}
-      <div className="absolute inset-0 trading-matrix-grid opacity-60" />
+      <div className="absolute inset-0 trading-matrix-grid opacity-60 dark:opacity-40" />
 
       {/* Subtle Horizontal Depth Coordinate Lines */}
       <div
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.02] dark:opacity-[0.04] bg-[linear-gradient(rgba(15,23,42,0.2)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)]"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(15, 23, 42, 0.2) 1px, transparent 1px)",
           backgroundSize: "100% 32px",
         }}
       />
@@ -90,7 +84,7 @@ export default function AmbientTradingBackground() {
       {/* =========================================================================
           LAYER 4: CANDLESTICK STREAM 1 (LEFT — BULLISH WYCKOFF & BOS BREAKOUT)
           ========================================================================= */}
-      <div className="absolute top-16 sm:top-24 -left-12 sm:left-2 md:left-6 lg:left-12 w-[340px] sm:w-[420px] h-[520px] animate-candle-float will-change-transform transform-gpu opacity-[0.28]">
+      <div className="absolute top-16 sm:top-24 -left-12 sm:left-2 md:left-6 lg:left-12 w-[340px] sm:w-[420px] h-[520px] animate-candle-float will-change-transform transform-gpu opacity-[0.28] dark:opacity-[0.38]">
         <svg
           viewBox="0 0 420 520"
           fill="none"
@@ -111,22 +105,22 @@ export default function AmbientTradingBackground() {
           </defs>
 
           {/* Reference Price Grid Lines */}
-          <line x1="20" y1="120" x2="400" y2="120" stroke="#CBD5E1" strokeDasharray="3 3" strokeWidth="0.8" />
-          <line x1="20" y1="210" x2="400" y2="210" stroke="#CBD5E1" strokeDasharray="3 3" strokeWidth="0.8" />
-          <line x1="20" y1="300" x2="400" y2="300" stroke="#CBD5E1" strokeDasharray="3 3" strokeWidth="0.8" />
-          <line x1="20" y1="390" x2="400" y2="390" stroke="#CBD5E1" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="20" y1="120" x2="400" y2="120" className="stroke-slate-300 dark:stroke-slate-800" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="20" y1="210" x2="400" y2="210" className="stroke-slate-300 dark:stroke-slate-800" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="20" y1="300" x2="400" y2="300" className="stroke-slate-300 dark:stroke-slate-800" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="20" y1="390" x2="400" y2="390" className="stroke-slate-300 dark:stroke-slate-800" strokeDasharray="3 3" strokeWidth="0.8" />
 
           {/* Technical Structure Annotations */}
           {/* Break of Structure (BOS) Line */}
-          <line x1="160" y1="210" x2="380" y2="210" stroke="#0284c7" strokeWidth="1.2" strokeDasharray="4 4" />
-          <rect x="230" y="200" width="84" height="18" rx="4" fill="#FFFFFF" stroke="#0284c7" strokeWidth="0.8" />
-          <text x="238" y="213" fill="#0284c7" fontSize="9" fontFamily="monospace" fontWeight="600">
+          <line x1="160" y1="210" x2="380" y2="210" stroke="#0284c7" className="stroke-sky-600 dark:stroke-sky-400" strokeWidth="1.2" strokeDasharray="4 4" />
+          <rect x="230" y="200" width="84" height="18" rx="4" className="fill-white dark:fill-slate-900 stroke-sky-600 dark:stroke-sky-400" strokeWidth="0.8" />
+          <text x="238" y="213" className="fill-sky-600 dark:fill-sky-400" fontSize="9" fontFamily="monospace" fontWeight="600">
             BOS BREAKOUT
           </text>
 
           {/* Fair Value Gap (FVG) Zone */}
-          <rect x="248" y="165" width="70" height="38" rx="2" fill="#38B6FF" fillOpacity="0.10" stroke="#38B6FF" strokeWidth="0.6" strokeDasharray="2 2" />
-          <text x="254" y="188" fill="#0284c7" fontSize="8" fontFamily="monospace" opacity="0.85">
+          <rect x="248" y="165" width="70" height="38" rx="2" className="fill-sky-400/10 dark:fill-sky-400/15 stroke-sky-400/60 dark:stroke-sky-400/40" strokeWidth="0.6" strokeDasharray="2 2" />
+          <text x="254" y="188" className="fill-sky-600 dark:fill-sky-400" fontSize="8" fontFamily="monospace" opacity="0.85">
             +FVG IMBALANCE
           </text>
 
@@ -218,9 +212,9 @@ export default function AmbientTradingBackground() {
 
           {/* Price Callout Tag */}
           <g transform="translate(280, 56)">
-            <rect width="132" height="24" rx="5" fill="#FFFFFF" stroke="#E09C64" strokeWidth="1" />
+            <rect width="132" height="24" rx="5" className="fill-white dark:fill-slate-900 stroke-amber-500 dark:stroke-amber-400" strokeWidth="1" />
             <circle cx="12" cy="12" r="3" fill="#059669" />
-            <text x="22" y="16" fill="#0F172A" fontSize="10" fontFamily="monospace" fontWeight="700">
+            <text x="22" y="16" className="fill-slate-900 dark:fill-slate-100" fontSize="10" fontFamily="monospace" fontWeight="700">
               XAUUSD $2,648.20
             </text>
           </g>
@@ -248,7 +242,7 @@ export default function AmbientTradingBackground() {
       {/* =========================================================================
           LAYER 5: CANDLESTICK STREAM 2 (RIGHT — FIBONACCI RETRACEMENT & GOLDEN POCKET)
           ========================================================================= */}
-      <div className="absolute top-28 sm:top-40 -right-16 sm:right-2 md:right-6 lg:right-10 w-[360px] sm:w-[460px] h-[550px] animate-candle-float-reverse will-change-transform transform-gpu opacity-[0.28]">
+      <div className="absolute top-28 sm:top-40 -right-16 sm:right-2 md:right-6 lg:right-10 w-[360px] sm:w-[460px] h-[550px] animate-candle-float-reverse will-change-transform transform-gpu opacity-[0.28] dark:opacity-[0.38]">
         <svg
           viewBox="0 0 460 550"
           fill="none"
@@ -270,40 +264,40 @@ export default function AmbientTradingBackground() {
           </defs>
 
           {/* Fibonacci Levels */}
-          <line x1="20" y1="75" x2="430" y2="75" stroke="#CBD5E1" strokeWidth="0.8" strokeDasharray="3 3" />
-          <text x="360" y="70" fill="#64748B" fontSize="8.5" fontFamily="monospace">
+          <line x1="20" y1="75" x2="430" y2="75" className="stroke-slate-300 dark:stroke-slate-800" strokeWidth="0.8" strokeDasharray="3 3" />
+          <text x="360" y="70" className="fill-slate-500 dark:fill-slate-400" fontSize="8.5" fontFamily="monospace">
             0.000 ($93,800.0)
           </text>
 
-          <line x1="20" y1="135" x2="430" y2="135" stroke="#CBD5E1" strokeWidth="0.8" strokeDasharray="3 3" />
-          <text x="360" y="130" fill="#64748B" fontSize="8.5" fontFamily="monospace">
+          <line x1="20" y1="135" x2="430" y2="135" className="stroke-slate-300 dark:stroke-slate-800" strokeWidth="0.8" strokeDasharray="3 3" />
+          <text x="360" y="130" className="fill-slate-500 dark:fill-slate-400" fontSize="8.5" fontFamily="monospace">
             0.236 ($93,240.5)
           </text>
 
           <line x1="20" y1="190" x2="430" y2="190" stroke="#059669" strokeWidth="0.9" strokeDasharray="4 4" strokeOpacity="0.7" />
-          <text x="360" y="185" fill="#059669" fontSize="8.5" fontFamily="monospace" opacity="0.9">
+          <text x="360" y="185" className="fill-emerald-600 dark:fill-emerald-400" fontSize="8.5" fontFamily="monospace" opacity="0.9">
             0.382 ($92,890.0)
           </text>
 
           <line x1="20" y1="245" x2="430" y2="245" stroke="#0284c7" strokeWidth="1" strokeDasharray="4 4" strokeOpacity="0.8" />
-          <text x="350" y="240" fill="#0284c7" fontSize="8.5" fontFamily="monospace" fontWeight="600">
+          <text x="350" y="240" className="fill-sky-600 dark:fill-sky-400" fontSize="8.5" fontFamily="monospace" fontWeight="600">
             0.500 EQ ($92,600.0)
           </text>
 
           {/* Level 0.618: GOLDEN POCKET REVERSAL ZONE */}
           <rect x="20" y="290" width="410" height="34" rx="4" fill="url(#goldenZoneGradient)" stroke="#E09C64" strokeWidth="0.9" strokeDasharray="3 3" />
           <line x1="20" y1="307" x2="430" y2="307" stroke="#E09C64" strokeWidth="1.6" strokeDasharray="5 3" />
-          <text x="240" y="303" fill="#B45309" fontSize="9.5" fontFamily="monospace" fontWeight="700">
+          <text x="240" y="303" className="fill-amber-700 dark:fill-amber-400" fontSize="9.5" fontFamily="monospace" fontWeight="700">
             ★ 0.618 GOLDEN POCKET ($92,310.0)
           </text>
 
           <line x1="20" y1="375" x2="430" y2="375" stroke="#DC2626" strokeWidth="0.8" strokeDasharray="3 3" strokeOpacity="0.6" />
-          <text x="360" y="370" fill="#DC2626" fontSize="8.5" fontFamily="monospace" opacity="0.8">
+          <text x="360" y="370" className="fill-rose-600 dark:fill-rose-400" fontSize="8.5" fontFamily="monospace" opacity="0.8">
             0.786 ($91,890.0)
           </text>
 
-          <line x1="20" y1="450" x2="430" y2="450" stroke="#CBD5E1" strokeWidth="0.8" strokeDasharray="3 3" />
-          <text x="360" y="445" fill="#64748B" fontSize="8.5" fontFamily="monospace">
+          <line x1="20" y1="450" x2="430" y2="450" className="stroke-slate-300 dark:stroke-slate-800" strokeWidth="0.8" strokeDasharray="3 3" />
+          <text x="360" y="445" className="fill-slate-500 dark:fill-slate-400" fontSize="8.5" fontFamily="monospace">
             1.000 ($91,400.0)
           </text>
 
@@ -363,9 +357,9 @@ export default function AmbientTradingBackground() {
 
           {/* BTCUSDT Ticker Badge */}
           <g transform="translate(18, 25)">
-            <rect width="144" height="26" rx="5" fill="#FFFFFF" stroke="#0284c7" strokeWidth="1" />
+            <rect width="144" height="26" rx="5" className="fill-white dark:fill-slate-900 stroke-sky-600 dark:stroke-sky-400" strokeWidth="1" />
             <circle cx="12" cy="13" r="3" fill="#E09C64" />
-            <text x="22" y="17" fill="#0F172A" fontSize="10.5" fontFamily="monospace" fontWeight="700">
+            <text x="22" y="17" className="fill-slate-900 dark:fill-slate-100" fontSize="10.5" fontFamily="monospace" fontWeight="700">
               BTCUSDT $92,450.0
             </text>
           </g>
@@ -386,7 +380,7 @@ export default function AmbientTradingBackground() {
       {/* =========================================================================
           LAYER 6: CENTER MACRO AMBIENT SWEEPING CHART WAVE
           ========================================================================= */}
-      <div className="absolute top-[28%] md:top-[34%] left-1/2 -translate-x-1/2 w-full max-w-7xl h-[320px] sm:h-[400px] animate-chart-pulse will-change-transform transform-gpu opacity-[0.20]">
+      <div className="absolute top-[28%] md:top-[34%] left-1/2 -translate-x-1/2 w-full max-w-7xl h-[320px] sm:h-[400px] animate-chart-pulse will-change-transform transform-gpu opacity-[0.20] dark:opacity-[0.28]">
         <svg
           viewBox="0 0 1200 400"
           fill="none"
@@ -410,9 +404,9 @@ export default function AmbientTradingBackground() {
           </defs>
 
           {/* Macro Grid Horizon Lines */}
-          <line x1="0" y1="100" x2="1200" y2="100" stroke="#CBD5E1" strokeDasharray="4 4" strokeWidth="0.7" />
-          <line x1="0" y1="200" x2="1200" y2="200" stroke="#CBD5E1" strokeDasharray="4 4" strokeWidth="0.7" />
-          <line x1="0" y1="300" x2="1200" y2="300" stroke="#CBD5E1" strokeDasharray="4 4" strokeWidth="0.7" />
+          <line x1="0" y1="100" x2="1200" y2="100" className="stroke-slate-300 dark:stroke-slate-800" strokeDasharray="4 4" strokeWidth="0.7" />
+          <line x1="0" y1="200" x2="1200" y2="200" className="stroke-slate-300 dark:stroke-slate-800" strokeDasharray="4 4" strokeWidth="0.7" />
+          <line x1="0" y1="300" x2="1200" y2="300" className="stroke-slate-300 dark:stroke-slate-800" strokeDasharray="4 4" strokeWidth="0.7" />
 
           {/* Area Glow */}
           <path
@@ -455,28 +449,28 @@ export default function AmbientTradingBackground() {
       {/* =========================================================================
           LAYER 7: INSTITUTIONAL PRICE COORDINATES & TICKER HUD STRIP
           ========================================================================= */}
-      <div className="hidden lg:flex absolute top-6 left-8 items-center gap-2.5 font-mono text-[10px] text-slate-400 tracking-wider">
+      <div className="hidden lg:flex absolute top-6 left-8 items-center gap-2.5 font-mono text-[10px] text-slate-400 dark:text-slate-500 tracking-wider">
         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
         <span>INSTITUTIONAL MARKET DEPTH: ACTIVE</span>
-        <span className="text-slate-300">|</span>
+        <span className="text-slate-300 dark:text-slate-700">|</span>
         <span>LATENCY: 0.8ms</span>
       </div>
 
-      <div className="hidden lg:flex absolute top-6 right-8 items-center gap-3 font-mono text-[10px] text-slate-400 tracking-wider">
+      <div className="hidden lg:flex absolute top-6 right-8 items-center gap-3 font-mono text-[10px] text-slate-400 dark:text-slate-500 tracking-wider">
         <span>EUR/USD 1.08425</span>
-        <span className="text-emerald-600 font-semibold">+0.48%</span>
-        <span className="text-slate-300">|</span>
+        <span className="text-emerald-600 dark:text-emerald-400 font-semibold">+0.48%</span>
+        <span className="text-slate-300 dark:text-slate-700">|</span>
         <span>ETH/USD $3,420.50</span>
-        <span className="text-emerald-600 font-semibold">+1.92%</span>
+        <span className="text-emerald-600 dark:text-emerald-400 font-semibold">+1.92%</span>
       </div>
 
-      <div className="hidden xl:flex absolute top-1/2 left-4 -translate-y-1/2 flex-col gap-1 font-mono text-[9px] text-slate-400">
+      <div className="hidden xl:flex absolute top-1/2 left-4 -translate-y-1/2 flex-col gap-1 font-mono text-[9px] text-slate-400 dark:text-slate-500">
         <div>[VOL 24H: $4.18B]</div>
         <div>[NY SESSION: 13:00 - 21:00 UTC]</div>
         <div>[SMC ORDER FLOW: CONFIRMED]</div>
       </div>
 
-      <div className="hidden xl:flex absolute top-1/2 right-4 -translate-y-1/2 flex-col items-end gap-1 font-mono text-[9px] text-slate-400 text-right">
+      <div className="hidden xl:flex absolute top-1/2 right-4 -translate-y-1/2 flex-col items-end gap-1 font-mono text-[9px] text-slate-400 dark:text-slate-500 text-right">
         <div>[ALGO: LIQUIDITY SWEEP]</div>
         <div>[RISK: 1:3.4 R:R CALIBRATED]</div>
         <div>[APEX TRADING ENGINE]</div>

@@ -18,7 +18,7 @@ import MobileAppDock from "@/components/ui/MobileAppDock";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full bg-[#F4F7FB] text-slate-900 overflow-x-hidden pb-20 md:pb-0">
+    <main className="relative min-h-screen w-full bg-[#F4F7FB] dark:bg-[#0B0E14] text-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden pb-20 md:pb-0">
       {/* Cinematic Ambient Trading Candlestick Background */}
       <AmbientTradingBackground />
 

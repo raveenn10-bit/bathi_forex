@@ -51,62 +51,62 @@ export default function Contact() {
     <section
       id="contact"
       ref={containerRef}
-      className="relative w-full py-24 sm:py-32 overflow-hidden"
+      className="relative w-full py-24 sm:py-32 bg-slate-50/50 dark:bg-[#0B0E14] border-t border-slate-200/80 dark:border-slate-800/80 overflow-hidden"
     >
       {/* Dynamic Background Nebula */}
-      <div className="pointer-events-none absolute -bottom-20 right-1/4 h-[500px] w-[500px] rounded-full bg-[#7FCDFF]/25 blur-[150px]" />
-      <div className="pointer-events-none absolute -top-20 left-10 h-[400px] w-[400px] rounded-full bg-[#FFD3B6]/30 blur-[140px]" />
+      <div className="pointer-events-none absolute -bottom-20 right-1/4 h-[500px] w-[500px] rounded-full bg-[#7FCDFF]/25 dark:bg-[#38B6FF]/10 blur-[150px]" />
+      <div className="pointer-events-none absolute -top-20 left-10 h-[400px] w-[400px] rounded-full bg-[#FFD3B6]/30 dark:bg-amber-500/10 blur-[140px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div ref={contentRef} className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Heading & Contact Channels */}
           <div className="lg:col-span-6 flex flex-col gap-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 bg-sky-50 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-sky-700 w-fit shadow-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 dark:border-sky-500/30 bg-sky-50 dark:bg-sky-950/40 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-300 w-fit shadow-sm">
               <Sparkles className="h-3.5 w-3.5 text-amber-500" />
               <span>DIRECT ADMISSIONS</span>
             </div>
 
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
               Start Your Trading Journey
             </h2>
 
-            <p className="text-base text-slate-600 leading-relaxed max-w-lg">
+            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-lg">
               Take the first step toward disciplined financial education at Apex Trading Academy. Select your preferred course below to connect directly with our admissions desk on WhatsApp.
             </p>
 
             {/* Contact Details Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-              <div className="rounded-2xl border border-slate-200 bg-white/85 p-5 backdrop-blur-md shadow-glass">
-                <div className="flex items-center gap-2.5 text-xs text-slate-500 mb-1">
-                  <Phone className="h-4 w-4 text-amber-600" />
+              <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/85 dark:bg-[#121824]/90 p-5 backdrop-blur-md shadow-glass">
+                <div className="flex items-center gap-2.5 text-xs text-slate-500 dark:text-slate-400 mb-1">
+                  <Phone className="h-4 w-4 text-amber-600 dark:text-amber-400" />
                   <span>Direct Hotline</span>
                 </div>
-                <div className="font-mono text-sm font-bold text-slate-900">
+                <div className="font-mono text-sm font-bold text-slate-900 dark:text-white">
                   {ACADEMY_CONFIG.displayPhone}
                 </div>
-                <div className="text-[10px] text-slate-400 mt-1">Available on WhatsApp</div>
+                <div className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">Available on WhatsApp</div>
               </div>
 
               <a
                 href={`mailto:${ACADEMY_CONFIG.email}`}
-                className="group rounded-2xl border border-slate-200 bg-white/85 p-5 backdrop-blur-md shadow-glass transition-all duration-300 hover:border-sky-300 hover:bg-white block"
+                className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/85 dark:bg-[#121824]/90 p-5 backdrop-blur-md shadow-glass transition-all duration-300 hover:border-sky-300 dark:hover:border-sky-500 hover:bg-white dark:hover:bg-[#162032] block"
               >
-                <div className="flex items-center gap-2.5 text-xs text-slate-500 mb-1 group-hover:text-sky-600 transition-colors">
-                  <Mail className="h-4 w-4 text-sky-600" />
+                <div className="flex items-center gap-2.5 text-xs text-slate-500 dark:text-slate-400 mb-1 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                  <Mail className="h-4 w-4 text-sky-600 dark:text-sky-400" />
                   <span>Official Email</span>
                 </div>
-                <div className="font-mono text-sm font-bold text-slate-900 truncate group-hover:text-sky-600 transition-colors">
+                <div className="font-mono text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                   {ACADEMY_CONFIG.email}
                 </div>
-                <div className="text-[10px] text-slate-400 mt-1">Direct support & admissions inquiries</div>
+                <div className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">Direct support & admissions inquiries</div>
               </a>
 
-              <div className="rounded-2xl border border-slate-200 bg-white/85 p-5 backdrop-blur-md shadow-glass sm:col-span-2">
-                <div className="flex items-center gap-2.5 text-xs text-slate-500 mb-1">
-                  <MapPin className="h-4 w-4 text-amber-600" />
+              <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/85 dark:bg-[#121824]/90 p-5 backdrop-blur-md shadow-glass sm:col-span-2">
+                <div className="flex items-center gap-2.5 text-xs text-slate-500 dark:text-slate-400 mb-1">
+                  <MapPin className="h-4 w-4 text-amber-600 dark:text-amber-400" />
                   <span>Academy Operations</span>
                 </div>
-                <div className="text-sm font-semibold text-slate-900">
+                <div className="text-sm font-semibold text-slate-900 dark:text-white">
                   {ACADEMY_CONFIG.location} &bull; Online & Hybrid Sessions Nationwide
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function Contact() {
 
             {/* Social media links */}
             <div>
-              <span className="block text-xs font-mono uppercase tracking-wider text-slate-500 mb-3">
+              <span className="block text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
                 Official Channels:
               </span>
               <div className="flex flex-wrap gap-2.5">
@@ -124,7 +124,7 @@ export default function Contact() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-xl border border-slate-200 bg-white/85 px-3.5 py-1.5 text-xs font-medium text-slate-700 hover:border-sky-300 hover:text-sky-600 transition-all hover:scale-105 shadow-sm"
+                    className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white/85 dark:bg-[#121824]/85 px-3.5 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 hover:border-sky-300 dark:hover:border-sky-500 hover:text-sky-600 dark:hover:text-sky-400 transition-all hover:scale-105 shadow-sm"
                   >
                     {social.platform}
                   </a>
@@ -135,16 +135,16 @@ export default function Contact() {
 
           {/* Right Column: Instant WhatsApp Enrollment Console */}
           <div className="lg:col-span-6">
-            <div className="relative rounded-3xl border border-slate-200/90 bg-white/95 p-7 sm:p-9 shadow-glass backdrop-blur-2xl">
+            <div className="relative rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-[#121824]/95 p-7 sm:p-9 shadow-glass backdrop-blur-2xl">
               {/* Top Card Eyebrow */}
-              <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+              <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
                 <div className="flex items-center gap-2">
-                  <MessageSquare className="h-5 w-5 text-sky-600" />
-                  <span className="font-heading text-sm font-bold text-slate-900">
+                  <MessageSquare className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                  <span className="font-heading text-sm font-bold text-slate-900 dark:text-white">
                     WhatsApp Course Dispatcher
                   </span>
                 </div>
-                <span className="font-mono text-[11px] text-amber-700 font-bold uppercase">
+                <span className="font-mono text-[11px] text-amber-700 dark:text-amber-400 font-bold uppercase">
                   Instant Response
                 </span>
               </div>
@@ -152,7 +152,7 @@ export default function Contact() {
               {/* Course Selection Form */}
               <div className="space-y-5">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-800 mb-2">
+                  <label className="block text-xs font-semibold text-slate-800 dark:text-slate-200 mb-2">
                     1. Select Your Desired Course:
                   </label>
                   <div className="grid grid-cols-1 gap-2.5">
@@ -165,19 +165,19 @@ export default function Contact() {
                           onClick={() => setSelectedCourseId(course.id)}
                           className={`flex items-center justify-between rounded-xl p-3.5 text-left border transition-all ${
                             isSelected
-                              ? "border-sky-400 bg-sky-50/80 text-sky-900 shadow-sm"
-                              : "border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900"
+                              ? "border-sky-400 dark:border-sky-500/60 bg-sky-50/80 dark:bg-sky-950/40 text-sky-900 dark:text-sky-300 shadow-sm"
+                              : "border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0E131C] text-slate-600 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-700 hover:text-slate-900 dark:hover:text-white"
                           }`}
                         >
                           <div>
-                            <div className="font-heading text-xs font-bold text-slate-900">
+                            <div className="font-heading text-xs font-bold text-slate-900 dark:text-white">
                               {course.name}
                             </div>
-                            <div className="text-[10px] text-slate-500">
+                            <div className="text-[10px] text-slate-500 dark:text-slate-400">
                               {course.tagline}
                             </div>
                           </div>
-                          <div className="font-mono text-xs font-bold text-amber-700">
+                          <div className="font-mono text-xs font-bold text-amber-700 dark:text-amber-400">
                             {formatLKR(course.priceLKR)}
                           </div>
                         </button>
@@ -188,13 +188,13 @@ export default function Contact() {
 
                 {/* Live Message Preview Box */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-800 mb-2">
+                  <label className="block text-xs font-semibold text-slate-800 dark:text-slate-200 mb-2">
                     2. Automated Message Preview:
                   </label>
-                  <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-4 font-mono text-xs text-slate-600 leading-relaxed">
+                  <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-[#0B0E14]/80 p-4 font-mono text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                     &ldquo;Hello Apex Trading Academy, I am interested in the{" "}
-                    <span className="text-slate-900 font-bold">{selectedCourse.name}</span> course priced at{" "}
-                    <span className="text-amber-700 font-bold">{formatLKR(selectedCourse.priceLKR)}</span>. Please send me the enrollment details.&rdquo;
+                    <span className="text-slate-900 dark:text-white font-bold">{selectedCourse.name}</span> course priced at{" "}
+                    <span className="text-amber-700 dark:text-amber-400 font-bold">{formatLKR(selectedCourse.priceLKR)}</span>. Please send me the enrollment details.&rdquo;
                   </div>
                 </div>
 
@@ -211,8 +211,8 @@ export default function Contact() {
                     <ArrowRight className="h-4 w-4 opacity-70" />
                   </a>
 
-                  <div className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-slate-500 text-center">
-                    <ShieldAlert className="h-3.5 w-3.5 text-amber-600" />
+                  <div className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400 text-center">
+                    <ShieldAlert className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
                     <span>Direct connection &bull; No middleman &bull; Instant WhatsApp chat</span>
                   </div>
                 </div>

@@ -62,30 +62,30 @@ export default function Roadmap() {
     <section
       id="roadmap"
       ref={containerRef}
-      className="relative w-full py-24 sm:py-32 overflow-hidden bg-slate-50/60 border-t border-slate-200/80"
+      className="relative w-full py-24 sm:py-32 overflow-hidden bg-slate-50/60 dark:bg-[#0B0E14] border-t border-slate-200/80 dark:border-slate-800/80"
     >
       {/* Subtle Ambient Glow */}
-      <div className="pointer-events-none absolute left-1/3 top-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-sky-200/30 blur-[150px]" />
-      <div className="pointer-events-none absolute right-10 bottom-10 h-72 w-72 rounded-full bg-amber-100/40 blur-[130px]" />
+      <div className="pointer-events-none absolute left-1/3 top-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-sky-200/30 dark:bg-sky-900/20 blur-[150px]" />
+      <div className="pointer-events-none absolute right-10 bottom-10 h-72 w-72 rounded-full bg-amber-100/40 dark:bg-amber-900/15 blur-[130px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
-          <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 bg-sky-50 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-sky-700 mb-3 shadow-xs">
+          <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 dark:border-sky-500/30 bg-sky-50 dark:bg-sky-950/40 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-300 mb-3 shadow-xs">
             <Sparkles className="h-3.5 w-3.5 text-amber-500" />
             <span>PROGRESSIVE LEARNING PATHWAY</span>
           </div>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Your Roadmap to Trading Knowledge
           </h2>
-          <p className="mt-4 text-base text-slate-600">
+          <p className="mt-4 text-base text-slate-600 dark:text-slate-300">
             A battle-tested four-phase progression taking you step-by-step from zero background to disciplined market mastery at Apex Trading Academy.
           </p>
         </div>
 
         {/* Desktop Progressive Connecting Line */}
         <div className="relative hidden lg:block mb-8">
-          <div className="absolute top-1/2 left-10 right-10 h-1 -translate-y-1/2 bg-slate-200 rounded-full" />
+          <div className="absolute top-1/2 left-10 right-10 h-1 -translate-y-1/2 bg-slate-200 dark:bg-slate-800 rounded-full" />
           <div
             ref={lineRef}
             className="absolute top-1/2 left-10 right-10 h-1 -translate-y-1/2 bg-gradient-to-r from-sky-500 via-sky-600 to-amber-500 rounded-full shadow-sm"
@@ -104,10 +104,10 @@ export default function Roadmap() {
             return (
               <div
                 key={`mobile-${phase.phase}`}
-                className={`group relative flex flex-col justify-between rounded-3xl border p-6 transition-all duration-300 shadow-sm ${
+                className={`group relative flex flex-col justify-between rounded-3xl border p-6 transition-all duration-300 shadow-sm bg-white/90 dark:bg-[#121824]/90 ${
                   isFinalPhase
-                    ? "border-amber-300 bg-white"
-                    : "border-slate-200 bg-white"
+                    ? "border-amber-300 dark:border-amber-500/40"
+                    : "border-slate-200 dark:border-slate-800"
                 }`}
               >
                 <div>
@@ -115,8 +115,8 @@ export default function Roadmap() {
                     <div
                       className={`flex h-11 w-11 items-center justify-center rounded-2xl border ${
                         isFinalPhase
-                          ? "border-amber-300 bg-amber-50 text-amber-700"
-                          : "border-sky-200 bg-sky-50 text-sky-600"
+                          ? "border-amber-300 dark:border-amber-500/40 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400"
+                          : "border-sky-200 dark:border-sky-800 bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400"
                       }`}
                     >
                       <IconComp className="h-5 w-5" />
@@ -125,34 +125,34 @@ export default function Roadmap() {
                     <span
                       className={`font-mono text-xs font-bold px-2.5 py-1 rounded-full border ${
                         isFinalPhase
-                          ? "border-amber-300 bg-amber-50 text-amber-700"
-                          : "border-sky-200 bg-sky-50 text-sky-700"
+                          ? "border-amber-300 dark:border-amber-500/40 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400"
+                          : "border-sky-200 dark:border-sky-800 bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-400"
                       }`}
                     >
                       PHASE 0{phase.phase}
                     </span>
                   </div>
 
-                  <span className="font-mono text-[10px] font-semibold tracking-wider uppercase text-slate-500">
+                  <span className="font-mono text-[10px] font-semibold tracking-wider uppercase text-slate-500 dark:text-slate-400">
                     {phase.badge}
                   </span>
-                  <h3 className="mt-1 font-heading text-lg font-bold text-slate-900">
+                  <h3 className="mt-1 font-heading text-lg font-bold text-slate-900 dark:text-white">
                     {phase.title}
                   </h3>
 
-                  <p className="mt-2.5 text-xs leading-relaxed text-slate-600">
+                  <p className="mt-2.5 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
                     {phase.description}
                   </p>
 
-                  <div className="mt-4 space-y-2 border-t border-slate-100 pt-3">
+                  <div className="mt-4 space-y-2 border-t border-slate-100 dark:border-slate-800 pt-3">
                     {phase.milestones.map((m, mIdx) => (
                       <div
                         key={mIdx}
-                        className="flex items-start gap-2 text-xs text-slate-700"
+                        className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300"
                       >
                         <CheckCircle2
                           className={`h-3.5 w-3.5 mt-0.5 shrink-0 ${
-                            isFinalPhase ? "text-amber-500" : "text-sky-600"
+                            isFinalPhase ? "text-amber-500" : "text-sky-600 dark:text-sky-400"
                           }`}
                         />
                         <span>{m}</span>
@@ -161,11 +161,11 @@ export default function Roadmap() {
                   </div>
                 </div>
 
-                <div className="mt-5 rounded-xl border border-slate-100 bg-slate-50 p-3">
-                  <span className="block text-[9px] font-mono uppercase tracking-wider text-amber-700 font-bold">
+                <div className="mt-5 rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50 dark:bg-[#0B0E14]/80 p-3">
+                  <span className="block text-[9px] font-mono uppercase tracking-wider text-amber-700 dark:text-amber-400 font-bold">
                     Key Outcome
                   </span>
-                  <p className="mt-1 text-xs text-slate-800 font-medium">
+                  <p className="mt-1 text-xs text-slate-800 dark:text-slate-200 font-medium">
                     {phase.keyOutcome}
                   </p>
                 </div>
@@ -186,10 +186,10 @@ export default function Roadmap() {
             return (
               <div
                 key={phase.phase}
-                className={`group relative flex flex-col justify-between rounded-3xl border p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-white ${
+                className={`group relative flex flex-col justify-between rounded-3xl border p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-white/90 dark:bg-[#121824]/90 ${
                   isFinalPhase
-                    ? "border-amber-300 hover:border-amber-400"
-                    : "border-slate-200 hover:border-sky-300"
+                    ? "border-amber-300 dark:border-amber-500/40 hover:border-amber-400 dark:hover:border-amber-400"
+                    : "border-slate-200 dark:border-slate-800 hover:border-sky-300 dark:hover:border-sky-500/50"
                 }`}
               >
                 <div>
@@ -198,8 +198,8 @@ export default function Roadmap() {
                     <div
                       className={`flex h-12 w-12 items-center justify-center rounded-2xl border transition-all duration-300 group-hover:scale-110 ${
                         isFinalPhase
-                          ? "border-amber-300 bg-amber-50 text-amber-700 shadow-xs"
-                          : "border-sky-200 bg-sky-50 text-sky-600"
+                          ? "border-amber-300 dark:border-amber-500/40 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 shadow-xs"
+                          : "border-sky-200 dark:border-sky-800 bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400"
                       }`}
                     >
                       <IconComp className="h-6 w-6" />
@@ -208,8 +208,8 @@ export default function Roadmap() {
                     <span
                       className={`font-mono text-xs font-bold px-2.5 py-1 rounded-full border ${
                         isFinalPhase
-                          ? "border-amber-300 bg-amber-50 text-amber-700"
-                          : "border-sky-200 bg-sky-50 text-sky-700"
+                          ? "border-amber-300 dark:border-amber-500/40 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400"
+                          : "border-sky-200 dark:border-sky-800 bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-400"
                       }`}
                     >
                       PHASE 0{phase.phase}
@@ -217,28 +217,28 @@ export default function Roadmap() {
                   </div>
 
                   {/* Title & Tagline */}
-                  <span className="font-mono text-[11px] font-semibold tracking-wider uppercase text-slate-500">
+                  <span className="font-mono text-[11px] font-semibold tracking-wider uppercase text-slate-500 dark:text-slate-400">
                     {phase.badge}
                   </span>
-                  <h3 className="mt-1 font-heading text-xl font-bold text-slate-900">
+                  <h3 className="mt-1 font-heading text-xl font-bold text-slate-900 dark:text-white">
                     {phase.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
+                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                     {phase.description}
                   </p>
 
                   {/* Milestones Checklist */}
-                  <div className="mt-5 space-y-2 border-t border-slate-100 pt-4">
+                  <div className="mt-5 space-y-2 border-t border-slate-100 dark:border-slate-800 pt-4">
                     {phase.milestones.map((m, mIdx) => (
                       <div
                         key={mIdx}
-                        className="flex items-start gap-2 text-xs text-slate-700"
+                        className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300"
                       >
                         <CheckCircle2
                           className={`h-3.5 w-3.5 mt-0.5 shrink-0 ${
-                            isFinalPhase ? "text-amber-500" : "text-sky-600"
+                            isFinalPhase ? "text-amber-500" : "text-sky-600 dark:text-sky-400"
                           }`}
                         />
                         <span>{m}</span>
@@ -248,11 +248,11 @@ export default function Roadmap() {
                 </div>
 
                 {/* Key Outcome Footer */}
-                <div className="mt-6 rounded-xl border border-slate-100 bg-slate-50 p-3">
-                  <span className="block text-[10px] font-mono uppercase tracking-wider text-amber-700 font-bold">
+                <div className="mt-6 rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50 dark:bg-[#0B0E14]/80 p-3">
+                  <span className="block text-[10px] font-mono uppercase tracking-wider text-amber-700 dark:text-amber-400 font-bold">
                     Key Outcome
                   </span>
-                  <p className="mt-1 text-xs text-slate-800 font-medium">
+                  <p className="mt-1 text-xs text-slate-800 dark:text-slate-200 font-medium">
                     {phase.keyOutcome}
                   </p>
                 </div>

@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ACADEMY_CONFIG } from "@/data/academy";
 import { COURSES } from "@/data/courses";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -108,15 +109,33 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function() {
+              try {
+                var stored = localStorage.getItem('apex_trading_academy_theme');
+                if (stored === 'dark') {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.style.colorScheme = 'dark';
+                } else {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.style.colorScheme = 'light';
+                }
+              } catch(e) {}
+            })();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-brand-bg text-white antialiased">
-        {children}
+      <body className="min-h-screen bg-[#F4F7FB] dark:bg-[#0B0E14] text-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-sky-500/30 selection:text-slate-900 dark:selection:text-white">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

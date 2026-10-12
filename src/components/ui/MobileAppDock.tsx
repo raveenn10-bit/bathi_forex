@@ -116,7 +116,7 @@ export default function MobileAppDock() {
   return (
     <nav
       aria-label="Mobile Navigation App Dock"
-      className="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/90 backdrop-blur-xl border-t border-slate-200/80 shadow-appDock pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] pt-1.5 px-2"
+      className="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/90 dark:bg-[#0B0E14]/90 backdrop-blur-xl border-t border-slate-200/80 dark:border-slate-800/80 shadow-appDock pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] pt-1.5 px-2 transition-colors duration-300"
     >
       <div className="grid grid-cols-5 items-center justify-items-center max-w-md mx-auto">
         {navItems.map((item) => {
@@ -133,10 +133,10 @@ export default function MobileAppDock() {
               onClick={(e) => handleNavClick(e, item.id)}
               className={`group relative flex flex-col items-center justify-center py-1 px-1.5 w-full rounded-2xl transition-all duration-200 active:scale-95 ${
                 isActive && !isWhatsApp
-                  ? "text-sky-600 font-bold"
+                  ? "text-sky-600 dark:text-sky-400 font-bold"
                   : isWhatsApp
                   ? "text-emerald-600 hover:text-emerald-700 font-semibold"
-                  : "text-slate-500 hover:text-slate-800 font-medium"
+                  : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 font-medium"
               }`}
             >
               {/* Active Tab Top Indicator Pill */}

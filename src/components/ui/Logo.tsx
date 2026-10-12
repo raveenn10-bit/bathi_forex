@@ -48,7 +48,7 @@ export default function Logo({
       <div
         className={`relative ${currentIcon.class} shrink-0 rounded-full p-[1.5px] bg-gradient-to-tr from-brand-oceanBlue via-brand-champagneWarm to-brand-oceanDeep shadow-md transition-transform duration-300 group-hover:scale-105`}
       >
-        <div className="relative h-full w-full overflow-hidden rounded-full bg-white border border-slate-200">
+        <div className="relative h-full w-full overflow-hidden rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
           <Image
             src="/images/logo.png"
             alt="Apex Trading Academy Logo"
@@ -60,25 +60,25 @@ export default function Logo({
         </div>
 
         {/* Ambient Ring Glow */}
-        <div className="pointer-events-none absolute -inset-1 rounded-full bg-brand-oceanBlue/25 blur-sm -z-10 group-hover:bg-brand-champagne/40 transition-all duration-300" />
+        <div className="pointer-events-none absolute -inset-1 rounded-full bg-brand-oceanBlue/25 dark:bg-sky-500/20 blur-sm -z-10 group-hover:bg-brand-champagne/40 transition-all duration-300" />
       </div>
 
       {/* Brand Typography */}
       {!onlyBadge && (
         <div className="flex flex-col">
           <span
-            className={`font-heading font-extrabold leading-none tracking-tight text-slate-900 ${textSizes[size]}`}
+            className={`font-heading font-extrabold leading-none tracking-tight text-slate-900 dark:text-white ${textSizes[size]}`}
           >
-            APEX <span className="text-sky-600">TRADING</span>
+            APEX <span className="text-sky-600 dark:text-sky-400">TRADING</span>
           </span>
 
           {showTagline && (
             <span
-              className={`font-mono font-bold uppercase text-slate-500 mt-1 flex items-center gap-1.5 ${taglineSizes[size]}`}
+              className={`font-mono font-bold uppercase text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1.5 ${taglineSizes[size]}`}
             >
               <span>ACADEMY</span>
               <span className="text-amber-500 font-bold">•</span>
-              <span className="text-slate-600">A TO Z TRADING</span>
+              <span className="text-slate-600 dark:text-slate-300">A TO Z TRADING</span>
             </span>
           )}
         </div>

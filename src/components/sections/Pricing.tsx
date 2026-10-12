@@ -36,23 +36,23 @@ export default function Pricing() {
     <section
       id="courses"
       ref={containerRef}
-      className="relative w-full py-24 sm:py-32 overflow-hidden bg-white/70 border-t border-slate-200/80 backdrop-blur-sm"
+      className="relative w-full py-24 sm:py-32 overflow-hidden bg-white/70 dark:bg-[#0B0E14] border-t border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm"
     >
       {/* Background Lighting */}
-      <div className="pointer-events-none absolute right-1/4 top-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-sky-200/25 blur-[140px]" />
-      <div className="pointer-events-none absolute left-10 bottom-10 h-72 w-72 rounded-full bg-amber-100/35 blur-[120px]" />
+      <div className="pointer-events-none absolute right-1/4 top-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-sky-200/25 dark:bg-sky-900/20 blur-[140px]" />
+      <div className="pointer-events-none absolute left-10 bottom-10 h-72 w-72 rounded-full bg-amber-100/35 dark:bg-amber-900/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 bg-sky-50 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-sky-700 mb-3 shadow-xs">
+          <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 dark:border-sky-500/30 bg-sky-50 dark:bg-sky-950/40 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-300 mb-3 shadow-xs">
             <Sparkles className="h-3.5 w-3.5 text-amber-500" />
             <span>TRANSPARENT TUITION • OFFICIAL PROGRAMS</span>
           </div>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Choose Your Trading Education Path
           </h2>
-          <p className="mt-4 text-base text-slate-600">
+          <p className="mt-4 text-base text-slate-600 dark:text-slate-300">
             Structured, transparent education tailored to your trading aspirations at Apex Trading Academy. Direct WhatsApp enrollment with zero hidden platform charges.
           </p>
         </div>
@@ -74,8 +74,8 @@ export default function Pricing() {
                 key={`mobile-${course.id}`}
                 className={`group relative flex flex-col justify-between rounded-3xl border transition-all duration-300 shadow-sm ${
                   isCompleteMaster
-                    ? "border-sky-400 bg-gradient-to-b from-sky-50/60 via-white to-white ring-2 ring-sky-300/40"
-                    : "border-slate-200 bg-white"
+                    ? "border-sky-400 dark:border-sky-500 bg-gradient-to-b from-sky-50/60 via-white to-white dark:from-[#162032] dark:via-[#121824] dark:to-[#121824] ring-2 ring-sky-300/40 dark:ring-sky-500/30"
+                    : "border-slate-200 dark:border-slate-800 bg-white dark:bg-[#121824]"
                 } p-6`}
               >
                 {isCompleteMaster && (
@@ -90,49 +90,49 @@ export default function Pricing() {
                     <span
                       className={`font-mono text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${
                         isCompleteMaster
-                          ? "bg-sky-100 text-sky-800 border border-sky-200"
-                          : "bg-slate-100 text-slate-600 border border-slate-200"
+                          ? "bg-sky-100 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 border border-sky-200 dark:border-sky-800"
+                          : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700"
                       }`}
                     >
                       {course.category}
                     </span>
                   </div>
 
-                  <h3 className="font-heading text-base font-bold text-slate-900 min-h-[44px] flex items-center">
+                  <h3 className="font-heading text-base font-bold text-slate-900 dark:text-white min-h-[44px] flex items-center">
                     {course.name}
                   </h3>
 
-                  <p className="mt-1 text-[11px] text-amber-700 font-semibold">
+                  <p className="mt-1 text-[11px] text-amber-700 dark:text-amber-400 font-semibold">
                     {course.tagline}
                   </p>
 
-                  <div className="mt-4 border-y border-slate-100 py-3.5">
-                    <span className="font-heading text-2xl font-extrabold text-slate-900">
+                  <div className="mt-4 border-y border-slate-100 dark:border-slate-800 py-3.5">
+                    <span className="font-heading text-2xl font-extrabold text-slate-900 dark:text-white">
                       {formatLKR(course.priceLKR)}
                     </span>
-                    <span className="text-[10px] text-slate-500 block mt-0.5">
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 block mt-0.5">
                       One-time academy tuition
                     </span>
                   </div>
 
-                  <p className="mt-3 text-xs leading-relaxed text-slate-600">
+                  <p className="mt-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
                     {course.description}
                   </p>
 
                   <div className="mt-4 space-y-2">
-                    <span className="block text-[9px] font-mono uppercase tracking-wider text-slate-400 font-bold">
+                    <span className="block text-[9px] font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500 font-bold">
                       What&apos;s Included:
                     </span>
                     {course.highlights.slice(0, 4).map((highlight, hIdx) => (
                       <div
                         key={hIdx}
-                        className="flex items-start gap-1.5 text-xs text-slate-700"
+                        className="flex items-start gap-1.5 text-xs text-slate-700 dark:text-slate-300"
                       >
                         <Check
                           className={`h-3.5 w-3.5 shrink-0 mt-0.5 ${
                             isCompleteMaster
-                              ? "text-sky-600 font-bold"
-                              : "text-slate-500"
+                              ? "text-sky-600 dark:text-sky-400 font-bold"
+                              : "text-slate-500 dark:text-slate-400"
                           }`}
                         />
                         <span>{highlight}</span>
@@ -141,15 +141,15 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100">
+                <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
                   <a
                     href={enrollAction.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`group/btn relative flex w-full items-center justify-center gap-2 rounded-2xl py-3 px-4 text-xs font-bold transition-all duration-200 ${
                       isCompleteMaster
-                        ? "bg-sky-600 hover:bg-sky-700 text-white shadow-sm"
-                        : "border border-slate-300 bg-white hover:border-sky-500 hover:text-sky-600 text-slate-700 hover:bg-slate-50"
+                        ? "bg-sky-600 hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-600 text-white shadow-sm"
+                        : "border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-sky-500 dark:hover:border-sky-400 hover:text-sky-600 dark:hover:text-sky-300 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/60"
                     }`}
                   >
                     <MessageSquare className="h-4 w-4" />
@@ -179,8 +179,8 @@ export default function Pricing() {
                 key={course.id}
                 className={`group relative flex flex-col justify-between rounded-3xl border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg ${
                   isCompleteMaster
-                    ? "border-sky-400 bg-gradient-to-b from-sky-50/60 via-white to-white ring-2 ring-sky-300/40 shadow-md"
-                    : "border-slate-200 bg-white hover:border-sky-300 shadow-sm"
+                    ? "border-sky-400 dark:border-sky-500 bg-gradient-to-b from-sky-50/60 via-white to-white dark:from-[#162032] dark:via-[#121824] dark:to-[#121824] ring-2 ring-sky-300/40 dark:ring-sky-500/30 shadow-md"
+                    : "border-slate-200 dark:border-slate-800 bg-white dark:bg-[#121824] hover:border-sky-300 dark:hover:border-sky-400 shadow-sm"
                 } p-6 sm:p-7`}
               >
                 {/* Popular / Best Value Badge */}
@@ -197,8 +197,8 @@ export default function Pricing() {
                     <span
                       className={`font-mono text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${
                         isCompleteMaster
-                          ? "bg-sky-100 text-sky-800 border border-sky-200"
-                          : "bg-slate-100 text-slate-600 border border-slate-200"
+                          ? "bg-sky-100 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 border border-sky-200 dark:border-sky-800"
+                          : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700"
                       }`}
                     >
                       {course.category}
@@ -206,47 +206,47 @@ export default function Pricing() {
                   </div>
 
                   {/* Course Title */}
-                  <h3 className="font-heading text-lg font-bold text-slate-900 min-h-[56px] flex items-center">
+                  <h3 className="font-heading text-lg font-bold text-slate-900 dark:text-white min-h-[56px] flex items-center">
                     {course.name}
                   </h3>
 
                   {/* Tagline */}
-                  <p className="mt-1 text-xs text-amber-700 font-semibold">
+                  <p className="mt-1 text-xs text-amber-700 dark:text-amber-400 font-semibold">
                     {course.tagline}
                   </p>
 
                   {/* Price Block */}
-                  <div className="mt-6 border-y border-slate-100 py-5">
+                  <div className="mt-6 border-y border-slate-100 dark:border-slate-800 py-5">
                     <div className="flex items-baseline gap-1">
-                      <span className="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">
+                      <span className="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                         {formatLKR(course.priceLKR)}
                       </span>
                     </div>
-                    <span className="text-[11px] text-slate-500 block mt-1">
+                    <span className="text-[11px] text-slate-500 dark:text-slate-400 block mt-1">
                       One-time academy tuition
                     </span>
                   </div>
 
                   {/* Description */}
-                  <p className="mt-4 text-xs leading-relaxed text-slate-600">
+                  <p className="mt-4 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
                     {course.description}
                   </p>
 
                   {/* Key Highlights */}
                   <div className="mt-6 space-y-2.5">
-                    <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">
+                    <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500 font-bold">
                       What&apos;s Included:
                     </span>
                     {course.highlights.map((highlight, hIdx) => (
                       <div
                         key={hIdx}
-                        className="flex items-start gap-2 text-xs text-slate-700"
+                        className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300"
                       >
                         <Check
                           className={`h-4 w-4 shrink-0 mt-0.5 ${
                             isCompleteMaster
-                              ? "text-sky-600 font-bold"
-                              : "text-slate-500"
+                              ? "text-sky-600 dark:text-sky-400 font-bold"
+                              : "text-slate-500 dark:text-slate-400"
                           }`}
                         />
                         <span>{highlight}</span>
@@ -256,15 +256,15 @@ export default function Pricing() {
                 </div>
 
                 {/* Enrollment CTA Button */}
-                <div className="mt-8 pt-4 border-t border-slate-100">
+                <div className="mt-8 pt-4 border-t border-slate-100 dark:border-slate-800">
                   <a
                     href={enrollAction.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`group/btn relative flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 px-4 text-xs font-bold transition-all duration-200 ${
                       isCompleteMaster
-                        ? "bg-sky-600 hover:bg-sky-700 text-white shadow-sm hover:scale-[1.01]"
-                        : "border border-slate-300 bg-white text-slate-700 hover:border-sky-500 hover:text-sky-600 hover:bg-slate-50"
+                        ? "bg-sky-600 hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-600 text-white shadow-sm hover:scale-[1.01]"
+                        : "border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:border-sky-500 dark:hover:border-sky-400 hover:text-sky-600 dark:hover:text-sky-300 hover:bg-slate-50 dark:hover:bg-slate-800/60"
                     }`}
                   >
                     <MessageSquare className="h-4 w-4" />
@@ -273,7 +273,7 @@ export default function Pricing() {
                   </a>
 
                   {!enrollAction.isConfigured && (
-                    <span className="block text-center text-[10px] text-slate-400 mt-2">
+                    <span className="block text-center text-[10px] text-slate-400 dark:text-slate-500 mt-2">
                       WhatsApp number editable in academy config
                     </span>
                   )}

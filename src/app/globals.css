@@ -13,9 +13,15 @@
   --color-champagne-warm: #F5A87B;
 }
 
+.dark {
+  --bg-primary: #0B0E14;
+  --bg-secondary: #121824;
+  --card-bg: #151D2A;
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
-  color-scheme: light;
 }
 
 body {
@@ -23,6 +29,12 @@ body {
   color: #0F172A;
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background-color: #0B0E14;
+  color: #F8FAFC;
 }
 
 ::selection {
@@ -30,7 +42,12 @@ body {
   color: #0F172A;
 }
 
-/* Custom Sleek Light Silver Scrollbar */
+.dark ::selection {
+  background: rgba(56, 182, 255, 0.35);
+  color: #FFFFFF;
+}
+
+/* Custom Sleek Light & Dark Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -40,13 +57,25 @@ body {
   background: #F4F7FB;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #0B0E14;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
   border-radius: 4px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #1E293B;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #7FCDFF;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #38B6FF;
 }
 
 /* Hide scrollbar for clean horizontal snap lists */
@@ -58,7 +87,7 @@ body {
   scrollbar-width: none;
 }
 
-/* Light Silver Frosted Glassmorphism Utility */
+/* Frosted Glassmorphism Utility (Light & Dark) */
 .glass-panel {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
@@ -66,11 +95,25 @@ body {
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
+.dark .glass-panel {
+  background: rgba(18, 24, 36, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .glass-panel-subtle {
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.dark .glass-panel-subtle {
+  background: rgba(18, 24, 36, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Ambient Trading Background Animations */
@@ -148,11 +191,19 @@ body {
   animation: depthPulse 3.5s ease-in-out infinite;
 }
 
-/* Technical Financial Matrix Grid for Light Silver Theme */
+/* Technical Financial Matrix Grid (Light & Dark) */
 .trading-matrix-grid {
   background-image: 
     radial-gradient(circle, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
     linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px, 48px 48px;
+}
+
+.dark .trading-matrix-grid {
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 48px 48px, 48px 48px, 48px 48px;
 }

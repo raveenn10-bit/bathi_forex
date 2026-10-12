@@ -29,32 +29,32 @@ export default function CandlestickChartVisual({
 
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm backdrop-blur-xl ${className}`}
+      className={`relative w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-[#121824]/90 p-4 shadow-sm backdrop-blur-xl transition-colors duration-300 ${className}`}
     >
       {/* Chart Header */}
-      <div className="mb-3 flex items-center justify-between border-b border-slate-200 pb-3">
+      <div className="mb-3 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
         <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-100 text-sky-600">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400">
             <span className="font-heading text-xs font-bold">FX</span>
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-heading text-sm font-bold text-slate-900">
+              <span className="font-heading text-sm font-bold text-slate-900 dark:text-white">
                 {activePair}
               </span>
-              <span className="rounded bg-sky-100 px-1.5 py-0.5 text-[10px] font-semibold text-sky-700">
+              <span className="rounded bg-sky-100 dark:bg-sky-950/60 px-1.5 py-0.5 text-[10px] font-semibold text-sky-700 dark:text-sky-300">
                 1H
               </span>
             </div>
             <div className="flex items-center gap-2 text-xs">
               <span
                 className={`font-mono font-bold transition-colors ${
-                  isBullishTick ? "text-emerald-600" : "text-rose-600"
+                  isBullishTick ? "text-emerald-600 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"
                 }`}
               >
                 {currentPrice}
               </span>
-              <span className="text-[10px] text-emerald-600 font-semibold">+0.48% Today</span>
+              <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold">+0.48% Today</span>
             </div>
           </div>
         </div>
@@ -62,12 +62,12 @@ export default function CandlestickChartVisual({
         {/* Live indicator & Target ratio */}
         <div className="flex items-center gap-3">
           <div className="hidden sm:flex flex-col items-end text-right">
-            <span className="text-[10px] text-slate-500">Target R:R</span>
-            <span className="font-mono text-xs font-bold text-amber-600">1 : 3.4</span>
+            <span className="text-[10px] text-slate-500 dark:text-slate-400">Target R:R</span>
+            <span className="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">1 : 3.4</span>
           </div>
-          <div className="flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 border border-emerald-200">
+          <div className="flex items-center gap-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-1 border border-emerald-200 dark:border-emerald-800/80">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-ping" />
-            <span className="text-[10px] font-bold tracking-wider text-emerald-700 uppercase">
+            <span className="text-[10px] font-bold tracking-wider text-emerald-700 dark:text-emerald-300 uppercase">
               LIVE
             </span>
           </div>
@@ -77,13 +77,13 @@ export default function CandlestickChartVisual({
       {/* Candlestick SVG canvas */}
       <div className="relative h-44 sm:h-52 w-full">
         {/* Support & Resistance Horizontal Reference Lines */}
-        <div className="absolute top-[22%] left-0 right-0 flex items-center gap-2 border-t border-dashed border-rose-300">
-          <span className="rounded bg-rose-50 px-1.5 py-0.5 text-[9px] font-mono text-rose-600 border border-rose-200">
+        <div className="absolute top-[22%] left-0 right-0 flex items-center gap-2 border-t border-dashed border-rose-300 dark:border-rose-900/60">
+          <span className="rounded bg-rose-50 dark:bg-rose-950/50 px-1.5 py-0.5 text-[9px] font-mono text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-800/60">
             Resistance 1.08900
           </span>
         </div>
-        <div className="absolute bottom-[28%] left-0 right-0 flex items-center gap-2 border-t border-dashed border-emerald-300">
-          <span className="rounded bg-emerald-50 px-1.5 py-0.5 text-[9px] font-mono text-emerald-700 border border-emerald-200">
+        <div className="absolute bottom-[28%] left-0 right-0 flex items-center gap-2 border-t border-dashed border-emerald-300 dark:border-emerald-900/60">
+          <span className="rounded bg-emerald-50 dark:bg-emerald-950/50 px-1.5 py-0.5 text-[9px] font-mono text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60">
             Institutional Demand 1.08150
           </span>
         </div>
@@ -107,9 +107,9 @@ export default function CandlestickChartVisual({
           </defs>
 
           {/* Grid lines */}
-          <line x1="0" y1="45" x2="500" y2="45" stroke="#E2E8F0" strokeDasharray="3 3" strokeWidth="0.8" />
-          <line x1="0" y1="90" x2="500" y2="90" stroke="#E2E8F0" strokeDasharray="3 3" strokeWidth="0.8" />
-          <line x1="0" y1="135" x2="500" y2="135" stroke="#E2E8F0" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="0" y1="45" x2="500" y2="45" className="stroke-slate-200 dark:stroke-slate-800/80" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="0" y1="90" x2="500" y2="90" className="stroke-slate-200 dark:stroke-slate-800/80" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="0" y1="135" x2="500" y2="135" className="stroke-slate-200 dark:stroke-slate-800/80" strokeDasharray="3 3" strokeWidth="0.8" />
 
           {/* Candlesticks sequence */}
           {/* Candle 1 (Bullish) */}
@@ -213,11 +213,11 @@ export default function CandlestickChartVisual({
       </div>
 
       {/* Chart Footer Information Bar */}
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 pt-2 text-[10px] text-slate-500">
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 dark:border-slate-800 pt-2 text-[10px] text-slate-500 dark:text-slate-400">
         <div className="flex items-center gap-3">
-          <span>Spread: <strong className="text-slate-800 font-mono">0.6 pips</strong></span>
-          <span className="hidden sm:inline">Volume: <strong className="text-slate-800 font-mono">$1.48B</strong></span>
-          <span>Session: <strong className="text-sky-600">London / NY Overlap</strong></span>
+          <span>Spread: <strong className="text-slate-800 dark:text-slate-200 font-mono">0.6 pips</strong></span>
+          <span className="hidden sm:inline">Volume: <strong className="text-slate-800 dark:text-slate-200 font-mono">$1.48B</strong></span>
+          <span>Session: <strong className="text-sky-600 dark:text-sky-400">London / NY Overlap</strong></span>
         </div>
         <div className="flex items-center gap-1.5">
           <span className="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
