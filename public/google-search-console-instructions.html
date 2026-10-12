@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Search Console & SEO/AEO Verification Guide — LankaForex.com</title>
+  <style>
+    :root {
+      --bg: #0B0E14;
+      --card-bg: #121824;
+      --border: #1E293B;
+      --accent: #0EA5E9;
+      --accent-glow: rgba(14, 165, 233, 0.15);
+      --text: #F1F5F9;
+      --text-muted: #94A3B8;
+      --green: #10B981;
+      --amber: #F59E0B;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+    }
+    p.lead {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    h2 {
+      font-size: 1.35rem;
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: #FFFFFF;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+    pre {
+      background: #06080C;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      color: #38BDF8;
+      margin: 0.75rem 0 1rem 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    code {
+      background: #1E293B;
+      color: #38BDF8;
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.25rem;
+      font-size: 0.85em;
+      font-family: ui-monospace, monospace;
+    }
+    ul, ol {
+      margin-left: 1.5rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    li {
+      margin-bottom: 0.4rem;
+    }
+    li strong {
+      color: var(--text);
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.6rem;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--green);
+      border: 1px solid var(--green);
+      border-radius: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Official Webmaster Documentation</div>
+      <h1>Google Search Console Setup & Verification</h1>
+      <p class="lead">Complete operational guide for connecting <strong>LankaForex.com</strong> to Google Search Console, Bing Webmaster Tools, and AI Answer Engines (Perplexity, ChatGPT, Claude).</p>
+    </header>
+
+    <!-- Step 1 -->
+    <div class="card">
+      <h2><span class="step-number">1</span> Option A: Verify via Environment Variable (HTML Meta Tag)</h2>
+      <p>LankaForex.com is pre-wired to read the Google site verification token directly from your environment variables.</p>
+      
+      <p>1. Open Google Search Console &rarr; <strong>Add Property</strong> &rarr; Select <strong>URL prefix</strong> (e.g. <code>https://lankaforex.com</code>).</p>
+      <p>2. Choose <strong>HTML tag</strong> as the verification method. You will get a tag like:</p>
+      <pre>&lt;meta name="google-site-verification" content="ABCxyz1234567890_EXAMPLE_TOKEN" /&gt;</pre>
+      <p>3. Copy only the content string (e.g. <code>ABCxyz1234567890_EXAMPLE_TOKEN</code>).</p>
+      <p>4. Add it to your <code>.env.local</code> or Vercel / hosting environment variables:</p>
+      <pre>NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="ABCxyz1234567890_EXAMPLE_TOKEN"</pre>
+      <p>5. Redeploy your application and click <strong>Verify</strong> in Google Search Console.</p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card">
+      <h2><span class="step-number">2</span> Option B: Verify via DNS TXT Record (Recommended)</h2>
+      <p>This is the most robust method as it verifies the entire domain <code>lankaforex.com</code> including <code>www</code> and any future subdomains.</p>
+      <ul>
+        <li>In Google Search Console, select <strong>Domain</strong> property type: <code>lankaforex.com</code>.</li>
+        <li>Copy the provided TXT record value: <code>google-site-verification=...</code></li>
+        <li>Sign in to your domain registrar (e.g., Cloudflare, Namecheap, GoDaddy, Hostinger).</li>
+        <li>Add a DNS Record:
+          <ul>
+            <li><strong>Type:</strong> TXT</li>
+            <li><strong>Host / Name:</strong> <code>@</code> (or <code>lankaforex.com</code>)</li>
+            <li><strong>Value / Content:</strong> <code>google-site-verification=...</code></li>
+            <li><strong>TTL:</strong> Automatic / 300 seconds</li>
+          </ul>
+        </li>
+        <li>Click <strong>Verify</strong> in Google Search Console.</li>
+      </ul>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="card">
+      <h2><span class="step-number">3</span> Submit the XML Sitemap</h2>
+      <p>Once verified, submit the sitemap to prompt Googlebot to index all core landing anchors and course hubs immediately:</p>
+      <pre>https://lankaforex.com/sitemap.xml</pre>
+      <p>Included indexed sections:</p>
+      <ul>
+        <li><code>https://lankaforex.com</code> &mdash; Main Portal (Priority: 1.0)</li>
+        <li><code>https://lankaforex.com#sl-market</code> &mdash; Sri Lanka Standard Time (SLST) Market Session Clocks (Priority: 0.95)</li>
+        <li><code>https://lankaforex.com#courses</code> &mdash; Course Curricula & Pricing (Priority: 1.0)</li>
+        <li><code>https://lankaforex.com#community</code> &mdash; Student WhatsApp Forum (Priority: 0.85)</li>
+        <li><code>https://lankaforex.com#faq</code> &mdash; Regulatory & CBSL Q&A Knowledge Base (Priority: 0.8)</li>
+        <li><code>https://lankaforex.com#contact</code> &mdash; Official Admissions & WhatsApp Inquiries (Priority: 0.9)</li>
+      </ul>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="card">
+      <h2><span class="step-number">4</span> AEO & GEO Structured Data (Schema.org Graph)</h2>
+      <p>LankaForex.com includes an enterprise JSON-LD Schema.org graph deployed in the <code>&lt;head&gt;</code> of every page:</p>
+      <ul>
+        <li><span class="status-pill">&check; Active</span> <strong>WebSite Schema:</strong> Declares <code>Lanka Forex</code> with alternate names (Bhathi Forex, Apex Trading Academy).</li>
+        <li><span class="status-pill">&check; Active</span> <strong>EducationalOrganization & LocalBusiness:</strong> Colombo, Western Province geo-coordinates and verified contact info.</li>
+        <li><span class="status-pill">&check; Active</span> <strong>Person Schema:</strong> Official author entity for founder Bhathiya Sooriarachchi.</li>
+        <li><span class="status-pill">&check; Active</span> <strong>FAQPage Schema:</strong> Comprehensive Q&A entities for instant Google Rich Results and AI Answer Engine citation (Perplexity, ChatGPT, Claude).</li>
+        <li><span class="status-pill">&check; Active</span> <strong>Course Schemas:</strong> Individual course pricing (LKR), availability, and curriculum scope.</li>
+        <li><span class="status-pill">&check; Active</span> <strong>BreadcrumbList Schema:</strong> Smooth search engine SERP hierarchy navigation.</li>
+      </ul>
+      <p style="margin-top: 0.75rem;">Test your live URL using the <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">Google Rich Results Test Tool</a>.</p>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="card">
+      <h2><span class="step-number">5</span> AI Crawlers Allowed in robots.txt</h2>
+      <p>To maximize Generative Engine Optimization (GEO) in Claude, ChatGPT search, and Perplexity:</p>
+      <pre>User-agent: *
+Allow: /
+
+User-agent: Googlebot
+User-agent: bingbot
+User-agent: Applebot
+User-agent: GPTBot
+User-agent: PerplexityBot
+User-agent: Claude-Web
+Allow: /
+
+Sitemap: https://lankaforex.com/sitemap.xml</pre>
+    </div>
+
+    <div class="footer">
+      &copy; 2026 Lanka Forex (LankaForex.com) &bull; Apex Trading Academy Sri Lanka &bull; Engineered for Superior SEO, AEO & GEO Performance.
+    </div>
+  </div>
+</body>
+</html>

@@ -123,9 +123,9 @@ export default function Hero() {
             {/* Eyebrow Badge */}
             <div ref={badgeRef} className="mb-5 inline-flex items-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 px-3.5 py-1.5 shadow-xs backdrop-blur-md">
-                <Sparkles className="h-3.5 w-3.5 text-amber-500" />
+                <span className="text-xs">🇱🇰</span>
                 <span className="font-heading text-[11px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">
-                  PROFESSIONAL TRADING EDUCATION
+                  SRI LANKA&apos;S #1 TRADING ACADEMY • LANKAFOREX.COM
                 </span>
                 <span className="h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700" />
                 <span className="font-heading text-[10px] font-bold tracking-wide text-slate-800 dark:text-slate-200">
@@ -162,6 +162,12 @@ export default function Hero() {
               structured Forex and cryptocurrency education at Apex Trading Academy.
               Led by Bhathiya Sooriarachchi.
             </p>
+
+            {/* Subtle Sinhala Trust Line */}
+            <div className="mt-3.5 flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-800/40 px-3.5 py-1.5 rounded-full w-fit">
+              <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
+              <span>ශ්‍රී ලංකාවේ විශ්වාසවන්තම ප්‍රායෝගික A to Z Trading අධ්‍යාපනය</span>
+            </div>
 
             {/* CTA Buttons */}
             <div

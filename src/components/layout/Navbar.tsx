@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Education", href: "#education" },
+  { label: "SL Market", href: "#sl-market" },
   { label: "Roadmap", href: "#roadmap" },
   { label: "Courses", href: "#courses" },
   { label: "Platforms", href: "#platforms" },
@@ -59,8 +60,19 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <Logo size="md" />
+        {/* Logo & Brand Identity */}
+        <div className="flex items-center gap-3">
+          <Logo size="md" tagline="LANKAFOREX.COM" />
+          <div className="hidden xl:flex flex-col border-l border-slate-200 dark:border-slate-800 pl-3">
+            <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200 leading-tight">
+              Apex Trading Academy
+            </span>
+            <span className="text-[10px] font-mono font-semibold text-amber-600 dark:text-amber-400 flex items-center gap-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              LankaForex.com
+            </span>
+          </div>
+        </div>
 
         {/* Desktop Navigation Links */}
         <nav

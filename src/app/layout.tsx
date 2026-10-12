@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ACADEMY_CONFIG } from "@/data/academy";
 import { COURSES } from "@/data/courses";
+import { FAQS } from "@/data/faqs";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 const inter = Inter({
@@ -18,38 +19,56 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Apex Trading Academy — A TO Z TRADING | Premium Forex & Crypto Academy",
+  metadataBase: new URL("https://lankaforex.com"),
+  title: {
+    default:
+      "Lanka Forex — Apex Trading Academy | #1 Forex & Crypto Education in Sri Lanka",
+    template: "%s | LankaForex.com",
+  },
   description:
-    "Master Forex and Cryptocurrency trading with Apex Trading Academy. Structured 4-phase education covering market foundations, price action technical analysis, and institutional risk management led by Bhathiya Sooriarachchi.",
-  keywords: [
-    "Apex Trading Academy",
-    "Forex Trading Sri Lanka",
-    "Crypto Trading Education Sri Lanka",
-    "Bhathiya Sooriarachchi",
-    "A to Z Trading",
-    "Forex Course Sri Lanka",
-    "Technical Analysis Course",
-    "Risk Management Forex",
-    "Binance Bybit Trading Course",
+    "Lanka Forex (LankaForex.com) by Apex Trading Academy is Sri Lanka's leading institute for Forex and Cryptocurrency education. Master institutional Price Action, London & New York session liquidity, Binance P2P, and disciplined risk management with lead strategist Bhathiya Sooriarachchi.",
+  keywords: ACADEMY_CONFIG.seo.keywords,
+  authors: [
+    { name: "Lanka Forex", url: "https://lankaforex.com" },
+    { name: "Apex Trading Academy" },
+    { name: "Bhathiya Sooriarachchi" },
   ],
-  authors: [{ name: "Apex Trading Academy" }, { name: "Bhathiya Sooriarachchi" }],
-  creator: "Apex Trading Academy",
-  publisher: "Apex Trading Academy",
+  creator: "Lanka Forex — Apex Trading Academy",
+  publisher: "Lanka Forex (LankaForex.com)",
+  alternates: {
+    canonical: "https://lankaforex.com",
+  },
+  verification: {
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+      "google-site-verification-token-here",
+  },
   openGraph: {
     type: "website",
     locale: "en_LK",
-    url: "https://apextradingacademy.com",
-    title: "Apex Trading Academy — A TO Z TRADING | Premium Forex & Crypto Academy",
+    url: "https://lankaforex.com",
+    title:
+      "Lanka Forex — Apex Trading Academy | #1 Forex & Crypto Education in Sri Lanka",
     description:
-      "Structured Forex and cryptocurrency trading education. Learn price action, session dynamics, and disciplined risk management.",
-    siteName: "Apex Trading Academy",
+      "Lanka Forex (LankaForex.com) by Apex Trading Academy provides structured Price Action education, Sri Lanka market hours (SLST) breakdown, Binance P2P guidance, and funded trader mentorship with Bhathiya Sooriarachchi.",
+    siteName: "Lanka Forex — Apex Trading Academy",
+    images: [
+      {
+        url: "/images/trading-desk.webp",
+        width: 1200,
+        height: 630,
+        alt: "Lanka Forex - Apex Trading Academy Sri Lanka",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Apex Trading Academy — A TO Z TRADING",
+    title:
+      "Lanka Forex — Apex Trading Academy | #1 Forex & Crypto Education in Sri Lanka",
     description:
-      "Master Forex and Crypto trading from beginner to advanced with structured, disciplined education.",
-    creator: "@apextrading",
+      "Master Forex and Crypto trading in Sri Lanka with structured Price Action education, risk management, and live session breakdowns.",
+    creator: "@lankaforex",
+    images: ["/images/trading-desk.webp"],
   },
   robots: {
     index: true,
@@ -69,40 +88,139 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Structured schema for Google search
+  // Comprehensive structured JSON-LD schemas for Google, Perplexity, and AI Search Engines
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "EducationalOrganization",
-        "@id": "https://bhathiforex.com/#organization",
-        name: ACADEMY_CONFIG.brandName,
-        legalName: ACADEMY_CONFIG.legalName,
-        url: "https://bhathiforex.com",
+        "@type": "WebSite",
+        "@id": "https://lankaforex.com/#website",
+        url: "https://lankaforex.com",
+        name: "Lanka Forex",
+        alternateName: ACADEMY_CONFIG.alternateNames,
         description:
-          "Professional Forex and Cryptocurrency trading education academy based in Sri Lanka.",
+          "Sri Lanka's premier Forex, Cryptocurrency, and institutional Price Action education portal.",
+        inLanguage: ["en-LK", "si-LK"],
+        publisher: {
+          "@id": "https://lankaforex.com/#organization",
+        },
+      },
+      {
+        "@type": ["EducationalOrganization", "LocalBusiness"],
+        "@id": "https://lankaforex.com/#organization",
+        name: "Lanka Forex — Apex Trading Academy",
+        legalName: ACADEMY_CONFIG.legalName,
+        alternateName: ACADEMY_CONFIG.alternateNames,
+        url: "https://lankaforex.com",
+        logo: "https://lankaforex.com/images/bhathiya-sooriarachchi.png",
+        image: "https://lankaforex.com/images/trading-desk.webp",
+        description:
+          "Leading financial market educational institute in Sri Lanka specializing in professional Forex, Crypto derivatives, Price Action technical analysis, and risk management.",
         telephone: ACADEMY_CONFIG.displayPhone,
         email: ACADEMY_CONFIG.email,
+        founder: {
+          "@id": "https://lankaforex.com/#founder",
+        },
         address: {
           "@type": "PostalAddress",
+          streetAddress: "Colombo 03",
+          addressLocality: "Colombo",
+          addressRegion: "Western Province",
+          postalCode: "00300",
           addressCountry: "LK",
         },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 6.9271,
+          longitude: 79.8612,
+        },
+        priceRange: "LKR 12,500 - LKR 40,000",
+        sameAs: [
+          "https://t.me/bhathiforex",
+          "https://youtube.com/@bhathiforex",
+          "https://instagram.com/bhathiforex",
+        ],
+      },
+      {
+        "@type": "Person",
+        "@id": "https://lankaforex.com/#founder",
+        name: ACADEMY_CONFIG.mentor.name,
+        jobTitle: ACADEMY_CONFIG.mentor.title,
+        worksFor: {
+          "@id": "https://lankaforex.com/#organization",
+        },
+        description: ACADEMY_CONFIG.mentor.bio,
+        image: "https://lankaforex.com/images/bhathiya-sooriarachchi.png",
+        sameAs: [
+          "https://youtube.com/@bhathiforex",
+          "https://instagram.com/bhathiforex",
+          "https://t.me/bhathiforex",
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://lankaforex.com/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://lankaforex.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Market Sessions (SLST)",
+            item: "https://lankaforex.com/#sl-market",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Courses & Curricula",
+            item: "https://lankaforex.com/#courses",
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: "Student Community Forum",
+            item: "https://lankaforex.com/#community",
+          },
+          {
+            "@type": "ListItem",
+            position: 5,
+            name: "FAQ & Regulatory Clarity",
+            item: "https://lankaforex.com/#faq",
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://lankaforex.com/#faq",
+        mainEntity: FAQS.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
       },
       ...COURSES.map((course) => ({
         "@type": "Course",
-        "@id": `https://bhathiforex.com/#course-${course.id}`,
+        "@id": `https://lankaforex.com/#course-${course.id}`,
         name: course.name,
         description: course.description,
         provider: {
           "@type": "Organization",
-          name: ACADEMY_CONFIG.brandName,
-          sameAs: "https://bhathiforex.com",
+          name: "Lanka Forex — Apex Trading Academy",
+          sameAs: "https://lankaforex.com",
         },
         offers: {
           "@type": "Offer",
           price: course.priceLKR,
           priceCurrency: "LKR",
           availability: "https://schema.org/InStock",
+          category: "Paid",
         },
       })),
     ],

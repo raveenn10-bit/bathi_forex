@@ -5,6 +5,7 @@ import Image from "next/image";
 interface LogoProps {
   className?: string;
   showTagline?: boolean;
+  tagline?: string;
   size?: "sm" | "md" | "lg" | "xl";
   onlyBadge?: boolean;
 }
@@ -12,6 +13,7 @@ interface LogoProps {
 export default function Logo({
   className = "",
   showTagline = true,
+  tagline = "LankaForex.com",
   size = "md",
   onlyBadge = false,
 }: LogoProps) {
@@ -78,7 +80,7 @@ export default function Logo({
             >
               <span>ACADEMY</span>
               <span className="text-amber-500 font-bold">•</span>
-              <span className="text-slate-600 dark:text-slate-300">A TO Z TRADING</span>
+              <span className="text-slate-600 dark:text-slate-300">{tagline}</span>
             </span>
           )}
         </div>

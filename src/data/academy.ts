@@ -1,4 +1,18 @@
+export interface MarketSessionSLST {
+  session: string;
+  city: string;
+  timeSLST: string;
+  utcTime: string;
+  statusNotes: string;
+  keyPairs: string[];
+  volatility: "Low" | "Medium" | "High" | "Peak";
+}
+
 export interface AcademyConfig {
+  siteUrl: string;
+  domain: string;
+  portalName: string;
+  alternateNames: string[];
   brandName: string;
   tagline: string;
   legalName: string;
@@ -7,6 +21,11 @@ export interface AcademyConfig {
   email: string;
   location: string;
   foundedYear: number;
+  seo: {
+    googleSiteVerification: string;
+    keywords: string[];
+  };
+  marketSessionsSLST: MarketSessionSLST[];
   mentor: {
     name: string;
     role: string;
@@ -45,6 +64,16 @@ export interface AcademyConfig {
 }
 
 export const ACADEMY_CONFIG: AcademyConfig = {
+  siteUrl: "https://lankaforex.com",
+  domain: "lankaforex.com",
+  portalName: "Lanka Forex (LankaForex.com)",
+  alternateNames: [
+    "Lanka Forex",
+    "LankaForex",
+    "LankaForex.com",
+    "Bhathi Forex",
+    "Apex Trading Academy Sri Lanka",
+  ],
   brandName: "Apex Trading Academy",
   tagline: "A TO Z TRADING",
   legalName: "Apex Trading Academy",
@@ -54,6 +83,76 @@ export const ACADEMY_CONFIG: AcademyConfig = {
   email: "apextradingacademy9@gmail.com",
   location: "Sri Lanka",
   foundedYear: 2021,
+  seo: {
+    googleSiteVerification:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+    keywords: [
+      "Lanka Forex",
+      "LankaForex",
+      "LankaForex.com",
+      "Apex Trading Academy",
+      "Bhathiya Sooriarachchi",
+      "Bhathi Forex",
+      "Forex trading Sri Lanka",
+      "Forex classes Sri Lanka Sinhala",
+      "Learn Forex trading in Sinhala",
+      "Best Forex academy in Sri Lanka",
+      "Crypto trading course Sri Lanka",
+      "Binance P2P Sri Lanka cashout",
+      "Bybit trading Sri Lanka",
+      "Forex market hours Sri Lanka time SLST",
+      "London New York golden overlap SLST",
+      "Central Bank of Sri Lanka Forex education",
+      "FTMO funded account Sri Lanka",
+      "FundedNext challenge Sri Lanka",
+      "Price action technical analysis Sri Lanka",
+      "Gold trading XAUUSD Sri Lanka strategy",
+      "Crypto futures leverage risk management",
+      "Professional trader Colombo Kandy Galle",
+    ],
+  },
+  marketSessionsSLST: [
+    {
+      session: "Asian / Tokyo Session",
+      city: "Tokyo, Sydney & Singapore",
+      timeSLST: "5:30 AM – 2:30 PM SLST",
+      utcTime: "00:00 – 09:00 UTC",
+      statusNotes:
+        "Initial liquidity accumulation and Asian range establishment. High activity in JPY, AUD, and NZD currency pairs before European opening bells.",
+      keyPairs: ["USD/JPY", "AUD/USD", "NZD/USD", "EUR/JPY"],
+      volatility: "Medium",
+    },
+    {
+      session: "European / London Session",
+      city: "London & Frankfurt",
+      timeSLST: "1:30 PM – 10:30 PM SLST",
+      utcTime: "08:00 – 17:00 UTC",
+      statusNotes:
+        "Primary trend initialization, institutional liquidity injection, and Judas swings. Significant directional expansion across major European currency pairs and Gold.",
+      keyPairs: ["EUR/USD", "GBP/USD", "GBP/JPY", "EUR/GBP", "XAU/USD (Gold)"],
+      volatility: "High",
+    },
+    {
+      session: "North American / New York Session",
+      city: "New York",
+      timeSLST: "6:30 PM – 3:30 AM SLST",
+      utcTime: "13:00 – 22:00 UTC",
+      statusNotes:
+        "Aggressive institutional volume driven by US macroeconomic events (CPI, NFP, FOMC interest rates). Massive trading participation from global investment funds.",
+      keyPairs: ["EUR/USD", "GBP/USD", "USD/CAD", "USD/JPY", "XAU/USD", "BTC/USDT"],
+      volatility: "High",
+    },
+    {
+      session: "London & New York Golden Overlap",
+      city: "London × New York",
+      timeSLST: "6:30 PM – 10:30 PM SLST",
+      utcTime: "13:00 – 17:00 UTC",
+      statusNotes:
+        "Peak global volume and maximum financial liquidity. The single best time window for Sri Lankan traders to execute disciplined intraday trades with ultra-tight broker spreads.",
+      keyPairs: ["XAU/USD (Gold)", "EUR/USD", "GBP/USD", "US30", "NAS100", "BTC/USDT"],
+      volatility: "Peak",
+    },
+  ],
   mentor: {
     name: "Bhathiya Sooriarachchi",
     role: "Founder, Lecturer & Crypto Master",

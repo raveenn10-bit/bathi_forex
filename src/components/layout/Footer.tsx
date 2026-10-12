@@ -18,12 +18,21 @@ export default function Footer() {
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-200 dark:border-slate-800">
           {/* Col 1: Brand & Bio */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
-            <Logo size="lg" />
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed">
-              Apex Trading Academy is an elite trading academy dedicated to demystifying global currency and cryptocurrency markets through systematic price action, mathematical risk management, and disciplined execution.
+          <div className="lg:col-span-5 flex flex-col gap-3">
+            <Logo size="lg" tagline="LANKAFOREX.COM" />
+            
+            {/* LankaForex.com Official Digital Education Portal Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-300/50 dark:border-sky-500/30 bg-sky-50/80 dark:bg-sky-950/50 px-3 py-1 text-xs font-mono font-bold text-sky-700 dark:text-sky-300 w-fit">
+              <span className="text-sm">🇱🇰</span>
+              <span>LankaForex.com</span>
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-sans font-semibold">Official Portal</span>
+            </div>
+
+            <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed">
+              LankaForex.com is the official digital education portal for Apex Trading Academy. Founded by Bhathiya Sooriarachchi in Sri Lanka, dedicated to demystifying global currency and cryptocurrency markets through systematic price action, mathematical risk management, and disciplined execution.
             </p>
-            <div className="flex items-center gap-3 mt-2 text-xs text-slate-500 dark:text-slate-400">
+            <div className="flex items-center gap-3 mt-1 text-xs text-slate-500 dark:text-slate-400">
               <span className="inline-flex items-center gap-1.5 text-amber-600 dark:text-amber-400 font-semibold">
                 <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                 A TO Z TRADING
@@ -52,6 +61,14 @@ export default function Footer() {
               <li>
                 <a href="#education" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                   Educational Features
+                </a>
+              </li>
+              <li>
+                <a href="#sl-market" className="hover:text-amber-500 transition-colors text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1.5">
+                  <span>Sri Lanka Market Hub</span>
+                  <span className="rounded-full bg-amber-100 dark:bg-amber-950/60 border border-transparent dark:border-amber-500/20 px-1.5 py-0.2 text-[9px] text-amber-700 dark:text-amber-300">
+                    SLST LIVE
+                  </span>
                 </a>
               </li>
               <li>
@@ -153,10 +170,10 @@ export default function Footer() {
         {/* Bottom Copyright Strip */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400 pt-4">
           <p>
-            &copy; {currentYear} {ACADEMY_CONFIG.brandName} &bull; All rights reserved.
+            &copy; {currentYear} {ACADEMY_CONFIG.brandName} &bull; LankaForex.com &bull; All rights reserved.
           </p>
           <p className="flex items-center gap-1.5">
-            <span>Built with precision for disciplined traders</span>
+            <span>Official Sri Lankan Forex & Crypto Digital Education Portal</span>
           </p>
         </div>
       </div>

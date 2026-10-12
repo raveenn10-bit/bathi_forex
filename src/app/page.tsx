@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import Mentor from "@/components/sections/Mentor";
 import Features from "@/components/sections/Features";
+import SriLankaTradingHub from "@/components/sections/SriLankaTradingHub";
 import Roadmap from "@/components/sections/Roadmap";
 import Pricing from "@/components/sections/Pricing";
 import Platforms from "@/components/sections/Platforms";
@@ -34,7 +35,10 @@ export default function Home() {
       {/* 4. Trading Education Features */}
       <Features />
 
-      {/* 5. Four-Phase Trading Roadmap */}
+      {/* 5. Sri Lanka Market Intelligence & Session Hub */}
+      <SriLankaTradingHub />
+
+      {/* 6. Four-Phase Trading Roadmap */}
       <Roadmap />
 
       {/* 6. Courses & Pricing */}
