@@ -7,14 +7,20 @@ import Roadmap from "@/components/sections/Roadmap";
 import Pricing from "@/components/sections/Pricing";
 import Platforms from "@/components/sections/Platforms";
 import TradeProofs from "@/components/sections/TradeProofs";
+import StudentCommunity from "@/components/sections/StudentCommunity";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import AmbientTradingBackground from "@/components/ui/AmbientTradingBackground";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen w-full bg-brand-bg text-white overflow-x-hidden">
+      {/* Cinematic Ambient Trading Candlestick Background */}
+      <AmbientTradingBackground />
+
       {/* 1. Sticky Navigation */}
       <Navbar />
 
@@ -39,17 +45,23 @@ export default function Home() {
       {/* 8. Live Market Execution & Verification */}
       <TradeProofs />
 
-      {/* 9. Why Choose BHATHI FOREX */}
+      {/* 9. Official Student WhatsApp Forum & Community */}
+      <StudentCommunity />
+
+      {/* 10. Why Choose BHATHI FOREX */}
       <WhyChooseUs />
 
-      {/* 9. Frequently Asked Questions */}
+      {/* 11. Frequently Asked Questions */}
       <FAQ />
 
-      {/* 10. Contact & Enrollment */}
+      {/* 12. Contact & Enrollment */}
       <Contact />
 
-      {/* 11. Premium Footer */}
+      {/* 13. Premium Footer */}
       <Footer />
+
+      {/* 14. Sticky Floating WhatsApp & Student Forum Widget */}
+      <FloatingWhatsApp />
     </main>
   );
 }

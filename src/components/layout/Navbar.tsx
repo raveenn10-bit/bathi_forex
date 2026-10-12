@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { label: "Courses", href: "#courses" },
   { label: "Platforms", href: "#platforms" },
   { label: "Proof", href: "#proofs" },
+  { label: "Community", href: "#community" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];

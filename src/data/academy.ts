@@ -24,6 +24,19 @@ export interface AcademyConfig {
       detail: string;
     }[];
   };
+  studentCommunity: {
+    title: string;
+    tagline: string;
+    description: string;
+    whatsappGroupUrl: string;
+    memberCountBadge: string;
+    telegramGroupUrl?: string;
+    benefits: {
+      title: string;
+      description: string;
+      iconName?: string;
+    }[];
+  };
   socialLinks: {
     platform: string;
     url: string;
@@ -38,7 +51,7 @@ export const ACADEMY_CONFIG: AcademyConfig = {
   // Change to verified WhatsApp number in international format without leading '+' or spaces, e.g. "94770000000"
   whatsappNumber: "94771234567",
   displayPhone: "+94 77 123 4567",
-  email: "support@bhathiforex.com",
+  email: "apextradingacademy9@gmail.com",
   location: "Sri Lanka",
   foundedYear: 2021,
   mentor: {
@@ -79,6 +92,32 @@ export const ACADEMY_CONFIG: AcademyConfig = {
         value: "100%",
         label: "Objective Focus",
         detail: "Strictly educational, non-gambling market methodology",
+      },
+    ],
+  },
+  studentCommunity: {
+    title: "BHATHI FOREX Official Student WhatsApp Forum",
+    tagline: "Exclusive Peer Learning & Live Market Discussions",
+    description: "Join over 1,500+ aspiring and active Sri Lankan Forex & Crypto traders. Get daily price action markups, high-probability market alerts, and engage in real-time discussions directly with Bhathiya Sooriarachchi.",
+    whatsappGroupUrl: "https://chat.whatsapp.com/invite/bhathiforex",
+    memberCountBadge: "1,500+ Active Traders",
+    telegramGroupUrl: "https://t.me/bhathiforex",
+    benefits: [
+      {
+        title: "Daily Chart Markups & Watchlists",
+        description: "Receive pre-market multi-timeframe analysis on XAUUSD (Gold), GBPUSD, EURUSD, and Bitcoin before London & New York volatility kicks in.",
+      },
+      {
+        title: "Direct Access to Bhathiya",
+        description: "Submit chart queries, get constructive feedback on your trade entries, and discuss risk calculations directly with the founder.",
+      },
+      {
+        title: "High-Impact Macro Alerts",
+        description: "Instant breakdowns during CPI, NFP, and interest rate announcements so you never get trapped in manipulated market spikes.",
+      },
+      {
+        title: "Supportive Student Trading Culture",
+        description: "Network with disciplined fellow students who prioritize mathematical risk management over gambling and excessive leverage.",
       },
     ],
   },

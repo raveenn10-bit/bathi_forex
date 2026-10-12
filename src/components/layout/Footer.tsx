@@ -70,6 +70,19 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#proofs" className="hover:text-white transition-colors">
+                  Live Trade Proofs
+                </a>
+              </li>
+              <li>
+                <a href="#community" className="hover:text-white transition-colors text-emerald-400 font-semibold flex items-center gap-1">
+                  <span>Student WhatsApp Forum</span>
+                  <span className="rounded-full bg-emerald-400/20 px-1.5 py-0.2 text-[9px] text-emerald-400">
+                    1.5K+
+                  </span>
+                </a>
+              </li>
+              <li>
                 <a href="#faq" className="hover:text-white transition-colors">
                   FAQ
                 </a>
@@ -109,7 +122,13 @@ export default function Footer() {
                 Enrollment Inquiries
               </span>
               <p className="mt-1 text-[11px] text-brand-muted">
-                {ACADEMY_CONFIG.displayPhone} &bull; {ACADEMY_CONFIG.email}
+                {ACADEMY_CONFIG.displayPhone} &bull;{" "}
+                <a
+                  href={`mailto:${ACADEMY_CONFIG.email}`}
+                  className="hover:text-brand-purpleLight transition-colors underline decoration-white/20 underline-offset-2"
+                >
+                  {ACADEMY_CONFIG.email}
+                </a>
               </p>
             </div>
           </div>

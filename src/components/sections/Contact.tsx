@@ -87,16 +87,19 @@ export default function Contact() {
                 <div className="text-[10px] text-brand-muted mt-1">Available on WhatsApp</div>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-brand-card/80 p-5 backdrop-blur-md">
-                <div className="flex items-center gap-2.5 text-xs text-brand-muted mb-1">
+              <a
+                href={`mailto:${ACADEMY_CONFIG.email}`}
+                className="group rounded-2xl border border-white/10 bg-brand-card/80 p-5 backdrop-blur-md transition-all duration-300 hover:border-brand-purple/50 hover:bg-white/5 block"
+              >
+                <div className="flex items-center gap-2.5 text-xs text-brand-muted mb-1 group-hover:text-brand-purpleLight transition-colors">
                   <Mail className="h-4 w-4 text-brand-purpleLight" />
                   <span>Official Email</span>
                 </div>
-                <div className="font-mono text-sm font-bold text-white truncate">
+                <div className="font-mono text-sm font-bold text-white truncate group-hover:text-brand-purpleLight transition-colors">
                   {ACADEMY_CONFIG.email}
                 </div>
-                <div className="text-[10px] text-brand-muted mt-1">Direct support inquiries</div>
-              </div>
+                <div className="text-[10px] text-brand-muted mt-1">Direct support & admissions inquiries</div>
+              </a>
 
               <div className="rounded-2xl border border-white/10 bg-brand-card/80 p-5 backdrop-blur-md sm:col-span-2">
                 <div className="flex items-center gap-2.5 text-xs text-brand-muted mb-1">

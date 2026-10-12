@@ -55,3 +55,68 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+/* Ambient Trading Background Animations */
+@keyframes candleFloatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    transform: translate3d(0, -16px, 0);
+  }
+}
+
+@keyframes candleFloatReverse {
+  0%, 100% {
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    transform: translate3d(0, 15px, 0);
+  }
+}
+
+@keyframes chartPulseSubtle {
+  0%, 100% {
+    opacity: 0.12;
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    opacity: 0.22;
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes depthPulse {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.animate-candle-float {
+  animation: candleFloatSlow 9s ease-in-out infinite;
+}
+
+.animate-candle-float-reverse {
+  animation: candleFloatReverse 11s ease-in-out infinite;
+}
+
+.animate-chart-pulse {
+  animation: chartPulseSubtle 8s ease-in-out infinite;
+}
+
+.animate-depth-pulse {
+  animation: depthPulse 3.5s ease-in-out infinite;
+}
+
+/* Subtle Technical Grid Matrix */
+.trading-matrix-grid {
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+  background-size: 52px 52px, 52px 52px, 52px 52px;
+}
+
