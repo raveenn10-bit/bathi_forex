@@ -100,7 +100,7 @@ export default function FloatingWhatsApp() {
   return (
     <aside
       aria-label="WhatsApp Student Support & Forum"
-      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end pointer-events-none"
+      className="fixed bottom-20 right-3 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end pointer-events-none"
     >
       {/* 1. Popover Preview Card */}
       {isOpen && (
@@ -148,7 +148,7 @@ export default function FloatingWhatsApp() {
                     </span>
                   </div>
                   <p className="truncate text-[11px] text-white/80 font-medium">
-                    BHATHI FOREX Official
+                    Apex Trading Academy Official
                   </p>
                   <p className="flex items-center gap-1 text-[10px] font-mono text-emerald-200">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 animate-pulse" />
@@ -253,7 +253,7 @@ export default function FloatingWhatsApp() {
             {/* Bottom Security Note */}
             <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-white/50">
               <ShieldCheck className="h-3 w-3 text-emerald-400" />
-              <span>Official BHATHI FOREX Support • 100% Free Consultation</span>
+              <span>Official Apex Trading Academy Support • 100% Free Consultation</span>
             </div>
           </div>
         </div>
@@ -265,14 +265,14 @@ export default function FloatingWhatsApp() {
         {!isOpen && (
           <div
             onClick={handleToggle}
-            className="hidden sm:flex cursor-pointer items-center gap-2 rounded-full border border-emerald-500/30 bg-brand-card/90 px-3.5 py-1.5 text-xs font-semibold text-white shadow-glass backdrop-blur-md transition-all duration-300 hover:border-emerald-500/60 hover:scale-105"
+            className="hidden sm:flex cursor-pointer items-center gap-2 rounded-full border border-slate-200 bg-white/95 px-3.5 py-1.5 text-xs font-semibold text-slate-800 shadow-glass backdrop-blur-md transition-all duration-300 hover:border-emerald-500/60 hover:scale-105"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            <span className="text-white/90">Chat with Bhathiya</span>
-            <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] font-bold text-emerald-400">
+            <span className="text-slate-800 font-semibold">Chat with Bhathiya</span>
+            <span className="rounded bg-emerald-50 px-1.5 py-0.5 font-mono text-[9px] font-bold text-emerald-700 border border-emerald-200">
               ONLINE
             </span>
           </div>

@@ -35,27 +35,27 @@ export default function FAQ() {
   };
 
   const whatsappInquiry = getGeneralInquiryWhatsAppUrl(
-    "Hello BHATHI FOREX, I have a question regarding course admissions."
+    "Hello Apex Trading Academy, I have a question regarding course admissions."
   );
 
   return (
     <section
       id="faq"
       ref={containerRef}
-      className="relative w-full py-24 sm:py-32 overflow-hidden bg-brand-bgSecondary/20 border-t border-white/5"
+      className="relative w-full py-24 sm:py-32 overflow-hidden"
     >
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-purple/30 bg-brand-purple/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-purpleLight mb-3">
-            <HelpCircle className="h-3.5 w-3.5 text-brand-purpleLight" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 bg-sky-50 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-sky-700 mb-3 shadow-sm">
+            <HelpCircle className="h-3.5 w-3.5 text-sky-600" />
             <span>CLARITY & TRANSPARENCY</span>
           </div>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-base text-brand-muted">
-            Everything you need to know about learning Forex and Cryptocurrency with BHATHI FOREX.
+          <p className="mt-4 text-base text-slate-600">
+            Everything you need to know about learning Forex and Cryptocurrency with Apex Trading Academy.
           </p>
         </div>
 
@@ -67,10 +67,10 @@ export default function FAQ() {
             return (
               <div
                 key={faq.id}
-                className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
+                className={`overflow-hidden rounded-2xl border transition-all duration-300 shadow-glass ${
                   isOpen
-                    ? "border-brand-purple/50 bg-brand-card shadow-purpleGlow"
-                    : "border-white/10 bg-brand-card/60 hover:border-white/20 hover:bg-brand-card/90"
+                    ? "border-sky-300 bg-white shadow-card"
+                    : "border-slate-200 bg-white/85 hover:border-slate-300 hover:bg-white"
                 }`}
               >
                 <button
@@ -81,14 +81,14 @@ export default function FAQ() {
                   aria-controls={`faq-answer-${faq.id}`}
                   id={`faq-question-${faq.id}`}
                 >
-                  <span className="font-heading text-base sm:text-lg font-bold text-white pr-4">
+                  <span className="font-heading text-base sm:text-lg font-bold text-slate-900 pr-4">
                     {faq.question}
                   </span>
                   <div
                     className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-transform duration-300 ${
                       isOpen
-                        ? "rotate-180 border-brand-purple bg-brand-purple text-white shadow-purpleGlow"
-                        : "border-white/10 bg-brand-bgSecondary text-brand-muted"
+                        ? "rotate-180 border-sky-400 bg-sky-500 text-white shadow-sm"
+                        : "border-slate-200 bg-slate-50 text-slate-500"
                     }`}
                   >
                     <ChevronDown className="h-4 w-4" />
@@ -100,9 +100,9 @@ export default function FAQ() {
                     id={`faq-answer-${faq.id}`}
                     role="region"
                     aria-labelledby={`faq-question-${faq.id}`}
-                    className="border-t border-white/5 px-5 sm:px-6 pb-6 pt-2"
+                    className="border-t border-slate-100 px-5 sm:px-6 pb-6 pt-2"
                   >
-                    <p className="text-sm leading-relaxed text-brand-muted">
+                    <p className="text-sm leading-relaxed text-slate-600">
                       {faq.answer}
                     </p>
                   </div>
@@ -113,12 +113,12 @@ export default function FAQ() {
         </div>
 
         {/* Still have questions CTA */}
-        <div className="mt-12 rounded-2xl border border-white/10 bg-brand-card/80 p-6 text-center backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 rounded-2xl border border-slate-200 bg-white/90 p-6 text-center backdrop-blur-xl shadow-glass flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-left">
-            <h4 className="font-heading text-base font-bold text-white">
+            <h4 className="font-heading text-base font-bold text-slate-900">
               Have a specific question not covered here?
             </h4>
-            <p className="text-xs text-brand-muted mt-1">
+            <p className="text-xs text-slate-500 mt-1">
               Reach out directly to our academy admissions team on WhatsApp.
             </p>
           </div>
@@ -126,7 +126,7 @@ export default function FAQ() {
             href={whatsappInquiry.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-purple to-brand-purpleLight px-5 py-2.5 text-xs font-bold text-white shadow-purpleGlow hover:scale-105 transition-all"
+            className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#38B6FF] to-[#0284c7] px-5 py-2.5 text-xs font-bold text-white shadow-md shadow-sky-500/20 hover:scale-105 transition-all"
           >
             <MessageSquare className="h-3.5 w-3.5" />
             <span>Ask on WhatsApp</span>

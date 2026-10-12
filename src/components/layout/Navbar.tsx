@@ -53,8 +53,8 @@ export default function Navbar() {
       id="main-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "border-b border-white/10 bg-brand-bg/85 py-3.5 shadow-glass backdrop-blur-xl"
-          : "bg-transparent py-5"
+          ? "border-b border-slate-200/80 bg-white/80 py-3.5 shadow-glass backdrop-blur-xl text-slate-900"
+          : "bg-transparent py-5 text-slate-900"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -63,7 +63,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav
-          className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-brand-bgSecondary/70 px-5 py-1.5 shadow-glass backdrop-blur-lg"
+          className="hidden md:flex items-center gap-1 rounded-full border border-slate-200/90 bg-white/90 px-3 py-1 shadow-sm backdrop-blur-md"
           aria-label="Main Navigation"
         >
           {NAV_LINKS.map((item) => {
@@ -72,16 +72,13 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className={`relative px-3 py-1.5 text-xs font-medium tracking-wide transition-colors ${
+                className={`px-3 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 ${
                   isActive
-                    ? "text-white font-semibold"
-                    : "text-brand-muted hover:text-white"
+                    ? "bg-sky-50 text-sky-700 font-bold"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/60"
                 }`}
               >
                 {item.label}
-                {isActive && (
-                  <span className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full bg-gradient-to-r from-brand-purple via-brand-purpleLight to-brand-gold" />
-                )}
               </a>
             );
           })}
@@ -93,11 +90,11 @@ export default function Navbar() {
             href={whatsappInquiry.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-brand-purple via-[#8545E0] to-brand-purpleLight px-5 py-2.5 text-xs font-semibold text-white shadow-purpleGlow transition-all duration-300 hover:scale-[1.03] hover:shadow-brand-purple/50 active:scale-[0.98]"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-sky-600 hover:bg-sky-700 px-5 py-2.5 text-xs font-bold text-white shadow-sm shadow-sky-600/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
           >
             <MessageSquare className="h-3.5 w-3.5 transition-transform group-hover:rotate-12" />
             <span>Enroll Now</span>
-            <ArrowUpRight className="h-3.5 w-3.5 opacity-80 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="h-3.5 w-3.5 opacity-90 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
 
@@ -105,7 +102,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-brand-bgSecondary/80 text-white md:hidden hover:border-white/20"
+          className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white/90 text-slate-800 md:hidden hover:border-slate-300"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
         >
@@ -115,27 +112,27 @@ export default function Navbar() {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-white/10 bg-brand-bgSecondary/95 px-6 py-6 shadow-2xl backdrop-blur-2xl">
+        <div className="md:hidden border-b border-slate-200 bg-white/95 px-6 py-6 shadow-2xl backdrop-blur-2xl">
           <nav className="flex flex-col gap-3">
             {NAV_LINKS.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium text-brand-muted hover:bg-white/5 hover:text-white transition-colors"
+                className="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-colors"
               >
                 <span>{item.label}</span>
-                <span className="text-xs text-brand-purpleLight">&rarr;</span>
+                <span className="text-xs text-sky-600 font-bold">&rarr;</span>
               </a>
             ))}
 
-            <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
+            <div className="mt-4 pt-4 border-t border-slate-200 flex flex-col gap-3">
               <a
                 href={whatsappInquiry.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-purple to-brand-purpleLight px-5 py-3 text-sm font-semibold text-white shadow-purpleGlow"
+                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#38B6FF] to-[#0284c7] px-5 py-3 text-sm font-semibold text-white shadow-md"
               >
                 <MessageSquare className="h-4 w-4" />
                 <span>Enroll via WhatsApp</span>

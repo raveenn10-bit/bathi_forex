@@ -98,50 +98,50 @@ export default function StudentCommunity() {
   const { studentCommunity } = ACADEMY_CONFIG;
   const whatsappGroupUrl = studentCommunity.whatsappGroupUrl;
   const directInquiryUrl = getGeneralInquiryWhatsAppUrl(
-    "Hello Bhathiya Sooriarachchi, I would like to inquire about joining the BHATHI FOREX student forum and learning program."
+    "Hello Bhathiya Sooriarachchi, I would like to inquire about joining the Apex Trading Academy student forum and learning program."
   );
 
   return (
     <section
       id="community"
       ref={containerRef}
-      className="relative w-full py-24 sm:py-32 overflow-hidden bg-brand-bgSecondary/30 border-y border-white/5"
+      className="relative w-full py-24 sm:py-32 overflow-hidden"
     >
       {/* Ambient background glows */}
       <div className="pointer-events-none absolute left-1/4 top-1/4 -translate-y-1/2 h-[450px] w-[450px] rounded-full bg-emerald-500/10 blur-[150px]" />
-      <div className="pointer-events-none absolute right-1/4 bottom-1/4 h-[420px] w-[420px] rounded-full bg-brand-gold/10 blur-[150px]" />
+      <div className="pointer-events-none absolute right-1/4 bottom-1/4 h-[420px] w-[420px] rounded-full bg-[#FFD3B6]/30 blur-[150px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-400 mb-4 shadow-[0_0_20px_rgba(37,211,102,0.2)]">
-            <WhatsAppGlyph className="h-4 w-4 fill-emerald-400" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-700 mb-4 shadow-sm">
+            <WhatsAppGlyph className="h-4 w-4 fill-emerald-600" />
             <span>OFFICIAL STUDENT FORUM & TRADING COMMUNITY</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Join the Official{" "}
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-brand-gold bg-clip-text text-transparent">
+            <span className="text-emerald-700">
               Student WhatsApp Forum
             </span>
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-brand-muted max-w-2xl mx-auto leading-relaxed">
-            Connect with 1,500+ active Sri Lankan traders, get daily market breakdowns, and receive direct chart guidance from Bhathiya Sooriarachchi.
+          <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Connect with 1,500+ active Sri Lankan traders, get daily market breakdowns, and receive direct chart guidance from Bhathiya Sooriarachchi at Apex Trading Academy.
           </p>
 
           {/* Quick Metrics Bar */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-white/80">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-700">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/90 px-3 py-1 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>1,500+ Active Members</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1">
-              <CheckCircle2 className="h-3.5 w-3.5 text-brand-gold" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/90 px-3 py-1 shadow-sm">
+              <CheckCircle2 className="h-3.5 w-3.5 text-amber-600" />
               <span>Daily Pre-Market Watchlists</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1">
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/90 px-3 py-1 shadow-sm">
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
               <span>Zero Spam & Anti-Gambling Rule</span>
             </span>
           </div>
@@ -159,33 +159,33 @@ export default function StudentCommunity() {
             return (
               <div
                 key={benefit.title}
-                className="group relative rounded-3xl border border-white/10 bg-brand-card/75 p-6 shadow-glass backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/40 hover:bg-brand-card hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_25px_rgba(37,211,102,0.15)] flex flex-col justify-between"
+                className="group relative rounded-3xl border border-slate-200 bg-white/85 p-6 shadow-glass backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/40 hover:bg-white hover:shadow-card flex flex-col justify-between"
               >
                 <div>
                   {/* Top Bar with Number and Tag */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 shadow-[0_0_15px_rgba(37,211,102,0.15)] transition-transform duration-300 group-hover:scale-110">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald-500/30 bg-emerald-50 text-emerald-600 shadow-sm transition-transform duration-300 group-hover:scale-110">
                       <IconComponent className="h-5 w-5" />
                     </div>
-                    <span className="font-mono text-xs font-bold text-brand-muted/60">
+                    <span className="font-mono text-xs font-bold text-slate-400">
                       {`0${idx + 1}`}
                     </span>
                   </div>
 
-                  <span className="inline-block font-mono text-[10px] font-bold tracking-wider uppercase text-brand-gold mb-2">
+                  <span className="inline-block font-mono text-[10px] font-bold tracking-wider uppercase text-amber-600 mb-2">
                     {pillText}
                   </span>
 
-                  <h3 className="font-heading text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
+                  <h3 className="font-heading text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
                     {benefit.title}
                   </h3>
 
-                  <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-brand-muted">
+                  <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-slate-600">
                     {benefit.description}
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-white/5 flex items-center gap-1.5 text-[11px] font-medium text-emerald-400/90">
+                <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700">
                   <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
                   <span>Included for All Forum Students</span>
                 </div>
@@ -197,36 +197,36 @@ export default function StudentCommunity() {
         {/* Big, High-Converting WhatsApp Forum CTA Card */}
         <div
           ref={ctaRef}
-          className="relative overflow-hidden rounded-3xl border border-emerald-500/30 bg-gradient-to-b from-brand-card via-[#161d28] to-brand-bg p-8 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.6),0_0_40px_rgba(37,211,102,0.15)] backdrop-blur-2xl"
+          className="relative overflow-hidden rounded-3xl border border-emerald-400/40 bg-gradient-to-b from-white via-slate-50 to-white p-8 sm:p-10 lg:p-12 shadow-glass backdrop-blur-2xl"
         >
           {/* Subtle background glow spots */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-emerald-500/20 blur-3xl" />
-          <div className="pointer-events-none absolute -left-20 -bottom-20 h-72 w-72 rounded-full bg-brand-gold/15 blur-3xl" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl" />
+          <div className="pointer-events-none absolute -left-20 -bottom-20 h-72 w-72 rounded-full bg-[#FFD3B6]/25 blur-3xl" />
 
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left: Conversion Copy & CTA Buttons */}
             <div className="lg:col-span-7 flex flex-col gap-6">
               {/* Trust Badges Strip */}
               <div className="flex flex-wrap items-center gap-2.5">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/50 bg-emerald-500/15 px-3 py-1 font-mono text-xs font-bold text-emerald-400 shadow-[0_0_15px_rgba(37,211,102,0.25)]">
-                  <WhatsAppGlyph className="h-3.5 w-3.5 fill-emerald-400" />
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-50 px-3 py-1 font-mono text-xs font-bold text-emerald-700 shadow-sm">
+                  <WhatsAppGlyph className="h-3.5 w-3.5 fill-emerald-600" />
                   <span>1,500+ Active Traders</span>
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-full border border-brand-gold/40 bg-brand-gold/10 px-3 py-1 font-mono text-xs font-bold text-brand-gold">
-                  <Sparkles className="h-3 w-3" />
+                <span className="inline-flex items-center gap-1 rounded-full border border-amber-400/40 bg-amber-50 px-3 py-1 font-mono text-xs font-bold text-amber-700">
+                  <Sparkles className="h-3 w-3 text-amber-500" />
                   <span>100% Free Educational Forum</span>
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs font-medium text-brand-muted">
-                  <Lock className="h-3 w-3" />
+                <span className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1 font-mono text-xs font-medium text-slate-600 shadow-sm">
+                  <Lock className="h-3 w-3 text-slate-500" />
                   <span>Zero Spam Guarantee</span>
                 </span>
               </div>
 
               <div>
-                <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
                   Accelerate Your Trading Journey with Sri Lanka&apos;s Most Disciplined Community
                 </h3>
-                <p className="mt-3 text-sm sm:text-base leading-relaxed text-brand-muted">
+                <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
                   Never trade in isolation again. Join our verified student community to review trade setups, discuss real macroeconomic events, and elevate your discipline alongside fellow dedicated traders under Bhathiya&apos;s direct supervision.
                 </p>
               </div>
@@ -237,7 +237,7 @@ export default function StudentCommunity() {
                   href={whatsappGroupUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#25D366] via-[#20BA5C] to-[#128C7E] px-7 py-4 text-sm font-bold text-white shadow-[0_4px_25px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_35px_rgba(37,211,102,0.6)] active:scale-[0.98]"
+                  className="group relative inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#25D366] via-[#20BA5C] to-[#128C7E] px-7 py-4 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition-all duration-300 hover:scale-[1.03] hover:shadow-emerald-500/40 active:scale-[0.98]"
                 >
                   <WhatsAppGlyph className="h-5 w-5 fill-white" />
                   <span>Join Student WhatsApp Forum</span>
@@ -248,25 +248,25 @@ export default function StudentCommunity() {
                   href={directInquiryUrl.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-gold/40 bg-brand-gold/10 px-6 py-4 text-sm font-semibold text-brand-gold transition-all duration-300 hover:bg-brand-gold hover:text-brand-bg hover:border-brand-gold active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-amber-400/60 bg-amber-50 px-6 py-4 text-sm font-semibold text-amber-800 transition-all duration-300 hover:bg-amber-100 active:scale-[0.98]"
                 >
-                  <MessageSquare className="h-4 w-4" />
+                  <MessageSquare className="h-4 w-4 text-amber-600" />
                   <span>Direct 1:1 Inquiries</span>
                 </a>
               </div>
 
               {/* Ethical Community Rules */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-brand-muted border-t border-white/10">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-slate-600 border-t border-slate-200">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
                   <span>Strict Moderator Screening</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
                   <span>No Scam Bots or Signals</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
                   <span>Focus on Pure Price Action</span>
                 </div>
               </div>
@@ -281,7 +281,7 @@ export default function StudentCommunity() {
                     <div className="relative h-10 w-10 shrink-0 rounded-full border-2 border-brand-gold/50 bg-black/50 overflow-hidden">
                       <Image
                         src="/images/logo.png"
-                        alt="BHATHI FOREX Group Avatar"
+                        alt="Apex Trading Academy Group Avatar"
                         fill
                         sizes="40px"
                         className="object-cover"
@@ -290,7 +290,7 @@ export default function StudentCommunity() {
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-1.5">
                         <h4 className="truncate font-heading text-xs font-bold text-white">
-                          BHATHI FOREX Official Forum
+                          Apex Trading Academy Official Forum
                         </h4>
                         <span className="inline-flex h-3.5 w-3.5 items-center justify-center rounded-full bg-emerald-400 text-[9px] font-bold text-black">
                           ✓

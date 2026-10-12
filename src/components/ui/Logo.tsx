@@ -69,10 +69,7 @@ export default function Logo({
           <span
             className={`font-heading font-extrabold leading-none tracking-tight text-slate-900 ${textSizes[size]}`}
           >
-            APEX{" "}
-            <span className="bg-gradient-to-r from-sky-500 via-blue-600 to-amber-500 bg-clip-text text-transparent">
-              TRADING
-            </span>
+            APEX <span className="text-sky-600">TRADING</span>
           </span>
 
           {showTagline && (
@@ -80,8 +77,8 @@ export default function Logo({
               className={`font-mono font-bold uppercase text-slate-500 mt-1 flex items-center gap-1.5 ${taglineSizes[size]}`}
             >
               <span>ACADEMY</span>
-              <span className="text-amber-500 font-extrabold">&bull;</span>
-              <span className="text-sky-600 font-bold">A TO Z</span>
+              <span className="text-amber-500 font-bold">•</span>
+              <span className="text-slate-600">A TO Z TRADING</span>
             </span>
           )}
         </div>

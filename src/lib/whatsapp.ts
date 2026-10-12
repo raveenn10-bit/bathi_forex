@@ -12,7 +12,7 @@ export function isValidInternationalPhone(phone: string): boolean {
 
 /**
  * Returns formatted wa.me URL for course enrollment.
- * Format: "Hello BHATHI FOREX, I am interested in the [COURSE NAME] course priced at LKR [PRICE]. Please send me the enrollment details."
+ * Format: "Hello Apex Trading Academy, I am interested in the [COURSE NAME] course priced at LKR [PRICE]. Please send me the enrollment details."
  */
 export function getCourseEnrollmentWhatsAppUrl(
   courseName: string,
@@ -22,7 +22,7 @@ export function getCourseEnrollmentWhatsAppUrl(
   const isConfigured = isValidInternationalPhone(phone);
 
   const formattedPrice = new Intl.NumberFormat("en-LK").format(priceLKR);
-  const message = `Hello BHATHI FOREX, I am interested in the ${courseName} course priced at LKR ${formattedPrice}. Please send me the enrollment details.`;
+  const message = `Hello Apex Trading Academy, I am interested in the ${courseName} course priced at LKR ${formattedPrice}. Please send me the enrollment details.`;
   const encodedMessage = encodeURIComponent(message);
 
   if (!isConfigured) {
@@ -51,7 +51,7 @@ export function getGeneralInquiryWhatsAppUrl(customNote?: string): {
 
   const message =
     customNote ||
-    `Hello BHATHI FOREX, I would like to inquire about your trading academy courses and enrollment process.`;
+    `Hello Apex Trading Academy, I would like to inquire about your trading academy courses and enrollment process.`;
   const encodedMessage = encodeURIComponent(message);
 
   if (!isConfigured) {

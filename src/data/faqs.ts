@@ -45,7 +45,7 @@ export const FAQS: FAQItem[] = [
     id: "faq-risk",
     question: "Is trading risky?",
     answer:
-      "Yes. Trading Forex and cryptocurrencies carries significant financial risk and is not suitable for everyone. Market prices can fluctuate unpredictably. At BHATHI FOREX, our core focus is teaching capital preservation, defensive position sizing, and disciplined risk-to-reward ratios so you can navigate the markets responsibly without gambling.",
+      "Yes. Trading Forex and cryptocurrencies carries significant financial risk and is not suitable for everyone. Market prices can fluctuate unpredictably. At Apex Trading Academy, our core focus is teaching capital preservation, defensive position sizing, and disciplined risk-to-reward ratios so you can navigate the markets responsibly without gambling.",
     category: "Risk",
   },
 ];

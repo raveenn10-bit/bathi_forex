@@ -25,6 +25,7 @@ import {
   Sparkles,
   Maximize2,
 } from "lucide-react";
+import MobileAutoScrollTrack from "@/components/ui/MobileAutoScrollTrack";
 
 export interface TradeProof {
   id: string;
@@ -129,7 +130,7 @@ const TRADE_PROOFS: TradeProof[] = [
       { label: "Validation", value: "Resistance Rejection" },
     ],
     description:
-      "Short 50X on BTC with Bybit Referral Code 02Q4O8Z. Institutional timing at major resistance rejection with multi-stage take-profit scaling under the official BHATHI FOREX Bybit partnership.",
+      "Short 50X on BTC with Bybit Referral Code 02Q4O8Z. Institutional timing at major resistance rejection with multi-stage take-profit scaling under the official Apex Trading Academy Bybit partnership.",
     coreRule:
       "High leverage demands flawless invalidation levels and instant execution discipline. Learn liquidity mechanics before touching derivative leverage.",
     referralCode: "02Q4O8Z",
@@ -265,29 +266,29 @@ export default function TradeProofs() {
     <section
       id="proofs"
       ref={containerRef}
-      className="relative w-full py-24 sm:py-32 overflow-hidden bg-brand-bgSecondary/30 border-t border-white/5"
+      className="relative w-full py-24 sm:py-32 overflow-hidden bg-slate-50/50 border-t border-slate-200/80"
     >
       {/* Background Ambience */}
-      <div className="pointer-events-none absolute -top-40 right-1/4 h-96 w-96 rounded-full bg-brand-purple/10 blur-[140px]" />
-      <div className="pointer-events-none absolute bottom-10 left-1/4 h-96 w-96 rounded-full bg-brand-gold/10 blur-[140px]" />
+      <div className="pointer-events-none absolute -top-40 right-1/4 h-96 w-96 rounded-full bg-sky-200/25 blur-[140px]" />
+      <div className="pointer-events-none absolute bottom-10 left-1/4 h-96 w-96 rounded-full bg-amber-100/35 blur-[140px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-brand-gold mb-3.5 shadow-goldGlow">
-            <ShieldCheck className="h-3.5 w-3.5 text-brand-gold" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 bg-sky-50 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-sky-700 mb-3.5 shadow-xs">
+            <ShieldCheck className="h-3.5 w-3.5 text-amber-500" />
             <span>LIVE MARKET EXECUTION &amp; VERIFICATION</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Verified Execution &amp;{" "}
-            <span className="bg-gradient-to-r from-brand-gold via-brand-purpleLight to-brand-purple bg-clip-text text-transparent">
+            <span className="text-sky-600">
               Real Results
             </span>
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base text-brand-muted leading-relaxed">
-            Real market orders. Real risk parameters. Real bank liquidations. Explore our verified trading records spanning MetaTrader 5 Forex, Binance Perpetual Futures, and Bybit derivative execution.
+          <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
+            Real market orders. Real risk parameters. Real bank liquidations. Explore our verified trading records spanning MetaTrader 5 Forex, Binance Perpetual Futures, and Bybit derivative execution at Apex Trading Academy.
           </p>
 
           {/* Interactive Category Filter Pills */}
@@ -303,8 +304,8 @@ export default function TradeProofs() {
                 onClick={() => setActiveCategory(tab.id as typeof activeCategory)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 border ${
                   activeCategory === tab.id
-                    ? "bg-brand-purple text-white border-brand-purpleLight shadow-purpleGlow"
-                    : "bg-brand-card/70 text-brand-muted border-white/10 hover:border-white/25 hover:text-white"
+                    ? "bg-sky-600 text-white border-sky-600 shadow-sm"
+                    : "bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
                 }`}
               >
                 {tab.label}
@@ -313,10 +314,154 @@ export default function TradeProofs() {
           </div>
         </div>
 
-        {/* 4 Proof Cards Grid */}
+        {/* Mobile Horizontal Auto-Scroll Proofs Track */}
+        <MobileAutoScrollTrack
+          badgeLabel="Execution Proofs • Auto-Scrolls LTR"
+          className="mb-4"
+        >
+          {filteredProofs.map((proof) => {
+            const originalIndex = TRADE_PROOFS.findIndex((p) => p.id === proof.id);
+
+            return (
+              <div
+                key={`mobile-${proof.id}`}
+                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden transition-all duration-300"
+              >
+                {/* Top Media Showcase Container */}
+                <div className="relative w-full bg-slate-50 border-b border-slate-100 p-4 pb-0">
+                  <div className="mb-3 flex items-center justify-between gap-2">
+                    <span
+                      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[10px] font-extrabold uppercase tracking-wider border ${getBadgeClasses(
+                        proof.badgeTheme
+                      )}`}
+                    >
+                      {proof.badge === "DISCIPLINED RISK" && (
+                        <Shield className="h-3 w-3" />
+                      )}
+                      {proof.badge === "FUTURES EXECUTION" && (
+                        <TrendingUp className="h-3 w-3" />
+                      )}
+                      {proof.badge === "P2P CASHOUT" && (
+                        <Wallet className="h-3 w-3" />
+                      )}
+                      <span>{proof.badge}</span>
+                    </span>
+
+                    <span className="font-mono text-[10px] font-semibold text-slate-600 bg-white px-2 py-0.5 rounded-md border border-slate-200 shadow-xs">
+                      {proof.platform}
+                    </span>
+                  </div>
+
+                  <div
+                    onClick={() => {
+                      setLightboxIndex(originalIndex);
+                      setZoomLevel(1);
+                    }}
+                    className="relative aspect-[9/13] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-sm cursor-pointer"
+                  >
+                    <Image
+                      src={proof.image}
+                      alt={proof.title}
+                      fill
+                      sizes="300px"
+                      className="object-cover object-top"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20 pointer-events-none" />
+
+                    <div className="absolute bottom-2.5 left-2.5 right-2.5 z-10">
+                      <div className="rounded-xl bg-black/75 p-2 backdrop-blur-md border border-white/15 flex items-center justify-between">
+                        <div className="truncate">
+                          <span className="block text-[9px] uppercase tracking-wider text-slate-300">
+                            {proof.heroStat.label}
+                          </span>
+                          <span
+                            className={`font-heading text-sm font-extrabold ${proof.heroStat.color}`}
+                          >
+                            {proof.heroStat.value}
+                          </span>
+                        </div>
+                        <div className="h-7 w-7 rounded-lg bg-white/20 flex items-center justify-center text-white shrink-0">
+                          <Maximize2 className="h-3.5 w-3.5" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Body & Proof Dossier */}
+                <div className="flex flex-1 flex-col justify-between p-4">
+                  <div>
+                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-amber-700 mb-1.5">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-amber-500 shrink-0" />
+                      <span className="truncate">{proof.verificationBadge}</span>
+                    </div>
+
+                    <h3 className="font-heading text-sm font-bold text-slate-900 leading-snug">
+                      {proof.title}
+                    </h3>
+                    <p className="mt-1 text-[11px] text-slate-600 leading-relaxed line-clamp-2">
+                      {proof.subtitle}
+                    </p>
+
+                    <div className="mt-3 grid grid-cols-2 gap-2 border-t border-slate-100 pt-2.5">
+                      {proof.metrics.slice(0, 2).map((m) => (
+                        <div
+                          key={m.label}
+                          className="rounded-lg bg-slate-50 p-1.5 border border-slate-100"
+                        >
+                          <span className="block text-[9px] text-slate-500">
+                            {m.label}
+                          </span>
+                          <span className="block font-mono text-xs font-bold text-slate-800 truncate">
+                            {m.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {proof.referralCode && (
+                      <div className="mt-2.5 flex items-center justify-between rounded-xl bg-amber-50 border border-amber-200 px-2.5 py-1 text-xs">
+                        <span className="text-[10px] font-medium text-amber-800">
+                          Code:
+                        </span>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            copyReferralCode(proof.referralCode!);
+                          }}
+                          className="inline-flex items-center gap-1 font-mono font-bold text-amber-700 hover:underline"
+                        >
+                          <span>{proof.referralCode}</span>
+                          {copiedCode === proof.referralCode ? (
+                            <Check className="h-3 w-3 text-emerald-600" />
+                          ) : (
+                            <Copy className="h-3 w-3" />
+                          )}
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      setLightboxIndex(originalIndex);
+                      setZoomLevel(1);
+                    }}
+                    className="mt-4 w-full rounded-xl border border-slate-200 bg-slate-50 py-2 px-3 text-center text-xs font-bold text-slate-700 transition-all duration-200 hover:bg-sky-50 hover:text-sky-700 hover:border-sky-300 flex items-center justify-center gap-1.5"
+                  >
+                    <span>View Proof</span>
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </MobileAutoScrollTrack>
+
+        {/* Desktop 4 Proof Cards Grid */}
         <div
           ref={cardsRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
+          className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
         >
           {filteredProofs.map((proof) => {
             const originalIndex = TRADE_PROOFS.findIndex((p) => p.id === proof.id);
@@ -324,10 +469,10 @@ export default function TradeProofs() {
             return (
               <div
                 key={proof.id}
-                className="group relative flex flex-col justify-between rounded-3xl border border-white/10 bg-brand-card/90 shadow-glass backdrop-blur-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-brand-purple/40 hover:shadow-purpleGlow"
+                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-300 hover:shadow-md"
               >
                 {/* Top Media Showcase Container */}
-                <div className="relative w-full bg-gradient-to-b from-[#161823] to-brand-bgSecondary p-4 pb-0">
+                <div className="relative w-full bg-slate-50 border-b border-slate-100 p-4 pb-0">
                   {/* Floating Top Badge Highlight */}
                   <div className="mb-3 flex items-center justify-between gap-2">
                     <span
@@ -347,7 +492,7 @@ export default function TradeProofs() {
                       <span>{proof.badge}</span>
                     </span>
 
-                    <span className="font-mono text-[10px] font-semibold text-brand-muted/90 bg-white/5 px-2 py-0.5 rounded-md border border-white/5">
+                    <span className="font-mono text-[10px] font-semibold text-slate-600 bg-white px-2 py-0.5 rounded-md border border-slate-200 shadow-xs">
                       {proof.platform}
                     </span>
                   </div>
@@ -358,7 +503,7 @@ export default function TradeProofs() {
                       setLightboxIndex(originalIndex);
                       setZoomLevel(1);
                     }}
-                    className="relative aspect-[9/13] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/60 shadow-xl cursor-pointer group/shot"
+                    className="relative aspect-[9/13] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-sm cursor-pointer group/shot"
                   >
                     <Image
                       src={proof.image}
@@ -374,7 +519,7 @@ export default function TradeProofs() {
 
                     {/* Hover Inspect Overlay */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/shot:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                      <div className="inline-flex items-center gap-2 rounded-full bg-brand-purple/90 px-3.5 py-1.5 text-xs font-bold text-white shadow-purpleGlow transform scale-95 group-hover/shot:scale-100 transition-transform">
+                      <div className="inline-flex items-center gap-2 rounded-full bg-sky-600 px-3.5 py-1.5 text-xs font-bold text-white shadow-sm transform scale-95 group-hover/shot:scale-100 transition-transform">
                         <ZoomIn className="h-3.5 w-3.5" />
                         <span>Inspect &amp; Zoom</span>
                       </div>
@@ -382,9 +527,9 @@ export default function TradeProofs() {
 
                     {/* Bottom Stat Chip inside photo */}
                     <div className="absolute bottom-2.5 left-2.5 right-2.5 z-10">
-                      <div className="rounded-xl bg-black/75 p-2 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                      <div className="rounded-xl bg-black/75 p-2 backdrop-blur-md border border-white/15 flex items-center justify-between">
                         <div className="truncate">
-                          <span className="block text-[9px] uppercase tracking-wider text-brand-muted">
+                          <span className="block text-[9px] uppercase tracking-wider text-slate-300">
                             {proof.heroStat.label}
                           </span>
                           <span
@@ -393,7 +538,7 @@ export default function TradeProofs() {
                             {proof.heroStat.value}
                           </span>
                         </div>
-                        <div className="h-7 w-7 rounded-lg bg-white/10 flex items-center justify-center text-white/80 shrink-0">
+                        <div className="h-7 w-7 rounded-lg bg-white/20 flex items-center justify-center text-white shrink-0">
                           <Maximize2 className="h-3.5 w-3.5" />
                         </div>
                       </div>
@@ -405,30 +550,30 @@ export default function TradeProofs() {
                 <div className="flex flex-1 flex-col justify-between p-5">
                   <div>
                     {/* Verification Stamp */}
-                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-brand-gold mb-2">
-                      <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
+                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-amber-700 mb-2">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-amber-500 shrink-0" />
                       <span className="truncate">{proof.verificationBadge}</span>
                     </div>
 
                     {/* Title & Subtitle */}
-                    <h3 className="font-heading text-base font-bold text-white group-hover:text-brand-purpleLight transition-colors leading-snug">
+                    <h3 className="font-heading text-base font-bold text-slate-900 group-hover:text-sky-600 transition-colors leading-snug">
                       {proof.title}
                     </h3>
-                    <p className="mt-1 text-xs text-brand-muted leading-relaxed line-clamp-2">
+                    <p className="mt-1 text-xs text-slate-600 leading-relaxed line-clamp-2">
                       {proof.subtitle}
                     </p>
 
                     {/* Mini Metrics List */}
-                    <div className="mt-4 grid grid-cols-2 gap-2 border-t border-white/10 pt-3">
+                    <div className="mt-4 grid grid-cols-2 gap-2 border-t border-slate-100 pt-3">
                       {proof.metrics.slice(0, 2).map((m) => (
                         <div
                           key={m.label}
-                          className="rounded-lg bg-white/[0.03] p-2 border border-white/5"
+                          className="rounded-lg bg-slate-50 p-2 border border-slate-100"
                         >
-                          <span className="block text-[10px] text-brand-muted">
+                          <span className="block text-[10px] text-slate-500">
                             {m.label}
                           </span>
-                          <span className="block font-mono text-xs font-bold text-white truncate">
+                          <span className="block font-mono text-xs font-bold text-slate-800 truncate">
                             {m.value}
                           </span>
                         </div>
@@ -437,8 +582,8 @@ export default function TradeProofs() {
 
                     {/* Bybit Partner Code Callout if available */}
                     {proof.referralCode && (
-                      <div className="mt-3 flex items-center justify-between rounded-xl bg-brand-purple/10 border border-brand-purple/30 px-3 py-1.5 text-xs">
-                        <span className="text-[11px] font-medium text-brand-muted">
+                      <div className="mt-3 flex items-center justify-between rounded-xl bg-amber-50 border border-amber-200 px-3 py-1.5 text-xs">
+                        <span className="text-[11px] font-medium text-amber-800">
                           Partner Code:
                         </span>
                         <button
@@ -446,11 +591,11 @@ export default function TradeProofs() {
                             e.stopPropagation();
                             copyReferralCode(proof.referralCode!);
                           }}
-                          className="inline-flex items-center gap-1 font-mono font-bold text-brand-gold hover:underline"
+                          className="inline-flex items-center gap-1 font-mono font-bold text-amber-700 hover:underline"
                         >
                           <span>{proof.referralCode}</span>
                           {copiedCode === proof.referralCode ? (
-                            <Check className="h-3 w-3 text-emerald-400" />
+                            <Check className="h-3 w-3 text-emerald-600" />
                           ) : (
                             <Copy className="h-3 w-3" />
                           )}
@@ -465,7 +610,7 @@ export default function TradeProofs() {
                       setLightboxIndex(originalIndex);
                       setZoomLevel(1);
                     }}
-                    className="mt-5 w-full rounded-xl border border-white/10 bg-white/5 py-2.5 px-3 text-center text-xs font-bold text-white transition-all duration-200 hover:bg-brand-purple hover:border-brand-purpleLight hover:shadow-purpleGlow flex items-center justify-center gap-2 group/btn"
+                    className="mt-5 w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 px-3 text-center text-xs font-bold text-slate-700 transition-all duration-200 hover:bg-sky-50 hover:text-sky-700 hover:border-sky-300 flex items-center justify-center gap-2 group/btn"
                   >
                     <span>View Verified Proof</span>
                     <ArrowUpRight className="h-3.5 w-3.5 transform transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
@@ -477,59 +622,59 @@ export default function TradeProofs() {
         </div>
 
         {/* Verification Guarantee Strip */}
-        <div className="mt-14 rounded-2xl border border-white/10 bg-brand-card/60 p-5 sm:p-6 shadow-glass backdrop-blur-xl">
+        <div className="mt-14 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center sm:text-left">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-white">
+                <span className="block text-xs font-bold text-slate-900">
                   100% Real Screenshots
                 </span>
-                <span className="text-[11px] text-brand-muted">
+                <span className="text-[11px] text-slate-500">
                   Zero simulated demos or mockups
                 </span>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-brand-purple/10 border border-brand-purple/30 flex items-center justify-center text-brand-purpleLight shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600 shrink-0">
                 <Layers className="h-5 w-5" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-white">
+                <span className="block text-xs font-bold text-slate-900">
                   Multi-Market Coverage
                 </span>
-                <span className="text-[11px] text-brand-muted">
-                  Forex, Gold, Bitcoin & Altcoins
+                <span className="text-[11px] text-slate-500">
+                  Forex, Gold, Bitcoin &amp; Altcoins
                 </span>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
                 <Sparkles className="h-5 w-5" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-white">
+                <span className="block text-xs font-bold text-slate-900">
                   Official Bybit Partner
                 </span>
-                <span className="text-[11px] text-brand-muted">
-                  Referral code: <code className="font-mono text-brand-gold">02Q4O8Z</code>
+                <span className="text-[11px] text-slate-500">
+                  Referral code: <code className="font-mono text-amber-700 font-bold">02Q4O8Z</code>
                 </span>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-600 shrink-0">
                 <Wallet className="h-5 w-5" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-white">
+                <span className="block text-xs font-bold text-slate-900">
                   Verified P2P Cashouts
                 </span>
-                <span className="text-[11px] text-brand-muted">
+                <span className="text-[11px] text-slate-500">
                   Proven bank settlement workflow
                 </span>
               </div>
@@ -538,18 +683,18 @@ export default function TradeProofs() {
         </div>
 
         {/* Mandatory Educational & Regulatory Risk Disclaimer */}
-        <div className="mt-10 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 sm:p-6 backdrop-blur-md">
+        <div className="mt-10 rounded-2xl border border-amber-200 bg-amber-50/70 p-5 sm:p-6">
           <div className="flex items-start gap-3.5">
-            <AlertTriangle className="h-5 w-5 text-amber-400 shrink-0 mt-0.5" />
-            <div className="space-y-1.5 text-xs leading-relaxed text-brand-muted">
-              <h4 className="font-heading text-sm font-bold text-amber-300">
+            <AlertTriangle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+            <div className="space-y-1.5 text-xs leading-relaxed text-slate-700">
+              <h4 className="font-heading text-sm font-bold text-amber-900">
                 Official Regulatory &amp; Educational Risk Disclaimer
               </h4>
               <p>
-                <strong className="text-white">Educational Illustrative Purpose Only:</strong> All trading execution logs, MT5 order tickets, Binance Futures PnL share cards, Bybit derivative positions, and Binance P2P liquidation receipts displayed on this page reflect authentic historical trades executed by the BHATHI FOREX lead educator. They are documented strictly for academic demonstration to illustrate proper risk-to-reward ratios, position sizing discipline, and capital realization procedures.
+                <strong className="text-slate-900">Educational Illustrative Purpose Only:</strong> All trading execution logs, MT5 order tickets, Binance Futures PnL share cards, Bybit derivative positions, and Binance P2P liquidation receipts displayed on this page reflect authentic historical trades executed by the Apex Trading Academy lead educator. They are documented strictly for academic demonstration to illustrate proper risk-to-reward ratios, position sizing discipline, and capital realization procedures.
               </p>
               <p>
-                <strong className="text-white">Capital Risk Warning:</strong> Trading foreign currencies (Forex), precious metals (Gold/XAUUSD), and high-leverage cryptocurrency futures carries a high level of risk and may result in the loss of your invested capital. Leverage amplifies both profits and losses. Past performance shown is not an indicator or guarantee of future trading success. Never risk capital that you cannot afford to lose. BHATHI FOREX is an educational academy and does not provide financial investment advisory services, manage external pooled accounts, or solicit funds.
+                <strong className="text-slate-900">Capital Risk Warning:</strong> Trading foreign currencies (Forex), precious metals (Gold/XAUUSD), and high-leverage cryptocurrency futures carries a high level of risk and may result in the loss of your invested capital. Leverage amplifies both profits and losses. Past performance shown is not an indicator or guarantee of future trading success. Never risk capital that you cannot afford to lose. Apex Trading Academy is an educational academy and does not provide financial investment advisory services, manage external pooled accounts, or solicit funds.
               </p>
             </div>
           </div>
@@ -788,7 +933,7 @@ export default function TradeProofs() {
                 <a
                   href={
                     getGeneralInquiryWhatsAppUrl(
-                      `Hello BHATHI FOREX, I viewed your verified trade "${currentProof.title}" (${currentProof.heroStat.value}) and would like to learn how to master this execution method.`
+                      `Hello Apex Trading Academy, I viewed your verified trade "${currentProof.title}" (${currentProof.heroStat.value}) and would like to learn how to master this execution method.`
                     ).url
                   }
                   target="_blank"

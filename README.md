@@ -1,34 +1,37 @@
-# BHATHI FOREX — A TO Z TRADING
-## Premium Forex & Crypto Academy Landing Page
+# Apex Trading Academy — A TO Z TRADING
+## Premium Forex & Crypto Academy Web Application
 
-Production-ready, high-performance, cinematic single-page landing page for **BHATHI FOREX — A TO Z TRADING**. Engineered with Next.js 14 App Router, TypeScript, Tailwind CSS, and custom GSAP ScrollTrigger animations.
+Production-ready, high-performance, institutional single-page platform for **Apex Trading Academy — A TO Z TRADING**. Engineered with Next.js 14 App Router, TypeScript, Tailwind CSS, native mobile app navigation, and custom GSAP ScrollTrigger animations.
 
 ---
 
 ## 💎 Features & Architecture
 
-- **Dark Luxury Fintech Aesthetic**: Designed with navy & charcoal backgrounds (`#12141D`, `#181B27`, `#202331`), purple gradients (`#995DE8`, `#B17AF5`), and refined gold accents (`#D6B15E`).
+- **Light Silver Institutional Theme**: Tailored with executive light silver backgrounds (`#F4F7FB`, `#FFFFFF`), deep ocean blue (`#0284C7`), soft ocean breeze accents (`#E0F2FE`), and warm champagne/gold highlights (`#D97706`).
+- **Native Mobile App Experience**: Fixed bottom navigation dock (`MobileAppDock.tsx`) with haptic feedback and left-to-right touch-swipeable auto-scroll tracks across key sections.
+- **Official 3D Golden Emblem**: High-resolution official brand crest integrated across navigation, mentor showcase, and student forum.
 - **Interactive Trading Terminal & Candlestick Charts**: Live interactive chart mockup with bullish/bearish candle wicks, support/resistance levels, order fill states, and live price fluctuations.
-- **Cinematic GSAP Animation Timeline**: Precision staggered hero entrance, smooth ScrollTrigger reveals, progressive roadmap drawing, and responsive motion handling.
-- **WhatsApp Course Enrollment Engine**: Pre-formatted, course-specific `wa.me` URL generation for frictionless conversion with zero backend required.
-- **Accessible Components**: Semantic HTML5 tags, ARIA-expanded FAQ accordions, keyboard accessibility, and `prefers-reduced-motion` compliance.
+- **Verified Trade Proofs & Live Market Execution**: Dedicated showcase featuring MT5 execution, Binance Futures breakout, Bybit partnership, and P2P liquidation.
+- **Official Student WhatsApp Forum**: 1,500+ student trading forum with instant WhatsApp enrollment and daily market breakdowns.
 - **Enterprise SEO & Schema Markup**: Pre-configured JSON-LD structured data for `EducationalOrganization` and `Course`, automated `sitemap.xml`, and `robots.txt`.
 
 ---
 
-## 📚 11 Complete Website Sections
+## 📚 Complete Platform Sections
 
-1. **Sticky Navigation Bar**: Dynamic blur on scroll, active section spy, BHATHI FOREX geometric emblem, and responsive mobile drawer.
-2. **Cinematic Hero**: Split-layout hero with eyebrow badge, Space Grotesk headline, description, CTAs, and floating trading dashboard mockup.
-3. **About the Mentor**: Two-column layout presenting mentor background, teaching approach, and trading philosophy.
-4. **Trading Education Features**: Six core pillars covering Forex Fundamentals, Crypto, Technical Analysis, Risk Management, Psychology, and Exchange Navigation.
-5. **Four-Phase Trading Roadmap**: Progressive visual timeline with line-drawing animation (Foundations &rarr; Technical Analysis &rarr; Risk Management &rarr; Mastery).
-6. **Courses & Pricing**: Exact tuition structure (LKR 5,000 / 25,000 / 25,000 / 40,000) with Best Value badges and WhatsApp links.
-7. **Trading Platforms**: Educational tour of TradingView, Binance, Bybit, and MetaTrader interfaces.
-8. **Why Choose BHATHI FOREX**: Clear emphasis on risk management, practical concepts, and capital defense.
-9. **Frequently Asked Questions (FAQ)**: Animated 6-question accordion addressing admissions, courses, format, and risk.
-10. **Contact & Admissions**: Interactive course dispatcher with real-time WhatsApp message preview and direct channels.
-11. **Premium Footer**: Complete navigation, course directory, official hotline, copyright, and mandatory financial risk disclaimer.
+1. **Sticky Navigation Bar**: Dynamic frosted glass on scroll, active section spy, official golden emblem, and responsive mobile dock.
+2. **Executive Hero**: Clean typography, verified credentials, dual CTAs, and floating trading dashboard mockup.
+3. **About the Mentor**: Bhathiya Sooriarachchi profile, educational approach, and core philosophy.
+4. **Trading Education Features**: Core modules with mobile horizontal auto-scroll and desktop grid.
+5. **Four-Phase Trading Roadmap**: Progressive visual timeline with auto-scroll on mobile.
+6. **Courses & Tuition Structure**: 4 tiers (LKR 5,000 / 25,000 / 25,000 / 40,000) with instant WhatsApp enrollment.
+7. **Trading Platforms**: Clean tour of TradingView, Binance, Bybit (with referral code `02Q4O8Z`), and MetaTrader 5.
+8. **Live Trade Proofs**: Real documented execution records with interactive lightbox inspection.
+9. **Student WhatsApp Forum**: 1,500+ active trader community with live chat simulation and direct access.
+10. **Why Choose Apex Trading Academy**: Clear emphasis on risk management, math, and capital defense.
+11. **Frequently Asked Questions (FAQ)**: Interactive 6-question accordion addressing admissions, courses, format, and risk.
+12. **Contact & Admissions**: Interactive course dispatcher with real-time WhatsApp message preview and direct channels.
+13. **Executive Footer**: Complete navigation, course directory, official email (`apextradingacademy9@gmail.com`), and risk disclaimer.
 
 ---
 
@@ -40,11 +43,11 @@ All business parameters, phone numbers, and course details are centralized for e
 Edit `src/data/academy.ts`:
 ```typescript
 export const ACADEMY_CONFIG = {
-  brandName: "BHATHI FOREX",
+  brandName: "Apex Trading Academy",
   tagline: "A TO Z TRADING",
-  whatsappNumber: "94771234567", // Enter digits only without '+' or spaces
+  whatsappNumber: "94771234567",
   displayPhone: "+94 77 123 4567",
-  email: "support@bhathiforex.com",
+  email: "apextradingacademy9@gmail.com",
   location: "Sri Lanka",
   ...
 };

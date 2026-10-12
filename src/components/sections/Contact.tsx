@@ -54,59 +54,59 @@ export default function Contact() {
       className="relative w-full py-24 sm:py-32 overflow-hidden"
     >
       {/* Dynamic Background Nebula */}
-      <div className="pointer-events-none absolute -bottom-20 right-1/4 h-[500px] w-[500px] rounded-full bg-brand-purple/20 blur-[150px]" />
-      <div className="pointer-events-none absolute -top-20 left-10 h-[400px] w-[400px] rounded-full bg-brand-gold/15 blur-[140px]" />
+      <div className="pointer-events-none absolute -bottom-20 right-1/4 h-[500px] w-[500px] rounded-full bg-[#7FCDFF]/25 blur-[150px]" />
+      <div className="pointer-events-none absolute -top-20 left-10 h-[400px] w-[400px] rounded-full bg-[#FFD3B6]/30 blur-[140px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div ref={contentRef} className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Heading & Contact Channels */}
           <div className="lg:col-span-6 flex flex-col gap-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand-purple/40 bg-brand-purple/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-purpleLight w-fit">
-              <Sparkles className="h-3.5 w-3.5 text-brand-gold" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-300 bg-sky-50 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-sky-700 w-fit shadow-sm">
+              <Sparkles className="h-3.5 w-3.5 text-amber-500" />
               <span>DIRECT ADMISSIONS</span>
             </div>
 
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Start Your Trading Journey
             </h2>
 
-            <p className="text-base text-brand-muted leading-relaxed max-w-lg">
-              Take the first step toward disciplined financial education. Select your preferred course below to connect directly with our admissions desk on WhatsApp.
+            <p className="text-base text-slate-600 leading-relaxed max-w-lg">
+              Take the first step toward disciplined financial education at Apex Trading Academy. Select your preferred course below to connect directly with our admissions desk on WhatsApp.
             </p>
 
             {/* Contact Details Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-              <div className="rounded-2xl border border-white/10 bg-brand-card/80 p-5 backdrop-blur-md">
-                <div className="flex items-center gap-2.5 text-xs text-brand-muted mb-1">
-                  <Phone className="h-4 w-4 text-brand-gold" />
+              <div className="rounded-2xl border border-slate-200 bg-white/85 p-5 backdrop-blur-md shadow-glass">
+                <div className="flex items-center gap-2.5 text-xs text-slate-500 mb-1">
+                  <Phone className="h-4 w-4 text-amber-600" />
                   <span>Direct Hotline</span>
                 </div>
-                <div className="font-mono text-sm font-bold text-white">
+                <div className="font-mono text-sm font-bold text-slate-900">
                   {ACADEMY_CONFIG.displayPhone}
                 </div>
-                <div className="text-[10px] text-brand-muted mt-1">Available on WhatsApp</div>
+                <div className="text-[10px] text-slate-400 mt-1">Available on WhatsApp</div>
               </div>
 
               <a
                 href={`mailto:${ACADEMY_CONFIG.email}`}
-                className="group rounded-2xl border border-white/10 bg-brand-card/80 p-5 backdrop-blur-md transition-all duration-300 hover:border-brand-purple/50 hover:bg-white/5 block"
+                className="group rounded-2xl border border-slate-200 bg-white/85 p-5 backdrop-blur-md shadow-glass transition-all duration-300 hover:border-sky-300 hover:bg-white block"
               >
-                <div className="flex items-center gap-2.5 text-xs text-brand-muted mb-1 group-hover:text-brand-purpleLight transition-colors">
-                  <Mail className="h-4 w-4 text-brand-purpleLight" />
+                <div className="flex items-center gap-2.5 text-xs text-slate-500 mb-1 group-hover:text-sky-600 transition-colors">
+                  <Mail className="h-4 w-4 text-sky-600" />
                   <span>Official Email</span>
                 </div>
-                <div className="font-mono text-sm font-bold text-white truncate group-hover:text-brand-purpleLight transition-colors">
+                <div className="font-mono text-sm font-bold text-slate-900 truncate group-hover:text-sky-600 transition-colors">
                   {ACADEMY_CONFIG.email}
                 </div>
-                <div className="text-[10px] text-brand-muted mt-1">Direct support & admissions inquiries</div>
+                <div className="text-[10px] text-slate-400 mt-1">Direct support & admissions inquiries</div>
               </a>
 
-              <div className="rounded-2xl border border-white/10 bg-brand-card/80 p-5 backdrop-blur-md sm:col-span-2">
-                <div className="flex items-center gap-2.5 text-xs text-brand-muted mb-1">
-                  <MapPin className="h-4 w-4 text-brand-gold" />
+              <div className="rounded-2xl border border-slate-200 bg-white/85 p-5 backdrop-blur-md shadow-glass sm:col-span-2">
+                <div className="flex items-center gap-2.5 text-xs text-slate-500 mb-1">
+                  <MapPin className="h-4 w-4 text-amber-600" />
                   <span>Academy Operations</span>
                 </div>
-                <div className="text-sm font-semibold text-white">
+                <div className="text-sm font-semibold text-slate-900">
                   {ACADEMY_CONFIG.location} &bull; Online & Hybrid Sessions Nationwide
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function Contact() {
 
             {/* Social media links */}
             <div>
-              <span className="block text-xs font-mono uppercase tracking-wider text-brand-muted mb-3">
+              <span className="block text-xs font-mono uppercase tracking-wider text-slate-500 mb-3">
                 Official Channels:
               </span>
               <div className="flex flex-wrap gap-2.5">
@@ -124,7 +124,7 @@ export default function Contact() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-xl border border-white/10 bg-brand-card/60 px-3.5 py-1.5 text-xs font-medium text-white/80 hover:border-brand-purple hover:text-white transition-all hover:scale-105"
+                    className="rounded-xl border border-slate-200 bg-white/85 px-3.5 py-1.5 text-xs font-medium text-slate-700 hover:border-sky-300 hover:text-sky-600 transition-all hover:scale-105 shadow-sm"
                   >
                     {social.platform}
                   </a>
@@ -135,16 +135,16 @@ export default function Contact() {
 
           {/* Right Column: Instant WhatsApp Enrollment Console */}
           <div className="lg:col-span-6">
-            <div className="relative rounded-3xl border border-brand-purple/40 bg-gradient-to-b from-[#201C33] via-brand-card to-brand-bgSecondary p-7 sm:p-9 shadow-purpleGlow backdrop-blur-2xl">
+            <div className="relative rounded-3xl border border-slate-200/90 bg-white/95 p-7 sm:p-9 shadow-glass backdrop-blur-2xl">
               {/* Top Card Eyebrow */}
-              <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
                 <div className="flex items-center gap-2">
-                  <MessageSquare className="h-5 w-5 text-brand-purpleLight" />
-                  <span className="font-heading text-sm font-bold text-white">
+                  <MessageSquare className="h-5 w-5 text-sky-600" />
+                  <span className="font-heading text-sm font-bold text-slate-900">
                     WhatsApp Course Dispatcher
                   </span>
                 </div>
-                <span className="font-mono text-[11px] text-brand-gold font-semibold uppercase">
+                <span className="font-mono text-[11px] text-amber-700 font-bold uppercase">
                   Instant Response
                 </span>
               </div>
@@ -152,7 +152,7 @@ export default function Contact() {
               {/* Course Selection Form */}
               <div className="space-y-5">
                 <div>
-                  <label className="block text-xs font-semibold text-white mb-2">
+                  <label className="block text-xs font-semibold text-slate-800 mb-2">
                     1. Select Your Desired Course:
                   </label>
                   <div className="grid grid-cols-1 gap-2.5">
@@ -165,19 +165,19 @@ export default function Contact() {
                           onClick={() => setSelectedCourseId(course.id)}
                           className={`flex items-center justify-between rounded-xl p-3.5 text-left border transition-all ${
                             isSelected
-                              ? "border-brand-purple bg-brand-purple/20 text-white shadow-purpleGlow"
-                              : "border-white/10 bg-brand-bgSecondary/60 text-brand-muted hover:border-white/20 hover:text-white"
+                              ? "border-sky-400 bg-sky-50/80 text-sky-900 shadow-sm"
+                              : "border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900"
                           }`}
                         >
                           <div>
-                            <div className="font-heading text-xs font-bold text-white">
+                            <div className="font-heading text-xs font-bold text-slate-900">
                               {course.name}
                             </div>
-                            <div className="text-[10px] text-brand-muted">
+                            <div className="text-[10px] text-slate-500">
                               {course.tagline}
                             </div>
                           </div>
-                          <div className="font-mono text-xs font-bold text-brand-gold">
+                          <div className="font-mono text-xs font-bold text-amber-700">
                             {formatLKR(course.priceLKR)}
                           </div>
                         </button>
@@ -188,13 +188,13 @@ export default function Contact() {
 
                 {/* Live Message Preview Box */}
                 <div>
-                  <label className="block text-xs font-semibold text-white mb-2">
+                  <label className="block text-xs font-semibold text-slate-800 mb-2">
                     2. Automated Message Preview:
                   </label>
-                  <div className="rounded-xl border border-white/10 bg-brand-bg/80 p-4 font-mono text-xs text-brand-muted leading-relaxed">
-                    &ldquo;Hello BHATHI FOREX, I am interested in the{" "}
-                    <span className="text-white font-bold">{selectedCourse.name}</span> course priced at{" "}
-                    <span className="text-brand-gold font-bold">{formatLKR(selectedCourse.priceLKR)}</span>. Please send me the enrollment details.&rdquo;
+                  <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-4 font-mono text-xs text-slate-600 leading-relaxed">
+                    &ldquo;Hello Apex Trading Academy, I am interested in the{" "}
+                    <span className="text-slate-900 font-bold">{selectedCourse.name}</span> course priced at{" "}
+                    <span className="text-amber-700 font-bold">{formatLKR(selectedCourse.priceLKR)}</span>. Please send me the enrollment details.&rdquo;
                   </div>
                 </div>
 
@@ -204,15 +204,15 @@ export default function Contact() {
                     href={enrollLink.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-brand-purple via-[#8B48E8] to-brand-purpleLight py-4 px-6 text-sm font-bold text-white shadow-purpleGlow transition-all duration-300 hover:scale-[1.02] hover:shadow-brand-purple/60 active:scale-[0.98]"
+                    className="group relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-[#38B6FF] via-[#0ea5e9] to-[#0284c7] py-4 px-6 text-sm font-bold text-white shadow-lg shadow-sky-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-sky-500/40 active:scale-[0.98]"
                   >
                     <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     <span>Send Message on WhatsApp</span>
                     <ArrowRight className="h-4 w-4 opacity-70" />
                   </a>
 
-                  <div className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-brand-muted text-center">
-                    <ShieldAlert className="h-3.5 w-3.5 text-brand-gold" />
+                  <div className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-slate-500 text-center">
+                    <ShieldAlert className="h-3.5 w-3.5 text-amber-600" />
                     <span>Direct connection &bull; No middleman &bull; Instant WhatsApp chat</span>
                   </div>
                 </div>

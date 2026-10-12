@@ -14,10 +14,11 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import AmbientTradingBackground from "@/components/ui/AmbientTradingBackground";
+import MobileAppDock from "@/components/ui/MobileAppDock";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full bg-brand-bg text-white overflow-x-hidden">
+    <main className="relative min-h-screen w-full bg-[#F4F7FB] text-slate-900 overflow-x-hidden pb-20 md:pb-0">
       {/* Cinematic Ambient Trading Candlestick Background */}
       <AmbientTradingBackground />
 
@@ -48,7 +49,7 @@ export default function Home() {
       {/* 9. Official Student WhatsApp Forum & Community */}
       <StudentCommunity />
 
-      {/* 10. Why Choose BHATHI FOREX */}
+      {/* 10. Why Choose Apex Trading Academy */}
       <WhyChooseUs />
 
       {/* 11. Frequently Asked Questions */}
@@ -62,6 +63,9 @@ export default function Home() {
 
       {/* 14. Sticky Floating WhatsApp & Student Forum Widget */}
       <FloatingWhatsApp />
+
+      {/* 15. Native Mobile App Bottom Navigation Dock */}
+      <MobileAppDock />
     </main>
   );
 }
