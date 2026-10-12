@@ -17,37 +17,38 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "BHATHI FOREX — A TO Z TRADING | Premium Forex & Crypto Academy",
+  title: "Apex Trading Academy — A TO Z TRADING | Premium Forex & Crypto Academy",
   description:
-    "Master Forex and Cryptocurrency trading with BHATHI FOREX. Structured 4-phase education covering market foundations, price action technical analysis, and institutional risk management.",
+    "Master Forex and Cryptocurrency trading with Apex Trading Academy. Structured 4-phase education covering market foundations, price action technical analysis, and institutional risk management led by Bhathiya Sooriarachchi.",
   keywords: [
+    "Apex Trading Academy",
     "Forex Trading Sri Lanka",
-    "Crypto Trading Education",
-    "Bhathi Forex",
+    "Crypto Trading Education Sri Lanka",
+    "Bhathiya Sooriarachchi",
     "A to Z Trading",
     "Forex Course Sri Lanka",
     "Technical Analysis Course",
     "Risk Management Forex",
     "Binance Bybit Trading Course",
   ],
-  authors: [{ name: "BHATHI FOREX Academy" }],
-  creator: "BHATHI FOREX",
-  publisher: "BHATHI FOREX",
+  authors: [{ name: "Apex Trading Academy" }, { name: "Bhathiya Sooriarachchi" }],
+  creator: "Apex Trading Academy",
+  publisher: "Apex Trading Academy",
   openGraph: {
     type: "website",
     locale: "en_LK",
-    url: "https://bhathiforex.com",
-    title: "BHATHI FOREX — A TO Z TRADING | Premium Forex & Crypto Academy",
+    url: "https://apextradingacademy.com",
+    title: "Apex Trading Academy — A TO Z TRADING | Premium Forex & Crypto Academy",
     description:
       "Structured Forex and cryptocurrency trading education. Learn price action, session dynamics, and disciplined risk management.",
-    siteName: "BHATHI FOREX",
+    siteName: "Apex Trading Academy",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BHATHI FOREX — A TO Z TRADING",
+    title: "Apex Trading Academy — A TO Z TRADING",
     description:
       "Master Forex and Crypto trading from beginner to advanced with structured, disciplined education.",
-    creator: "@bhathiforex",
+    creator: "@apextrading",
   },
   robots: {
     index: true,

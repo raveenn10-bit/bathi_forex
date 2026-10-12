@@ -3,57 +3,74 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #12141D;
-  --bg-secondary: #181B27;
-  --card-bg: #202331;
-  --color-purple: #995DE8;
-  --color-purple-light: #B17AF5;
-  --color-gold: #D6B15E;
+  --bg-primary: #F4F7FB;
+  --bg-secondary: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --color-ocean-ice: #DFF7FF;
+  --color-ocean-blue: #7FCDFF;
+  --color-ocean-deep: #38B6FF;
+  --color-champagne: #FFD3B6;
+  --color-champagne-warm: #F5A87B;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background-color: #12141D;
-  color: #FFFFFF;
+  background-color: #F4F7FB;
+  color: #0F172A;
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
-  selection-background-color: #995DE8;
-  selection-color: #FFFFFF;
 }
 
 ::selection {
-  background: rgba(153, 93, 232, 0.4);
-  color: #FFFFFF;
+  background: rgba(127, 205, 255, 0.4);
+  color: #0F172A;
 }
 
-/* Custom Sleek Dark Scrollbar */
+/* Custom Sleek Light Silver Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #12141D;
+  background: #F4F7FB;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #282C3D;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #995DE8;
+  background: #7FCDFF;
 }
 
-/* Custom Glassmorphism Utility */
+/* Hide scrollbar for clean horizontal snap lists */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Light Silver Frosted Glassmorphism Utility */
 .glass-panel {
-  background: rgba(32, 35, 49, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.6);
 }
 
 /* Ambient Trading Background Animations */
@@ -77,22 +94,42 @@ body {
 
 @keyframes chartPulseSubtle {
   0%, 100% {
-    opacity: 0.12;
+    opacity: 0.15;
     transform: translate3d(0, 0px, 0);
   }
   50% {
-    opacity: 0.22;
+    opacity: 0.28;
     transform: translate3d(0, -8px, 0);
   }
 }
 
 @keyframes depthPulse {
   0%, 100% {
-    opacity: 0.45;
+    opacity: 0.5;
   }
   50% {
     opacity: 0.95;
   }
+}
+
+/* Continuous Horizontal Auto-Scroll (Left to Right / Continuous Marquee) */
+@keyframes autoScrollLTR {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-auto-scroll {
+  display: flex;
+  width: max-content;
+  animation: autoScrollLTR 30s linear infinite;
+}
+
+.animate-auto-scroll:hover {
+  animation-play-state: paused;
 }
 
 .animate-candle-float {
@@ -111,12 +148,11 @@ body {
   animation: depthPulse 3.5s ease-in-out infinite;
 }
 
-/* Subtle Technical Grid Matrix */
+/* Technical Financial Matrix Grid for Light Silver Theme */
 .trading-matrix-grid {
   background-image: 
-    radial-gradient(circle, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
-  background-size: 52px 52px, 52px 52px, 52px 52px;
+    radial-gradient(circle, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px, 48px 48px;
 }
-

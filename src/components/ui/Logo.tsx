@@ -17,9 +17,9 @@ export default function Logo({
 }: LogoProps) {
   const iconDimensions = {
     sm: { size: 36, class: "w-9 h-9" },
-    md: { size: 46, class: "w-11 h-11" },
-    lg: { size: 58, class: "w-14 h-14" },
-    xl: { size: 84, class: "w-20 h-20" },
+    md: { size: 44, class: "w-11 h-11" },
+    lg: { size: 54, class: "w-14 h-14" },
+    xl: { size: 76, class: "w-20 h-20" },
   };
 
   const textSizes = {
@@ -30,10 +30,10 @@ export default function Logo({
   };
 
   const taglineSizes = {
-    sm: "text-[9px] tracking-[0.22em]",
-    md: "text-[10px] tracking-[0.28em]",
-    lg: "text-xs tracking-[0.32em]",
-    xl: "text-xs sm:text-sm tracking-[0.35em]",
+    sm: "text-[9px] tracking-[0.2em]",
+    md: "text-[10px] tracking-[0.24em]",
+    lg: "text-xs tracking-[0.28em]",
+    xl: "text-xs sm:text-sm tracking-[0.3em]",
   };
 
   const currentIcon = iconDimensions[size];
@@ -42,16 +42,16 @@ export default function Logo({
     <Link
       href="#hero"
       className={`group flex items-center gap-3 transition-all duration-300 hover:opacity-95 ${className}`}
-      aria-label="BHATHI FOREX - A TO Z TRADING"
+      aria-label="Apex Trading Academy - A TO Z TRADING"
     >
-      {/* Official BHATHI FOREX Logo Emblem */}
+      {/* Official Academy Emblem */}
       <div
-        className={`relative ${currentIcon.class} shrink-0 rounded-full p-[1.5px] bg-gradient-to-tr from-brand-gold via-brand-purple to-brand-purpleLight shadow-goldGlow transition-transform duration-300 group-hover:scale-105 group-hover:shadow-purpleGlow`}
+        className={`relative ${currentIcon.class} shrink-0 rounded-full p-[1.5px] bg-gradient-to-tr from-brand-oceanBlue via-brand-champagneWarm to-brand-oceanDeep shadow-md transition-transform duration-300 group-hover:scale-105`}
       >
-        <div className="relative h-full w-full overflow-hidden rounded-full bg-brand-bgSecondary">
+        <div className="relative h-full w-full overflow-hidden rounded-full bg-white border border-slate-200">
           <Image
             src="/images/logo.png"
-            alt="BHATHI FOREX Official Logo"
+            alt="Apex Trading Academy Logo"
             width={currentIcon.size}
             height={currentIcon.size}
             priority
@@ -60,25 +60,28 @@ export default function Logo({
         </div>
 
         {/* Ambient Ring Glow */}
-        <div className="pointer-events-none absolute -inset-1 rounded-full bg-brand-gold/20 blur-sm -z-10 group-hover:bg-brand-purple/30 transition-all duration-300" />
+        <div className="pointer-events-none absolute -inset-1 rounded-full bg-brand-oceanBlue/25 blur-sm -z-10 group-hover:bg-brand-champagne/40 transition-all duration-300" />
       </div>
 
       {/* Brand Typography */}
       {!onlyBadge && (
         <div className="flex flex-col">
           <span
-            className={`font-heading font-extrabold leading-none tracking-tight text-white ${textSizes[size]}`}
+            className={`font-heading font-extrabold leading-none tracking-tight text-slate-900 ${textSizes[size]}`}
           >
-            BHATHI{" "}
-            <span className="bg-gradient-to-r from-brand-purple via-brand-purpleLight to-brand-gold bg-clip-text text-transparent">
-              FOREX
+            APEX{" "}
+            <span className="bg-gradient-to-r from-sky-500 via-blue-600 to-amber-500 bg-clip-text text-transparent">
+              TRADING
             </span>
           </span>
+
           {showTagline && (
             <span
-              className={`font-heading font-semibold uppercase text-brand-gold/90 transition-colors group-hover:text-brand-gold ${taglineSizes[size]} mt-1`}
+              className={`font-mono font-bold uppercase text-slate-500 mt-1 flex items-center gap-1.5 ${taglineSizes[size]}`}
             >
-              A TO Z TRADING
+              <span>ACADEMY</span>
+              <span className="text-amber-500 font-extrabold">&bull;</span>
+              <span className="text-sky-600 font-bold">A TO Z</span>
             </span>
           )}
         </div>

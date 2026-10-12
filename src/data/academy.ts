@@ -45,9 +45,9 @@ export interface AcademyConfig {
 }
 
 export const ACADEMY_CONFIG: AcademyConfig = {
-  brandName: "BHATHI FOREX",
+  brandName: "Apex Trading Academy",
   tagline: "A TO Z TRADING",
-  legalName: "BHATHI FOREX Trading Academy",
+  legalName: "Apex Trading Academy",
   // Change to verified WhatsApp number in international format without leading '+' or spaces, e.g. "94770000000"
   whatsappNumber: "94771234567",
   displayPhone: "+94 77 123 4567",
@@ -96,7 +96,7 @@ export const ACADEMY_CONFIG: AcademyConfig = {
     ],
   },
   studentCommunity: {
-    title: "BHATHI FOREX Official Student WhatsApp Forum",
+    title: "Apex Trading Academy Official Student WhatsApp Forum",
     tagline: "Exclusive Peer Learning & Live Market Discussions",
     description: "Join over 1,500+ aspiring and active Sri Lankan Forex & Crypto traders. Get daily price action markups, high-probability market alerts, and engage in real-time discussions directly with Bhathiya Sooriarachchi.",
     whatsappGroupUrl: "https://chat.whatsapp.com/invite/bhathiforex",
