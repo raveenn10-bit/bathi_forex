@@ -1,0 +1,13 @@
+# Cursor Rules for Lanka Forex • Apex Trading Academy
+
+Read `PROJECT_MEMORY.md` before making any modifications.
+
+- Tech: Next.js 14 App Router, TypeScript, Tailwind CSS, Lucide Icons, GSAP.
+- Brand: Lanka Forex • Apex Trading Academy (Founder: Bhathiya Sooriarachchi, WhatsApp: 0771240270).
+- Domain: https://lankaforex.com
+- Logo: /images/logo.png
+- Rules:
+  * Strict typing (tsc code 0).
+  * Dark & Light mode compatibility on all components (`dark:...`).
+  * High-end financial aesthetic (avoid AI slop).
+  * Fast push: `npm run push` or `push.bat`.
