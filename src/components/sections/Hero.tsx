@@ -164,9 +164,11 @@ export default function Hero() {
             </p>
 
             {/* Subtle Sinhala Trust Line */}
-            <div className="mt-3.5 flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-800/40 px-3.5 py-1.5 rounded-full w-fit">
+            <div className="mt-3.5 flex flex-wrap items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-800/40 px-3.5 py-1.5 rounded-full w-fit">
               <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
               <span>ශ්‍රී ලංකාවේ විශ්වාසවන්තම ප්‍රායෝගික A to Z Trading අධ්‍යාපනය</span>
+              <span className="text-slate-400">•</span>
+              <span className="text-sky-700 dark:text-sky-300 font-bold">ගාල්ල &amp; කොළඹ Chapters</span>
             </div>
 
             {/* CTA Buttons */}

@@ -24,6 +24,8 @@ import {
   ChevronRight,
   Award,
   BookOpen,
+  MapPin,
+  Users,
 } from "lucide-react";
 
 interface SessionData {
@@ -516,6 +518,135 @@ export default function SriLankaTradingHub() {
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
                 <span>Direct WhatsApp 1:1 Access</span>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Galle District & Southern Province Chapter Spotlight */}
+        <div
+          id="galle-hub"
+          className="mb-20 overflow-hidden rounded-3xl border border-emerald-500/30 dark:border-emerald-500/20 bg-gradient-to-b from-emerald-500/[0.04] via-white to-emerald-500/[0.02] dark:from-[#0D161F] dark:via-[#0B1017] dark:to-[#0D161F] p-7 sm:p-10 shadow-xl backdrop-blur-xl"
+        >
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-8 pb-6 border-b border-emerald-500/20 dark:border-emerald-500/10">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-400 mb-3">
+                <MapPin className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+                <span>GALLE DISTRICT & SOUTHERN CHAPTER • ගාල්ල දිස්ත්‍රික්කයේ TRADERS HUB</span>
+              </div>
+              <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                ගාල්ල, කරාපිටිය සහ දකුණු පළාතේ{" "}
+                <span className="text-emerald-600 dark:text-emerald-400">Traders Guild</span>
+              </h3>
+              <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+                ගාල්ල නගරය, කරාපිටිය, හික්කඩුව, අම්බලන්ගොඩ, ඇල්පිටිය සහ බද්දේගම ඇතුළු ගාල්ල දිස්ත්‍රික්කයේ 450+ කට අධික තරුණ වෘත්තිකයන් සහ විශ්වවිද්‍යාල සිසුන් වෙනුවෙන් ක්‍රියාත්මක වන නිල Regional Hub එක.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
+              <a
+                href={getGeneralInquiryWhatsAppUrl(
+                  "Hello Bhathiya Sir, I am from Galle District (ගාල්ල). I would like to join the Galle / Southern Province Trading Guild and enroll in Apex Trading Academy."
+                ).url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3.5 text-xs font-bold shadow-md shadow-emerald-600/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <MessageSquare className="h-4 w-4" />
+                <span>ගාල්ලේ අපේ WhatsApp Guild එකට එක්වන්න</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
+          </div>
+
+          {/* 4 Galle District Pillars */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-slate-900/60 p-5 shadow-xs">
+              <div className="h-9 w-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3">
+                <Sparkles className="h-4 w-4" />
+              </div>
+              <h4 className="font-heading text-sm font-bold text-slate-900 dark:text-white">
+                Galle & Coastal Remote Work
+              </h4>
+              <p className="text-[11px] text-amber-600 dark:text-amber-400 font-medium mt-0.5">
+                සංචාරක & Remote Work පරිසරය
+              </p>
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                ගාල්ල, හික්කඩුව, උණවටුන සහ අහංගම ප්‍රදේශවල remote living කරමින් USD/USDT මාසික ආදායමක් උපයා ගැනීමේ ප්‍රායෝගික ක්‍රමවේදය.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-slate-900/60 p-5 shadow-xs">
+              <div className="h-9 w-9 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-3">
+                <BookOpen className="h-4 w-4" />
+              </div>
+              <h4 className="font-heading text-sm font-bold text-slate-900 dark:text-white">
+                Karapitiya & Ruhuna Academic Hub
+              </h4>
+              <p className="text-[11px] text-sky-600 dark:text-sky-400 font-medium mt-0.5">
+                විශ්වවිද්‍යාල ශිෂ්‍ය Fast-Track
+              </p>
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                කරාපිටිය වෛද්‍ය පීඨය, රුහුණ සරසවිය සහ දකුණේ උසස් අධ්‍යාපන සිසුන් වෙනුවෙන් නම්‍යශීලී සන්ධ්‍යා කාලීන ලෙක්චර්ස් සහ ශිෂ්‍ය මඟපෙන්වීම.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-slate-900/60 p-5 shadow-xs">
+              <div className="h-9 w-9 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3">
+                <Users className="h-4 w-4" />
+              </div>
+              <h4 className="font-heading text-sm font-bold text-slate-900 dark:text-white">
+                Galle Physical Student Meetups
+              </h4>
+              <p className="text-[11px] text-purple-600 dark:text-purple-400 font-medium mt-0.5">
+                ගාල්ලේ Physical Workshops
+              </p>
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                Online පාඨමාලාවට අමතරව ගාල්ල නගරයේදී පැවැත්වෙන විශේෂ chart breakdown sessions, cohort meetups සහ 1:1 mentorship සාකච්ඡා.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-slate-900/60 p-5 shadow-xs">
+              <div className="h-9 w-9 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3">
+                <ShieldCheck className="h-4 w-4" />
+              </div>
+              <h4 className="font-heading text-sm font-bold text-slate-900 dark:text-white">
+                Southern Bank P2P Safety
+              </h4>
+              <p className="text-[11px] text-amber-600 dark:text-amber-400 font-medium mt-0.5">
+                ආරක්ෂිත බැංකු Cashout මඟපෙන්වීම
+              </p>
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                ගාල්ල නගරයේ Commercial, Sampath, HNB, BOC ශාඛා හරහා Binance/Bybit P2P නීත්‍යානුකූලව සහ ආරක්ෂිතව මුදල් ලබාගැනීමේ නිවැරදි උපදෙස්.
+              </p>
+            </div>
+          </div>
+
+          {/* Regional Town Badges */}
+          <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+            <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-medium">
+              <span className="font-bold text-emerald-700 dark:text-emerald-400 font-heading">
+                ගාල්ල දිස්ත්‍රික්කයේ ප්‍රධාන ප්‍රදේශ:
+              </span>
+              <span className="hidden sm:inline text-slate-400">•</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              {[
+                "Galle Fort & City",
+                "Karapitiya",
+                "Hikkaduwa",
+                "Ambalangoda",
+                "Baddegama",
+                "Elpitiya",
+                "Bentota",
+                "Ahangama",
+              ].map((town) => (
+                <span
+                  key={town}
+                  className="rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-2.5 py-0.5 text-[11px] font-semibold text-slate-700 dark:text-slate-300 shadow-2xs"
+                >
+                  📍 {town}
+                </span>
+              ))}
             </div>
           </div>
         </div>

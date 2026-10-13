@@ -418,6 +418,24 @@ export default function StudentCommunity() {
                     </p>
                   </div>
 
+                  {/* Student Reply 3 - Galle District Chapter */}
+                  <div className="rounded-2xl rounded-tl-sm bg-[#1f2c34] p-2.5 text-slate-200 shadow border-l-2 border-emerald-400">
+                    <div className="flex items-center justify-between mb-0.5">
+                      <span className="font-heading text-[10px] font-bold text-emerald-400 flex items-center gap-1.5">
+                        <span>Hasitha K. (Galle - Karapitiya)</span>
+                        <span className="rounded bg-emerald-500/20 px-1 py-0.2 text-[8px] font-mono font-bold text-emerald-300">
+                          GALLE HUB
+                        </span>
+                      </span>
+                      <span className="font-mono text-[9px] text-white/40">
+                        10:22 AM
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-100">
+                      Galle meetup eken passe Gold London sweep setup eka perfectly execute kara. FTMO challenge phase 1 passed! Thank you Bhathiya sir! 🇱🇰🔥
+                    </p>
+                  </div>
+
                   {/* Mentor Audio Note simulation */}
                   <div className="flex items-center justify-between rounded-xl bg-emerald-950/40 border border-emerald-500/20 px-3 py-2 text-[11px] text-emerald-300">
                     <div className="flex items-center gap-2">

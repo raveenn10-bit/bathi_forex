@@ -25,6 +25,13 @@ export interface AcademyConfig {
     googleSiteVerification: string;
     keywords: string[];
   };
+  galleChapter?: {
+    title: string;
+    nativeTitle: string;
+    studentCount: string;
+    leadTowns: string[];
+    description: string;
+  };
   marketSessionsSLST: MarketSessionSLST[];
   mentor: {
     name: string;
@@ -81,8 +88,25 @@ export const ACADEMY_CONFIG: AcademyConfig = {
   whatsappNumber: "94771240270",
   displayPhone: "+94 77 124 0270",
   email: "apextradingacademy9@gmail.com",
-  location: "Sri Lanka",
+  location: "Colombo & Galle District, Sri Lanka",
   foundedYear: 2021,
+  galleChapter: {
+    title: "Galle District & Southern Province Trading Chapter",
+    nativeTitle: "ගාල්ල දිස්ත්‍රික්කය & දකුණු පළාතේ Traders Hub",
+    studentCount: "450+ Active Traders",
+    leadTowns: [
+      "Galle Fort & City",
+      "Karapitiya Campus Hub",
+      "Hikkaduwa Coastal Corridor",
+      "Ambalangoda",
+      "Baddegama",
+      "Elpitiya",
+      "Bentota",
+      "Ahangama",
+    ],
+    description:
+      "Specialized hybrid mentorship, localized Southern student meetups, and dedicated 1:1 guidance for ambitious traders across Galle District and the Southern Province.",
+  },
   seo: {
     googleSiteVerification:
       process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
@@ -97,6 +121,14 @@ export const ACADEMY_CONFIG: AcademyConfig = {
       "Forex classes Sri Lanka Sinhala",
       "Learn Forex trading in Sinhala",
       "Best Forex academy in Sri Lanka",
+      "Forex trading Galle",
+      "Forex classes Galle Sri Lanka",
+      "ගාල්ල Forex පාඨමාලාව",
+      "Forex Sinhala Galle",
+      "Karapitiya trading campus",
+      "Hikkaduwa crypto trading",
+      "Ambalangoda Forex trading",
+      "Southern Province Forex academy",
       "Crypto trading course Sri Lanka",
       "Binance P2P Sri Lanka cashout",
       "Bybit trading Sri Lanka",

@@ -32,13 +32,13 @@ export default function Footer() {
             <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed">
               LankaForex.com is the official digital education portal for Apex Trading Academy. Founded by Bhathiya Sooriarachchi in Sri Lanka, dedicated to demystifying global currency and cryptocurrency markets through systematic price action, mathematical risk management, and disciplined execution.
             </p>
-            <div className="flex items-center gap-3 mt-1 text-xs text-slate-500 dark:text-slate-400">
+            <div className="flex flex-wrap items-center gap-2 mt-1 text-xs text-slate-500 dark:text-slate-400">
               <span className="inline-flex items-center gap-1.5 text-amber-600 dark:text-amber-400 font-semibold">
                 <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                 A TO Z TRADING
               </span>
               <span>&bull;</span>
-              <span>Based in Sri Lanka</span>
+              <span>Colombo & Galle Chapters, Sri Lanka</span>
             </div>
           </div>
 
@@ -96,6 +96,14 @@ export default function Footer() {
                   <span>Student WhatsApp Forum</span>
                   <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/60 border border-transparent dark:border-emerald-500/20 px-1.5 py-0.2 text-[9px] text-emerald-700 dark:text-emerald-300">
                     1.5K+
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#galle-hub" className="hover:text-emerald-500 transition-colors text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+                  <span>Galle District Hub (ගාල්ල)</span>
+                  <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/60 border border-transparent dark:border-emerald-500/20 px-1.5 py-0.2 text-[9px] text-emerald-700 dark:text-emerald-300">
+                    450+
                   </span>
                 </a>
               </li>
