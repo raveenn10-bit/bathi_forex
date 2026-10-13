@@ -155,21 +155,6 @@ export default function RootLayout({
           "Ambalangoda",
           "Worldwide",
         ],
-        department: [
-          {
-            "@type": "EducationalOrganization",
-            name: "Lanka Forex — Galle District & Southern Province Hub",
-            description:
-              "Regional trading education hub and student network for Galle, Karapitiya, Hikkaduwa, and Southern Sri Lanka.",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Galle",
-              addressRegion: "Southern Province",
-              addressCountry: "LK",
-            },
-            telephone: ACADEMY_CONFIG.displayPhone,
-          },
-        ],
         priceRange: "LKR 12,500 - LKR 40,000",
         sameAs: [
           "https://t.me/bhathiforex",

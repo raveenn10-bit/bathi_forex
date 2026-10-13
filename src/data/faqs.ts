@@ -97,11 +97,4 @@ export const FAQS: FAQItem[] = [
       "Yes. Trading Forex and cryptocurrencies carries significant financial risk and is not suitable for everyone. Market prices can fluctuate unpredictably. At Apex Trading Academy, our core focus is teaching capital preservation, defensive position sizing, and disciplined risk-to-reward ratios so you can navigate the markets responsibly without gambling.",
     category: "Risk",
   },
-  {
-    id: "faq-galle-district",
-    question: "Are there specific workshops or community groups for students in Galle District & Southern Province?",
-    answer:
-      "Yes, absolutely. Apex Trading Academy (LankaForex.com) hosts an active Southern Province Chapter with over 450+ registered students across Galle Fort, Karapitiya Medical & Campus Hub, Hikkaduwa, Ambalangoda, Baddegama, and Elpitiya. In addition to our structured live online cohorts, we organize regional physical chart breakdown meetups and dedicated Southern WhatsApp Guild discussions. Students from Galle and the Southern Province can connect directly with mentor Bhathiya Sooriarachchi via WhatsApp (+94 77 124 0270).",
-    category: "Sri Lanka & Regulation",
-  },
 ];

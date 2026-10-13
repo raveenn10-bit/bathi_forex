@@ -25,13 +25,6 @@ export interface AcademyConfig {
     googleSiteVerification: string;
     keywords: string[];
   };
-  galleChapter?: {
-    title: string;
-    nativeTitle: string;
-    studentCount: string;
-    leadTowns: string[];
-    description: string;
-  };
   marketSessionsSLST: MarketSessionSLST[];
   mentor: {
     name: string;
@@ -88,25 +81,8 @@ export const ACADEMY_CONFIG: AcademyConfig = {
   whatsappNumber: "94771240270",
   displayPhone: "+94 77 124 0270",
   email: "apextradingacademy9@gmail.com",
-  location: "Colombo & Galle District, Sri Lanka",
+  location: "Colombo, Sri Lanka",
   foundedYear: 2021,
-  galleChapter: {
-    title: "Galle District & Southern Province Trading Chapter",
-    nativeTitle: "ගාල්ල දිස්ත්‍රික්කය & දකුණු පළාතේ Traders Hub",
-    studentCount: "450+ Active Traders",
-    leadTowns: [
-      "Galle Fort & City",
-      "Karapitiya Campus Hub",
-      "Hikkaduwa Coastal Corridor",
-      "Ambalangoda",
-      "Baddegama",
-      "Elpitiya",
-      "Bentota",
-      "Ahangama",
-    ],
-    description:
-      "Specialized hybrid mentorship, localized Southern student meetups, and dedicated 1:1 guidance for ambitious traders across Galle District and the Southern Province.",
-  },
   seo: {
     googleSiteVerification:
       process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",

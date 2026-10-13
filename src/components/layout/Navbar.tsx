@@ -149,21 +149,6 @@ export default function Navbar() {
               </a>
             ))}
 
-            {/* Regional Galle Chapter Quick Link */}
-            <a
-              href="#galle-hub"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-between rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300/50 dark:border-emerald-800/60 px-4 py-2.5 text-xs font-semibold text-emerald-800 dark:text-emerald-300"
-            >
-              <span className="flex items-center gap-1.5">
-                <span>📍</span>
-                <span>Galle District Hub (ගාල්ල)</span>
-              </span>
-              <span className="rounded-full bg-emerald-200 dark:bg-emerald-900 px-2 py-0.5 text-[9px] font-mono font-bold text-emerald-800 dark:text-emerald-200">
-                450+ Active
-              </span>
-            </a>
-
             <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
               <div className="flex items-center justify-between px-2">
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">

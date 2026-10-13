@@ -38,7 +38,7 @@ export default function Footer() {
                 A TO Z TRADING
               </span>
               <span>&bull;</span>
-              <span>Colombo & Galle Chapters, Sri Lanka</span>
+              <span>Colombo, Sri Lanka</span>
             </div>
           </div>
 
@@ -96,14 +96,6 @@ export default function Footer() {
                   <span>Student WhatsApp Forum</span>
                   <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/60 border border-transparent dark:border-emerald-500/20 px-1.5 py-0.2 text-[9px] text-emerald-700 dark:text-emerald-300">
                     1.5K+
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="#galle-hub" className="hover:text-emerald-500 transition-colors text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
-                  <span>Galle District Hub (ගාල්ල)</span>
-                  <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/60 border border-transparent dark:border-emerald-500/20 px-1.5 py-0.2 text-[9px] text-emerald-700 dark:text-emerald-300">
-                    450+
                   </span>
                 </a>
               </li>
