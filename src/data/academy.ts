@@ -77,9 +77,9 @@ export const ACADEMY_CONFIG: AcademyConfig = {
   brandName: "Apex Trading Academy",
   tagline: "A TO Z TRADING",
   legalName: "Apex Trading Academy",
-  // Change to verified WhatsApp number in international format without leading '+' or spaces, e.g. "94770000000"
-  whatsappNumber: "94771234567",
-  displayPhone: "+94 77 123 4567",
+  // Verified WhatsApp number in international format without leading '+' or spaces
+  whatsappNumber: "94771240270",
+  displayPhone: "+94 77 124 0270",
   email: "apextradingacademy9@gmail.com",
   location: "Sri Lanka",
   foundedYear: 2021,
@@ -221,7 +221,7 @@ export const ACADEMY_CONFIG: AcademyConfig = {
     ],
   },
   socialLinks: [
-    { platform: "WhatsApp", url: "https://wa.me/94771234567" },
+    { platform: "WhatsApp", url: "https://wa.me/94771240270" },
     { platform: "Telegram", url: "https://t.me/bhathiforex" },
     { platform: "YouTube", url: "https://youtube.com/@bhathiforex" },
     { platform: "Instagram", url: "https://instagram.com/bhathiforex" },

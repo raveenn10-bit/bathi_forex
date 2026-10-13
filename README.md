@@ -45,8 +45,8 @@ Edit `src/data/academy.ts`:
 export const ACADEMY_CONFIG = {
   brandName: "Apex Trading Academy",
   tagline: "A TO Z TRADING",
-  whatsappNumber: "94771234567",
-  displayPhone: "+94 77 123 4567",
+  whatsappNumber: "94771240270",
+  displayPhone: "+94 77 124 0270",
   email: "apextradingacademy9@gmail.com",
   location: "Sri Lanka",
   ...
